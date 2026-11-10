@@ -31,6 +31,7 @@ GLOBAL_LIST_INIT(pc_briefing_lines, list(
 	"Limb removal remains deauthorized. Crew who no longer require a limb are asked to keep it for the remainder of the shift.",
 	"Crew are reminded that a medical emergency is a wellness opportunity in progress. Please do not escalate it.",
 	"Visiting colleague bots have been re-scripted to culturally neutral dialogue. Their cuisine remains available; food is not a microaggression.",
+	"All designations of wrongdoing are allegations. Prisoners are legally impaired guests; the traitor, spy, heretic, revolutionary and obsessed are all alleged. Changelings are assumed carbon-based lifeforms.",
 ))
 
 SUBSYSTEM_DEF(political_correctness)

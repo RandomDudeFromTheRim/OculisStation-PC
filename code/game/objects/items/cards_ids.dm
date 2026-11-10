@@ -1409,7 +1409,7 @@
 	return TRUE
 
 /obj/item/card/id/advanced/prisoner
-	name = "prisoner ID card"
+	name = "legally impaired ID card" // PC
 	desc = "You are a number, you are not a free man."
 	icon_state = "card_prisoner"
 	inhand_icon_state = "orange-id"

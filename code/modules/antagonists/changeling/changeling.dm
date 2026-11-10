@@ -4,14 +4,14 @@
 #define FORMAT_CHEM_CHARGES_TEXT(charges) MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(charges)]</font></div>")
 
 /datum/antagonist/changeling
-	name = "\improper Changeling"
-	roundend_category = "changelings"
-	antagpanel_category = "Changeling"
+	name = "\improper Changeling (Assumed Carbon-Based Lifeform)" // PC - species is a matter of assumption
+	roundend_category = "assumed carbon-based lifeforms" // PC
+	antagpanel_category = "Assumed Carbon-Based Lifeform" // PC
 	pref_flag = ROLE_CHANGELING
 	antag_moodlet = /datum/mood_event/ling
 	antag_hud_name = "changeling"
 	ui_name = "AntagInfoChangeling"
-	suicide_cry = "FOR THE HIVE!!"
+	suicide_cry = "FOR THE ASSUMED HIVE!!" // PC
 	can_assign_self_objectives = TRUE
 	default_custom_objective = "Consume the station's most valuable genomes."
 	hardcore_random_bonus = TRUE
@@ -221,7 +221,7 @@
 
 /datum/antagonist/changeling/farewell()
 	if(owner.current)
-		to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
+		to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer an assumed carbon-based lifeform and are stuck in your current form!"))
 
 /*
  * Instantiate the cellular emporium for the changeling.

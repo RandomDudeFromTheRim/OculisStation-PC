@@ -426,14 +426,14 @@
 
 /datum/job/prisoner
 	alt_titles = list(
-		"Prisoner",
-		"Convict", // OCULIS EDIT ADDITION
-		"Minimum Security Prisoner",
-		"Medium Security Prisoner", // OCULIS EDIT ADDITION
-		"Maximum Security Prisoner",
-		"SuperMax Security Prisoner",
-		"Protective Custody Prisoner",
-		"Psychiatric Hold Prisoner",
+		"Legally Impaired (Alleged)", // PC
+		"Alleged Offender", // OCULIS EDIT ADDITION
+		"Low-Risk Legally Impaired", // PC
+		"Medium-Risk Legally Impaired", // OCULIS EDIT ADDITION
+		"High-Risk Legally Impaired", // PC
+		"SuperMax Legally Impaired", // PC
+		"Protective Custody Legally Impaired", // PC
+		"Psychiatric Hold Legally Impaired", // PC
 	)
 
 /datum/job/psychologist

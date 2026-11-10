@@ -5,17 +5,17 @@
 #define OBSESSED_OBJECTIVE_JEALOUS "jealous"
 
 /datum/antagonist/obsessed
-	name = "Obsessed"
+	name = "Obsessed (Alleged)" // PC - presumption of innocence
 	show_in_antagpanel = TRUE
 	antagpanel_category = ANTAG_GROUP_CREW
 	pref_flag = ROLE_OBSESSED
 	show_to_ghosts = TRUE
 	antag_hud_name = "obsessed"
 	show_name_in_check_antagonists = TRUE
-	roundend_category = "obsessed"
+	roundend_category = "obsessed (alleged)" // PC
 	antag_flags = ANTAG_SKIP_GLOBAL_LIST
 	silent = TRUE //not actually silent, because greet will be called by the trauma anyway.
-	suicide_cry = "FOR MY LOVE!!"
+	suicide_cry = "FOR MY ALLEGED LOVE!!" // PC
 	preview_outfit = /datum/outfit/obsessed
 	hardcore_random_bonus = TRUE
 	stinger_sound = 'sound/music/antag/creepalert.ogg'
@@ -29,7 +29,7 @@
 
 /// Dummy antag datum that will show the cured obsessed to admins
 /datum/antagonist/former_obsessed
-	name = "Former Obsessed"
+	name = "Formerly Alleged Obsessed" // PC
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
 	antagpanel_category = ANTAG_GROUP_CREW

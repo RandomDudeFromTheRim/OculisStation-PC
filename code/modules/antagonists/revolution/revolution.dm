@@ -1,11 +1,11 @@
 /datum/antagonist/rev
-	name = "\improper Revolutionary"
-	roundend_category = "revolutionaries" // if by some miracle revolutionaries without revolution happen
-	antagpanel_category = "Revolution"
+	name = "\improper Revolutionary (Alleged)" // PC - presumption of innocence
+	roundend_category = "revolutionaries (alleged)" // PC
+	antagpanel_category = "Revolution (Alleged)" // PC
 	pref_flag = ROLE_REV
 	antag_moodlet = /datum/mood_event/revolution
 	antag_hud_name = "rev"
-	suicide_cry = "VIVA LA REVOLUTION!!"
+	suicide_cry = "VIVA LA ALLEGED REVOLUTION!!" // PC
 	stinger_sound = 'sound/music/antag/revolutionary_tide.ogg'
 	ui_name = "AntagInfoRevolution"
 
@@ -24,7 +24,7 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has rev'ed [key_name_admin(new_owner)].")
 	log_admin("[key_name(admin)] has rev'ed [key_name(new_owner)].")
-	to_chat(new_owner.current, span_userdanger("You are a member of the revolution!"))
+	to_chat(new_owner.current, span_userdanger("You are allegedly a member of the alleged revolution!"))
 
 /datum/antagonist/rev/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
@@ -70,7 +70,7 @@
 	new_revhead.silent = TRUE
 	old_owner.add_antag_datum(new_revhead,old_team)
 	new_revhead.silent = FALSE
-	to_chat(old_owner, span_userdanger("You have proved your devotion to revolution! You are a head revolutionary now!"))
+	to_chat(old_owner, span_userdanger("You have proved your devotion to the alleged revolution! You are allegedly a head revolutionary now!"))
 
 /datum/antagonist/rev/get_admin_commands()
 	. = ..()
@@ -123,7 +123,7 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has head-rev'ed [key_name_admin(new_owner)].")
 	log_admin("[key_name(admin)] has head-rev'ed [key_name(new_owner)].")
-	to_chat(new_owner.current, span_userdanger("You are a member of the revolutionaries' leadership now!"))
+	to_chat(new_owner.current, span_userdanger("You are allegedly a member of the alleged revolutionaries' leadership now!"))
 
 /datum/antagonist/rev/head/get_admin_commands()
 	. = ..()
@@ -169,7 +169,7 @@
 	demote()
 
 /datum/antagonist/rev/head
-	name = "\improper Head Revolutionary"
+	name = "\improper Head Revolutionary (Alleged)" // PC
 	antag_hud_name = "rev_head"
 	pref_flag = ROLE_REV_HEAD
 
@@ -345,7 +345,7 @@
 	new_rev.silent = TRUE
 	old_owner.add_antag_datum(new_rev,old_team)
 	new_rev.silent = FALSE
-	to_chat(old_owner, span_userdanger("Revolution has been disappointed of your leader traits! You are a regular revolutionary now!"))
+	to_chat(old_owner, span_userdanger("The alleged revolution has been disappointed in your leader traits! You are allegedly a regular revolutionary now!"))
 
 /datum/antagonist/rev/farewell()
 	if(!owner.current)
@@ -415,7 +415,7 @@
 			to_chat(carbon_owner, "Your eyes have been implanted with a cybernetic security HUD which will help you keep track of who is mindshield-implanted, and therefore unable to be recruited.")
 
 /datum/team/revolution
-	name = "\improper Revolution"
+	name = "\improper Alleged Revolution" // PC
 	/// Maximum number of headrevs
 	var/max_headrevs = 3
 

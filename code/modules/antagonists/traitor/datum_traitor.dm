@@ -4,14 +4,14 @@
 #define FLAVOR_FACTION_NANOTRASEN "nanotrasen"
 
 /datum/antagonist/traitor
-	name = "\improper Traitor"
-	roundend_category = "traitors"
-	antagpanel_category = "Traitor"
+	name = "\improper Traitor (Alleged)" // PC - presumption of innocence
+	roundend_category = "traitors (alleged)" // PC
+	antagpanel_category = "Traitor (Alleged)" // PC
 	pref_flag = ROLE_TRAITOR
 	antag_moodlet = /datum/mood_event/focused
 	antag_hud_name = "traitor"
 	ui_name = "AntagInfoTraitor"
-	suicide_cry = "FOR THE SYNDICATE!!"
+	suicide_cry = "FOR THE ALLEGED SYNDICATE!!" // PC
 	preview_outfit = /datum/outfit/traitor
 	can_assign_self_objectives = TRUE
 	default_custom_objective = "Perform an overcomplicated heist on valuable Nanotrasen assets."

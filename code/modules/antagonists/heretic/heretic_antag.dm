@@ -15,14 +15,14 @@
 
 /// The heretic antagonist itself.
 /datum/antagonist/heretic
-	name = "\improper Heretic"
-	roundend_category = "Heretics"
-	antagpanel_category = "Heretic"
+	name = "\improper Heretic (Alleged)" // PC - presumption of innocence
+	roundend_category = "Heretics (alleged)" // PC
+	antagpanel_category = "Heretic (Alleged)" // PC
 	ui_name = "AntagInfoHeretic"
 	antag_moodlet = /datum/mood_event/heretics
 	pref_flag = ROLE_HERETIC
 	antag_hud_name = "heretic"
-	suicide_cry = "THE MANSUS SMILES UPON ME!!"
+	suicide_cry = "THE ALLEGED MANSUS SMILES UPON ME!!" // PC
 	preview_outfit = /datum/outfit/heretic
 	can_assign_self_objectives = TRUE
 	default_custom_objective = "Turn a department into a testament for your dark knowledge."

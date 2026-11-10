@@ -1,10 +1,10 @@
 /datum/job/prisoner
 	title = JOB_PRISONER
-	description = "Keep yourself occupied in permabrig."
+	description = "Keep yourself occupied in the involuntary accommodation wing. Your legal impairment is a wellness matter, not a crime." // PC
 	faction = FACTION_STATION
 	total_positions = 0
 	spawn_positions = 4
-	supervisors = "the security team"
+	supervisors = "the inclusivity enforcement team" // PC
 	exp_granted_type = EXP_TYPE_CREW
 	paycheck = PAYCHECK_LOWER
 	config_tag = "PRISONER"
@@ -32,11 +32,11 @@
 /datum/job/prisoner/proc/handle_prisoner_joining(datum/source, mob/living/crewmember, rank)
 	SIGNAL_HANDLER
 	if(rank != title)
-		return //not a prisoner
+		return //not a legally impaired crewmember
 
 	var/crime_name = crewmember.client?.prefs?.read_preference(/datum/preference/choiced/prisoner_crime)
 	if(!crime_name)
-		stack_trace("[crewmember] joined as a Prisoner without having a prisoner crime set.")
+		stack_trace("[crewmember] joined as a legally impaired crewmember without having an allegation set.")
 		crime_name = pick(assoc_to_keys(GLOB.prisoner_crimes))
 	else if(crime_name == "Random")
 		crime_name = pick(assoc_to_keys(GLOB.prisoner_crimes))
@@ -46,11 +46,11 @@
 	var/datum/record/crew/target_record = find_record(crewmember.real_name)
 	target_record.crimes += past_crime
 	target_record.recreate_manifest_photos(add_height_chart = TRUE)
-	to_chat(crewmember, span_warning("You are imprisoned for \"[crime_name]\"."))
+	to_chat(crewmember, span_warning("You are being involuntarily accommodated pending an allegation of \"[crime_name]\".")) // PC
 	crewmember.add_mob_memory(/datum/memory/key/permabrig_crimes, crimes = crime_name)
 
 /datum/outfit/job/prisoner
-	name = "Prisoner"
+	name = "Legally Impaired" // PC
 	jobtype = /datum/job/prisoner
 
 	id = /obj/item/card/id/advanced/prisoner

@@ -1,7 +1,7 @@
 /datum/antagonist/spy
-	name = "\improper Spy"
-	roundend_category = "spies"
-	antagpanel_category = "Spy"
+	name = "\improper Spy (Alleged)" // PC - presumption of innocence
+	roundend_category = "spies (alleged)" // PC
+	antagpanel_category = "Spy (Alleged)" // PC
 	antag_hud_name = "spy"
 	pref_flag = ROLE_SPY
 	antag_moodlet = /datum/mood_event/focused

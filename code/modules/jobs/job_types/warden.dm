@@ -1,6 +1,6 @@
 /datum/job/warden
 	title = JOB_WARDEN
-	description = "Watch over the Brig and Prison Wing, release prisoners when \
+	description = "Watch over the Brig and involuntary accommodation wing, release legally impaired guests when \
 		their time is up, issue equipment to security, be a security officer when \
 		they all eventually die."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY

@@ -4,11 +4,11 @@
  * They either have the choice to fuck off and do their own thing, or try and regain their honor with a hijack.
  */
 /datum/antagonist/enemy_of_the_state
-	name = "\improper Enemy of the State"
+	name = "\improper Enemy of the State (Alleged)" // PC
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
 	hijack_speed = 2 //not like they have much to do
-	suicide_cry = "FOR THE ETERNAL REVOLUTION!!"
+	suicide_cry = "FOR THE ALLEGED ETERNAL REVOLUTION!!" // PC
 
 /datum/antagonist/enemy_of_the_state/forge_objectives()
 	var/datum/objective/exile/exile_choice = new
