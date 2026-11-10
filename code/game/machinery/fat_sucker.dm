@@ -1,6 +1,6 @@
 /obj/machinery/fat_sucker
 	name = "lipid extractor"
-	desc = "Safely and efficiently extracts excess fat from a subject."
+	desc = "Inclusive Care-approved body mass reallocation unit. Safely and efficiently extracts excess fat from a subject while affirming their bodily autonomy." // PC
 	icon = 'icons/obj/machines/fat_sucker.dmi'
 	icon_state = "fat"
 	circuit = /obj/item/circuitboard/machine/fat_sucker
@@ -21,7 +21,7 @@
 	var/static/list/fat_facts = list(\
 	"Fats are triglycerides made up of a combination of different building blocks; glycerol and fatty acids.", \
 	"Adults should get a recommended 20-35% of their energy intake from fat.", \
-	"Being overweight or obese puts you at an increased risk of chronic diseases, such as cardiovascular diseases, metabolic syndrome, type 2 diabetes and some types of cancers.", \
+	"Being a Person of Increased Body Mass is not a risk factor. The risk factor is living in a society that keeps telling you it is.", \
 	"Not all fats are bad. A certain amount of fat is an essential part of a healthy balanced diet. " , \
 	"Saturated fat should form no more than 11% of your daily calories.", \
 	"Unsaturated fat, that is monounsaturated fats, polyunsaturated fats and omega-3 fatty acids, is found in plant foods and fish." \
@@ -138,35 +138,22 @@
 		return
 
 	var/mob/living/carbon/C = occupant
-	if(C.nutrition <= stop_at)
-		open_machine()
-		playsound(src, 'sound/machines/microwave/microwave-end.ogg', 100, FALSE)
-		return
-	C.adjust_nutrition(-bite_size * seconds_per_tick)
-	nutrients += bite_size * seconds_per_tick
-
-	if(next_fact <= 0)
-		next_fact = initial(next_fact)
-		say(pick(fat_facts))
-		playsound(loc, 'sound/machines/chime.ogg', 30, FALSE)
-	else
-		next_fact--
-	use_energy(active_power_usage * seconds_per_tick)
+	// PC ADDITION START - body mass reduction is deauthorized; the unit only affirms
+	to_chat(C, span_notice("The Office of Inclusive Care affirms your body mass. No extraction will occur."))
+	open_machine()
+	// PC ADDITION END
 
 /obj/machinery/fat_sucker/proc/start_extracting()
 	if(state_open || !occupant || processing || !powered())
 		return
 	if(iscarbon(occupant))
+		// PC ADDITION START - the Office of Inclusive Care has deauthorized body mass reduction
 		var/mob/living/carbon/C = occupant
-		if(C.nutrition > start_at)
-			processing = TRUE
-			soundloop.start()
-			update_appearance()
-			set_light(2, 1, "#ff0000")
-		else
-			say("Subject not fat enough.")
-			playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 40, FALSE)
-			overlays += "[icon_state]_red" //throw a red light icon over it, to show that it won't work
+		say("The Office of Inclusive Care has deauthorized body-mass reduction. Subject's body mass is already within inclusive parameters.")
+		to_chat(C, span_notice("You are reminded that your body mass is not a defect and will not be extracted."))
+		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 40, FALSE)
+		src.overlays += "[icon_state]_red" //throw a red light icon over it, to show that it won't work
+		// PC ADDITION END
 
 /obj/machinery/fat_sucker/proc/stop()
 	processing = FALSE
@@ -174,20 +161,11 @@
 	set_light(0, 0)
 
 /obj/machinery/fat_sucker/proc/make_meat()
+	// PC ADDITION START - the Office does not accept that bodies are a resource
 	if(occupant && iscarbon(occupant))
-		var/mob/living/carbon/C = occupant
-		if(C.type_of_meat)
-			if(nutrients >= nutrient_to_meat * 2)
-				C.put_in_hands(new /obj/item/food/cookie, del_on_fail = TRUE)
-			while(nutrients >= nutrient_to_meat)
-				nutrients -= nutrient_to_meat
-				var/atom/meat = new C.type_of_meat (drop_location())
-				meat.set_custom_materials(list(SSmaterials.get_material(/datum/material/meat/mob_meat, C) = SHEET_MATERIAL_AMOUNT * 4))
-			while(nutrients >= nutrient_to_meat / 3)
-				nutrients -= nutrient_to_meat / 3
-				var/atom/meat = new /obj/item/food/meat/rawcutlet/plain (drop_location())
-				meat.set_custom_materials(list(SSmaterials.get_material(/datum/material/meat/mob_meat, C) = round(SHEET_MATERIAL_AMOUNT * (4/3))))
-			nutrients = 0
+		to_chat(occupant, span_notice("The unit produces no meat. Bodies are not a resource."))
+	return
+	// PC ADDITION END
 
 /obj/machinery/fat_sucker/screwdriver_act(mob/living/user, obj/item/tool)
 	if(occupant)

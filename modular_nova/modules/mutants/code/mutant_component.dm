@@ -141,7 +141,7 @@
 		to_chat(host, span_redtext("You are a FAST zombie. You run fast and hit more quickly, beware however, you are much weaker and susceptible to damage."))
 	else
 		to_chat(host, span_redtext("You are a SLOW zombie. You walk slowly and hit more slowly and harder. However, you are far more resilient to most damage types."))
-	to_chat(host, span_alertalien("You are now a mutant! Do not seek to be cured, do not help any non-mutants in any way, do not harm your mutant brethren. You retain some higher functions and can reason to an extent."))
+	to_chat(host, span_alertalien("You are now a Genetically Diverse Individual! Do not seek to be cured, do not help any non-genetically-diverse individuals in any way, do not harm your genetically diverse brethren. You retain some higher functions and can reason to an extent.")) // PC
 	host.mind?.add_antag_datum(/datum/antagonist/mutant)
 	create_glow()
 	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(mutant_death))
@@ -154,10 +154,10 @@
 
 /datum/component/mutant_infection/proc/regenerate()
 	if(!host.mind)
-		var/list/candidates = SSpolling.poll_ghosts_for_target("Do you want to play as a mutant([host.name])?",
+		var/list/candidates = SSpolling.poll_ghosts_for_target("Do you want to play as a Genetically Diverse Individual ([host.name])?", // PC
 		checked_target = host,
 		alert_pic = host,
-		role_name_text = "mutant [host.name]",
+		role_name_text = "Genetically Diverse Individual [host.name]", // PC
 		)
 		if(!candidates.len)
 			return

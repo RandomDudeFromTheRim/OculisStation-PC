@@ -671,8 +671,8 @@
 		icon_state = "cheeseburgeralt"
 
 /obj/item/food/burger/crazy
-	name = "crazy hamburger"
-	desc = "This looks like the sort of food that a demented clown in a trenchcoat would make."
+	name = "unpredictable hamburger" // PC
+	desc = "This looks like the sort of food that a wildly unregulated clown in a trenchcoat would make." // PC
 	icon_state = "crazyburger"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -702,7 +702,7 @@
 // empty burger you can customize
 /obj/item/food/burger/empty
 	name = "burger"
-	desc = "A crazy, custom burger made by a mad cook."
+	desc = "A custom burger made by a culinarily unregulated cook." // PC
 	icon_state = "custburg"
 	tastes = list("bun")
 	foodtypes = GRAIN

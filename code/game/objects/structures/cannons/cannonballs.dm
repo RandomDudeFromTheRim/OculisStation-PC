@@ -52,7 +52,7 @@
 /obj/item/stack/cannonball/the_big_one
 	name = "\"The Biggest Ones\""
 	singular_name = "\"The Biggest One\""
-	desc = "An insane amount of explosives jammed into a massive cannonball. The last cannonball you'll ever fire in a fight, mostly because there'll be nothing left to shoot at afterwards."
+	desc = "An excessive amount of explosives jammed into a massive cannonball. The last cannonball you'll ever fire in a fight, mostly because there'll be nothing left to shoot at afterwards." // PC
 	max_amount = 5
 	icon_state = "biggest_cannonballs"
 	base_icon_state = "biggest_cannonballs"

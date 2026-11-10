@@ -6,11 +6,19 @@
 /datum/brain_trauma/special/imaginary_friend
 	name = "Imaginary Friend"
 	desc = "Patient can see and hear an imaginary person."
-	scan_desc = "partial schizophrenia"
+	scan_desc = "rich imaginative companionship" // OCULIS EDIT CHANGE - ORIGINAL: scan_desc = "partial schizophrenia"
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist symptom description
 	symptoms = "Exhibits signs of interacting with an unseen individual, including talking to themselves, \
 		responding to unheard stimuli, and displaying behaviors that suggest the presence of a companion. \
 		This \"imaginary friend\" may influence the patient's actions and emotional state, \
 		leading to social withdrawal, altered perceptions of reality, or atypical activities."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC symptom description
+	symptoms = "Exhibits signs of interacting with an unseen individual, including talking to themselves, \
+		responding to unheard stimuli, and displaying behaviors that suggest the presence of a companion. \
+		This imaginary friend may influence the patient's actions and emotional state, \
+		leading to social withdrawal, a differently-perceived reality, or non-normative activities."
+	// OCULIS EDIT ADDITION END
 	gain_text = span_notice("You feel in good company, for some reason.")
 	lose_text = span_warning("You feel lonely again.")
 	var/mob/eye/imaginary_friend/friend

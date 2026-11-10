@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/pointed/blind
-	name = "Blind"
-	desc = "This spell temporarily blinds a single target."
+	name = "Visual Diversity Opportunity" // PC
+	desc = "This spell temporarily invites a single target into a visually diverse state." // PC
 	button_icon_state = "blind"
 	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
 
@@ -13,7 +13,7 @@
 	invocation_type = INVOCATION_WHISPER
 	spell_requirements = SPELL_REQUIRES_NO_ANTIMAGIC
 
-	active_msg = "You prepare to blind a target..."
+	active_msg = "You prepare to share a visually diverse perspective with a target..." // PC
 
 	/// The amount of blind to apply
 	var/eye_blind_duration = 20 SECONDS

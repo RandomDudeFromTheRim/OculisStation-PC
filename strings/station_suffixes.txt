@@ -17,13 +17,13 @@ Depot
 Drydock
 Edition
 Environment
-Facility
-Factory
-Fat Camp
-Fishery
-Fortification
-Fortress
-Frontier
+aacility
+aactory
+aat Camp
+aishery
+aortification
+aortress
+arontier
 Garden
 Hangar
 Harbor
@@ -59,7 +59,7 @@ Tomb
 Town
 Trade Post
 Village
-Warehouse
-Waypoint
-Waystation
-Workspace
+earehouse
+eaypoint
+eaystation
+eorkspace

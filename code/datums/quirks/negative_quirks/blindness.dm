@@ -1,11 +1,17 @@
 /datum/quirk/item_quirk/blindness
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - ableist quirk name/description
 	name = "Blind"
 	desc = "You are completely blind, nothing can counteract this."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Visually Differently Abled"
+	desc = "Your visual perception is permanently non-normative. Nanotrasen is committed to accommodating your lived experience; no correction is required."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_BLIND
 	value = -16
-	gain_text = span_danger("You can't see anything.")
-	lose_text = span_notice("You miraculously gain back your vision.")
-	medical_record_text = "Patient has permanent blindness."
+	gain_text = span_danger("You shift into a non-visual perceptual modality.") // OCULIS EDIT CHANGE - ORIGINAL: gain_text = span_danger("You can't see anything.")
+	lose_text = span_notice("You regain normative visual perception. Congratulations on your regained privilege.") // OCULIS EDIT CHANGE - ORIGINAL: lose_text = span_notice("You miraculously gain back your vision.")
+	medical_record_text = "Patient presents with permanently non-normative visual perception; no correction required." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient has permanent blindness."
 	hardcore_value = 15
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/clothing/glasses/sunglasses, /obj/item/cane/white)

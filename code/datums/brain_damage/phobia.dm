@@ -1,6 +1,6 @@
 /datum/brain_trauma/mild/phobia
 	name = "Phobia"
-	desc = "Patient is unreasonably afraid of something."
+	desc = "Patient experiences an above-average safety response to something." // OCULIS EDIT CHANGE - ORIGINAL: desc = "Patient is unreasonably afraid of something."
 	scan_desc = "phobia"
 	symptoms = "When exposed to a specific stimulus, experiences \
 		an immediate anxiety or fear response far greater than typically expected, \

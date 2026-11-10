@@ -34,7 +34,7 @@
 
 /obj/item/clothing/under/plasmaman/chief_engineer
 	name = "chief engineer's plasma envirosuit"
-	desc = "An airtight suit designed to be used by plasmamen insane enough to achieve the rank of \"Chief Engineer\"."
+	desc = "An airtight suit designed to be used by plasmamen with an officially certified tolerance for risk who achieve the rank of \"Chief Engineer\"." // PC
 	icon_state = "ce_envirosuit"
 	inhand_icon_state = null
 	armor_type = /datum/armor/clothing_under/engineering_chief_engineer/plasmaman

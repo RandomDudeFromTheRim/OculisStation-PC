@@ -21,7 +21,7 @@
 
 /datum/techweb_node/surgery_adv
 	display_name = "Advanced Surgery"
-	description = "When simple medicine doesn't cut it."
+	description = "When simple medicine doesn't cut it. Now featuring Office of Inclusive Care-approved tissue appreciation procedures, which correct nothing because nothing needs correcting." // PC - ORIGINAL: description = "When simple medicine doesn't cut it."
 	prerequisite_nodes = list(/datum/techweb_node/surgery)
 	unlocked_designs = list(
 		/datum/design/board/harvester,

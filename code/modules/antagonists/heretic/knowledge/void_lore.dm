@@ -26,7 +26,7 @@
 		"Has a difficult time with silicon-based lifeforms.",
 	)
 	tips = list(
-		"Your Mansus Grasp allows you to mute your targets, making it ideal for silent assassinations (keep in mind that it won't short circuit their suit sensors, make sure you turn them off after you kill them). Yhe grasp also applies a mark that when triggered by the void blade will apply the maximum amount of stacks of void chill to your target, slowing them down to a crawl.",
+		"Your Mansus Grasp allows you to render your targets Non-Verbal Communicators, making it ideal for silent assassinations (keep in mind that it won't short circuit their suit sensors, make sure you turn them off after you kill them). Yhe grasp also applies a mark that when triggered by the void blade will apply the maximum amount of stacks of void chill to your target, slowing them down to a crawl.", // PC
 		"Void Cloak can be used to hide one of your blades and a Codex Cicatrix.",
 		"Void chill is a debuff applied by your spells, your grasp, your mark and your blade once you unlock the upgrade. Each stack slows your target movement speed by 10% and make them gradually colder, up to a maximum of 5 stacks.",
 		"At 5 stacks void chill will also prevent your target from heating up.",

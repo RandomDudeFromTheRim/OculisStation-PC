@@ -1,12 +1,18 @@
 /datum/quirk/erratic
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist quirk name/description
 	name = "Erratic"
 	desc = "You mood swings like a pendulum, causing your personality to change on a whim every so often."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Emotionally Expressive"
+	desc = "Your mood swings with a pendulum-like grace, causing your personality to change on a whim every so often."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_MASKS_THEATER
 	value = -3
-	gain_text = span_danger("You feel erratic.") // say that again?
-	lose_text = span_notice("You feel more stable.")
-	medical_record_text = "Patient has a bipolar personality disorder."
-	medical_symptom_text = "Exhibits sudden and unpredictable changes in personality, mood, and behavior, often swinging between extremes of emotion and demeanor."
+	gain_text = span_danger("You feel emotionally expressive.") // OCULIS EDIT CHANGE - ORIGINAL: gain_text = span_danger("You feel erratic.") // say that again?
+	lose_text = span_notice("You feel more normatively regulated.") // OCULIS EDIT CHANGE - ORIGINAL: lose_text = span_notice("You feel more stable.")
+	medical_record_text = "Patient demonstrates a flexible, non-normative emotional regulation style." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient has a bipolar personality disorder."
+	medical_symptom_text = "Exhibits sudden and expressive changes in personality, mood, and behavior, often swinging between extremes of emotion and demeanor." // OCULIS EDIT CHANGE - ORIGINAL: medical_symptom_text = "Exhibits sudden and unpredictable changes in personality, mood, and behavior, often swinging between extremes of emotion and demeanor."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES|QUIRK_TRAUMALIKE
 	hardcore_value = 3
 	mail_goodies = list(/obj/item/storage/pill_bottle/psicodine)

@@ -273,9 +273,10 @@
 
 		blood_status = "Patient [blood_name] levels are currently reading [blood_percent]%.[blood_type.get_type() ? " Patient has [blood_type.get_type()] type [blood_name]." : ""][blood_warning]"
 
-	var/trauma_status = "Patient is free of unique brain trauma."
+	// PC - patient-facing trauma strings rebranded as cerebral enrichment
+	var/trauma_status = "Patient is free of unique cerebral enrichments."
 	var/brain_loss = patient.get_organ_loss(ORGAN_SLOT_BRAIN)
-	var/brain_status = "Brain patterns normal."
+	var/brain_status = "Cerebral patterns within normative expectations."
 	if(LAZYLEN(patient.get_traumas()))
 		var/list/trauma_text = list()
 		for(var/t in patient.get_traumas())
@@ -283,19 +284,19 @@
 			var/trauma_desc = ""
 			switch(trauma.resilience)
 				if(TRAUMA_RESILIENCE_SURGERY)
-					trauma_desc += "severe "
+					trauma_desc += "significant "
 				if(TRAUMA_RESILIENCE_LOBOTOMY)
-					trauma_desc += "deep-rooted "
+					trauma_desc += "deeply cherished "
 				if(TRAUMA_RESILIENCE_MAGIC, TRAUMA_RESILIENCE_ABSOLUTE)
-					trauma_desc += "permanent "
+					trauma_desc += "long-term-affirmed "
 			trauma_desc += trauma.scan_desc
 			trauma_text += trauma_desc
-		trauma_status = "Cerebral traumas detected: patient appears to be suffering from [english_list(trauma_text)]."
+		trauma_status = "Cerebral enrichments detected: patient is currently expressing [english_list(trauma_text)]."
 
 	var/chemical_list = list()
 	var/overdose_list = list()
 	var/addict_list = list()
-	var/hallucination_status = "Patient is not hallucinating."
+	var/hallucination_status = "Patient is not experiencing perceptual enrichment." // PC
 
 	if(patient.reagents.reagent_list.len) //Chemical Analysis details.
 		for(var/r in patient.reagents.reagent_list)
@@ -321,7 +322,7 @@
 		addict_list += list(list("name" = initial(addiction_type.name)))
 
 	if (patient.has_status_effect(/datum/status_effect/hallucination))
-		hallucination_status = "Subject appears to be hallucinating. Suggested treatments: Antipsychotic medication, [/datum/reagent/medicine/haloperidol::name] or [/datum/reagent/medicine/synaptizine::name]."
+		hallucination_status = "Subject is experiencing perceptual enrichment. Suggested supports: neuro-affirming medication, [/datum/reagent/medicine/haloperidol::name] or [/datum/reagent/medicine/synaptizine::name]." // PC
 
 	if(IS_DEAD_OR_FAKING(patient))  //Patient status checks.
 		patient_status = "Dead."
@@ -343,13 +344,13 @@
 		)
 
 	if((brain_loss) >= 100)   //Brain status checks.
-		brain_status = "Grave brain damage detected."
+		brain_status = "Profound cerebral enrichment detected." // PC
 	else if((brain_loss) >= 50)
-		brain_status = "Severe brain damage detected."
+		brain_status = "Significant cerebral enrichment detected." // PC
 	else if((brain_loss) >= 20)
-		brain_status = "Brain damage detected."
+		brain_status = "Cerebral enrichment detected." // PC
 	else if((brain_loss) >= 1)
-		brain_status = "Mild brain damage detected."  //You may have a miiiild case of severe brain damage.
+		brain_status = "Mild cerebral enrichment detected."  // PC - You may have a miiiild case of severe brain damage.
 
 	if(pandemonium)
 		chaos_modifier = 1

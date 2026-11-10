@@ -2,20 +2,20 @@
 #define STRANGER 1
 
 /datum/brain_trauma/severe/split_personality
-	name = "Split Personality"
-	desc = "Patient's brain is split into two personalities, which randomly switch control of the body."
-	scan_desc = "complete lobe separation"
+	name = "Co-Hosted Consciousness" // PC
+	desc = "Patient's brain hosts two coexisting personalities, which randomly switch control of the body." // PC
+	scan_desc = "multi-consciousness co-habitation" // PC
 	symptoms = "Exhibits two distinct personalities that alternate control over the same body, \
 		each with its own memories, behaviors, and preferences. While both personalities are aware of each other, \
-		they may have conflicting desires and actions, leading to confusion and disorientation for the host."
-	gain_text = span_warning("You feel like your mind was split in two.")
+		they may have conflicting desires and actions, leading to an alternative shared-living arrangement for the host." // PC
+	gain_text = span_warning("You feel your mind welcoming a co-host.") // PC
 	lose_text = span_notice("You feel alone again.")
 	var/current_controller = OWNER
 	var/initialized = FALSE //to prevent personalities deleting themselves while we wait for ghosts
 	var/mob/living/split_personality/stranger_backseat //there's two so they can swap without overwriting
 	var/mob/living/split_personality/owner_backseat
 	///The role to display when polling ghost
-	var/poll_role = "split personality"
+	var/poll_role = "co-hosted consciousness" // PC
 	///How long do we give ghosts to respond?
 	var/poll_time = 20 SECONDS
 

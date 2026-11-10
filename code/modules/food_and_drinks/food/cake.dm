@@ -76,14 +76,14 @@
 
 /obj/item/food/cake/empty
 	name = "cake"
-	desc = "A custom cake made by an insane chef."
+	desc = "A custom cake made by a culinarily unregulated chef." // PC
 	icon_state = "cake_custom"
 	foodtypes = GRAIN | DAIRY | SUGAR
 	slice_type = /obj/item/food/cakeslice/empty
 
 /obj/item/food/cakeslice/empty
 	name = "cake slice"
-	desc = "A slice of custom cake, made by an insane chef."
+	desc = "A slice of custom cake, made by a culinarily unregulated chef." // PC
 	icon_state = "cake_custom_slice"
 	foodtypes = GRAIN | DAIRY | SUGAR
 
@@ -93,13 +93,13 @@
 
 /obj/item/food/cake/empty/vegan
 	name = "vegan cake"
-	desc = "A custom vegan cake made by an really insane chef."
+	desc = "A custom vegan cake made by a really culinarily unregulated chef." // PC
 	foodtypes = GRAIN
 	slice_type = /obj/item/food/cakeslice/empty/vegan
 
 /obj/item/food/cakeslice/empty/vegan
 	name = "vegan cake slice"
-	desc = "A slice of custom vegan cake, made by an really insane chef."
+	desc = "A slice of custom vegan cake, made by a really culinarily unregulated chef." // PC
 	foodtypes = GRAIN
 
 /obj/item/food/cake/carrot

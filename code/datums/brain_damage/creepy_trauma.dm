@@ -1,12 +1,19 @@
 /datum/brain_trauma/special/obsessed
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist trauma name/description
 	name = "Psychotic Schizophrenia"
 	desc = "Patient has a subtype of delusional disorder, becoming irrationally attached to someone."
 	scan_desc = "psychotic schizophrenic delusions"
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC trauma strings
+	name = "Enhanced Relational Devotion"
+	desc = "Patient demonstrates a distinctive attachment modality, becoming deeply relationally invested in someone."
+	scan_desc = "enhanced relational pattern recognition"
+	// OCULIS EDIT ADDITION END
 	symptoms = "Exhibits obsessive behaviors towards a specific individual, \
 		including frequent staring, intrusive thoughts, and an overwhelming desire to be near them. \
 		This obsession can lead to social withdrawal, anxiety, and impaired daily functioning."
 	gain_text = "If you see this message, make a github issue report. The trauma initialized wrong."
-	lose_text = span_warning("The voices in your head fall silent.")
+	lose_text = span_warning("Your internal advisory committee falls silent.") // PC
 	can_gain = TRUE
 	random_gain = FALSE
 	resilience = TRAUMA_RESILIENCE_LOBOTOMY

@@ -1,6 +1,6 @@
 /obj/item/book/granter/crafting_recipe/trash_cannon
 	name = "diary of a demoted engineer"
-	desc = "A lost journal. The engineer seems very deranged about their demotion."
+	desc = "A lost journal. The engineer seems to have a lot of unprocessed feelings about their demotion." // PC
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/trash_cannon,
 		/datum/crafting_recipe/trashball,

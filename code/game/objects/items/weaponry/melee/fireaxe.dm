@@ -5,7 +5,7 @@ GLOBAL_DATUM(bridge_axe, /obj/item/fireaxe)
  */
 /obj/item/fireaxe  // DEM AXES MAN, marker -Agouri
 	name = "fire axe"
-	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
+	desc = "Truly, the weapon of a dangerously unregulated individual. Who would think to fight fire with an axe?" // PC
 	icon = 'icons/obj/weapons/fireaxe.dmi'
 	icon_state = "fireaxe0"
 	inhand_icon_state = "fireaxe0"

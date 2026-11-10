@@ -91,7 +91,7 @@
 			By using a lower amount of energy and many proprietary principles, a CWM medigun can stimulate a patient's natural healing factor by \
 			a factor of at least 7 times in an instant, far outpacing the gradual healing that they initially set out to achieve. Unfortunately, the \
 			overloading of natural processes means that the device is prone to inducing superficial sickness when used carelessly on those with \
-			less-than-ideal lifestyles. Despite this, many, from insane Solarian field doctors to remote colonial hospitals, would eagerly pay \
+			less-than-ideal lifestyles. Despite this, many, from wildly unregulated Solarian field doctors to remote colonial hospitals, would eagerly pay \
 			the exorbitant price for the CWM-479, and Vey-Med is more than happy to provide it." \
 	)
 

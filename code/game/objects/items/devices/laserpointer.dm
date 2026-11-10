@@ -242,10 +242,10 @@
 
 			//chance to actually hit the eyes depends on internal component
 			if(prob(effectchance * diode.rating) && !always_fail && target_humanoid.flash_act(severity))
-				outmsg = span_notice("You blind [target_humanoid] by shining [src] in [target_humanoid.p_their()] eyes.")
+				outmsg = span_notice("You render [target_humanoid] Visually Differently Abled by shining [src] in [target_humanoid.p_their()] eyes.") // PC
 				log_combat(user, target_humanoid, "blinded with a laser pointer", src)
 			else
-				outmsg = span_warning("You fail to blind [target_humanoid] by shining [src] at [target_humanoid.p_their()] eyes!")
+				outmsg = span_warning("You fail to render [target_humanoid] Visually Differently Abled by shining [src] at [target_humanoid.p_their()] eyes!") // PC
 				log_combat(user, target_humanoid, "attempted to blind with a laser pointer", src)
 
 	//borgs: chance to flash and paralyse the target

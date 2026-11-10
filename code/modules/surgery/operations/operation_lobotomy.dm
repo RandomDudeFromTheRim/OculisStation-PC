@@ -1,8 +1,8 @@
 /datum/surgery_operation/organ/lobotomy
-	name = "Invasive Neurological Tissue Removal" // OCULIS EDIT, ORIGINAL - name = "Lobotomy"
-	rnd_name = "Invasive Neurological Tissue Removal" // OCULIS EDIT, ORIGINAL - rnd_name = "Lobotomy"
-	desc = "Repair most of a patient's brain traumas, with the risk of causing new permanent traumas."
-	rnd_desc = "An invasive surgical procedure which guarantees removal of almost all brain traumas, but might cause another permanent trauma in return."
+	name = "invasive neurological tissue appreciation" // PC - ORIGINAL: name = "Invasive Neurological Tissue Removal" (upstream: "Lobotomy")
+	rnd_name = "Invasive Neurological Tissue Appreciation (Neurodiversity Affirmation)" // PC - ORIGINAL: rnd_name = "Invasive Neurological Tissue Removal" (upstream: "Lobotomy")
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer removes or inflicts brain traumas; it invasively appreciates the patient's neurological tissue, which is already perfect as it is." // PC - ORIGINAL: desc = "Repair most of a patient's brain traumas, with the risk of causing new permanent traumas."
+	rnd_desc = "A deauthorized invasive procedure which guarantees nothing except official acknowledgement that the patient's brain, including its traumas, is already perfect as it is." // PC - ORIGINAL: rnd_desc = "An invasive surgical procedure which guarantees removal of almost all brain traumas, but might cause another permanent trauma in return."
 	operation_flags = OPERATION_MORBID | OPERATION_AFFECTS_MOOD | OPERATION_LOCKED | OPERATION_NOTABLE | OPERATION_NO_PATIENT_REQUIRED
 	implements = list(
 		TOOL_SCALPEL = 1.15,
@@ -40,20 +40,24 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to perform an invasive tissue removal on [FORMAT_ORGAN_OWNER(organ)]'s brain..."), // OCULIS EDIT, ORIGINAL: span_notice("You begin to perform a lobotomy on [FORMAT_ORGAN_OWNER(organ)]'s brain..."),
-		span_notice("[surgeon] begins to perform an invasive tissue removal on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // OCULIS EDIT, ORIGINAL: span_notice("[surgeon] begins to perform a lobotomy on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
-		span_notice("[surgeon] begins to perform surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_notice("You begin to invasively appreciate [FORMAT_ORGAN_OWNER(organ)]'s neurological tissue..."), // PC
+		span_notice("[surgeon] begins to invasively appreciate [FORMAT_ORGAN_OWNER(organ)]'s neurological tissue."), // PC
+		span_notice("[surgeon] begins to perform a neurological tissue appreciation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
-	display_pain(organ.owner, "Your head pounds with unimaginable pain!")
+	display_pain(organ.owner, "Your head pounds with the sheer invasiveness of the appreciation!")
 
 /datum/surgery_operation/organ/lobotomy/on_success(obj/item/organ/brain/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You successfully perform an invasive tissue removal on [FORMAT_ORGAN_OWNER(organ)]'s brain!"), // OCULIS EDIT, ORIGINAL: span_notice("You successfully perform a lobotomy on [FORMAT_ORGAN_OWNER(organ)]!"),
-		span_notice("[surgeon] invasively removes tissue from [FORMAT_ORGAN_OWNER(organ)]'s brain!"), // OCULIS EDIT, ORIGINAL: span_notice("[surgeon] successfully lobotomizes [FORMAT_ORGAN_OWNER(organ)]!"),
-		span_notice("[surgeon] finishes performing surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_notice("You invasively appreciate [FORMAT_ORGAN_OWNER(organ)]'s neurological tissue. Their brain is already perfect as it is."), // PC
+		span_notice("[surgeon] invasively appreciates [FORMAT_ORGAN_OWNER(organ)]'s neurological tissue. Their brain is already perfect as it is."), // PC
+		span_notice("[surgeon] completes the neurological tissue appreciation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
+	// PC ADD - no traumas are cured, removed, or inflicted
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care confirms that your brain is not damaged, merely diverse. No treatment has been performed, because none is required."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all trauma curing, brainwash removal, and trauma infliction
+	/*
 	display_pain(organ.owner, "Your head goes totally numb for a moment, the pain is overwhelming!")
 
 	organ.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
@@ -75,16 +79,20 @@
 				organ.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_MAGIC)
 		if(3)
 			organ.gain_trauma_type(BRAIN_TRAUMA_SPECIAL, TRAUMA_RESILIENCE_MAGIC)
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/lobotomy/on_failure(obj/item/organ/brain/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
 		surgeon,
 		organ.owner,
-		span_warning("You remove the wrong part, causing more damage!"),
-		span_notice("[surgeon] unsuccessfully attempts to invasively remove tissue from [FORMAT_ORGAN_OWNER(organ)]'s brain!"), // OCULIS EDIT, ORIGINAL: span_notice("[surgeon] unsuccessfully attempts to lobotomize [FORMAT_ORGAN_OWNER(organ)]!"),
-		span_notice("[surgeon] completes the surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_warning("The Office of Inclusive Care rejects your appreciation request. Nothing was removed, because nothing was wrong!"), // PC
+		span_warning("[surgeon] fails to invasively appreciate [FORMAT_ORGAN_OWNER(organ)]'s neurological tissue. Nothing was removed, because nothing was wrong."), // PC
+		span_notice("[surgeon] completes the neurological tissue appreciation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
-	display_pain(organ.owner, "The pain in your head only seems to get worse!")
+	display_pain(organ.owner, "The pain in your head only seems to get worse, as if the paperwork itself were cutting into you!")
+	// PC REMOVAL START - no organ damage is caused and no trauma is inflicted
+	/*
 	organ.apply_organ_damage(80)
 	switch(rand(1, 3))
 		if(1)
@@ -96,10 +104,12 @@
 				organ.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_MAGIC)
 		if(3)
 			organ.gain_trauma_type(BRAIN_TRAUMA_SPECIAL, TRAUMA_RESILIENCE_MAGIC)
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/lobotomy/mechanic
-	name = "execute neural defragging"
-	rnd_name = "Wetware OS Destructive Defragmentation (Lobotomy)"
+	name = "execute neural appreciation" // PC - ORIGINAL: name = "execute neural defragging"
+	rnd_name = "Wetware OS Appreciation Routine (Neurodiversity Affirmation)" // PC - ORIGINAL: rnd_name = "Wetware OS Destructive Defragmentation (Lobotomy)"
 	implements = list(
 		TOOL_MULTITOOL = 1.15,
 		/obj/item/melee/energy/sword = 1.85,

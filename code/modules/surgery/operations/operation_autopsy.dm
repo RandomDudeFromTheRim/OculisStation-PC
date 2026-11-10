@@ -1,7 +1,7 @@
 /datum/surgery_operation/limb/autopsy
 	name = "autopsy"
 	rnd_name = "Androtomy (Dissection and Autopsy)"
-	desc = "Perform a detailed analysis of a deceased patient's body."
+	desc = "Perform a detailed analysis of a temporarily non-living patient's body." // PC
 	implements = list(/obj/item/autopsy_scanner = 1)
 	time = 10 SECONDS
 	success_sound = 'sound/machines/printer.ogg'
@@ -16,7 +16,7 @@
 	. = list()
 	. += "operate on chest (target chest)"
 	. += ..()
-	. += "the patient must be deceased"
+	. += "the patient must be temporarily non-living" // PC
 	. += "the patient must not have been autopsied prior"
 
 /datum/surgery_operation/limb/autopsy/state_check(obj/item/bodypart/limb)

@@ -1,6 +1,6 @@
 // A type of antagonist created by the moon ascension
 /datum/antagonist/lunatic
-	name = "\improper Lunatic"
+	name = "\improper Differently-Reality-Aligned Associate" // OCULIS EDIT CHANGE - ORIGINAL: name = "\improper Lunatic"
 	antagpanel_category = ANTAG_GROUP_HORRORS
 	show_in_antagpanel = FALSE
 	suicide_cry = "PRAISE THE RINGLEADER!!"
@@ -80,9 +80,9 @@
 /datum/objective/lunatic/update_explanation_text()
 	. = ..()
 	if(is_master)
-		explanation_text = "Lead your lunatics to further your own goals!"
+		explanation_text = "Lead your fellow differently-reality-aligned associates to further your own goals!" // OCULIS EDIT CHANGE - ORIGINAL: explanation_text = "Lead your lunatics to further your own goals!"
 		return
-	explanation_text = "Assist your ringleader [master], do not harm fellow lunatics"
+	explanation_text = "Assist your ringleader [master], do not harm fellow differently-reality-aligned associates" // OCULIS EDIT CHANGE - ORIGINAL: explanation_text = "Assist your ringleader [master], do not harm fellow lunatics"
 
 // Lunatic master
 /datum/antagonist/lunatic/master

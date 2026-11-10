@@ -118,7 +118,7 @@
 
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
-	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
+	desc = "It's useful for both carrying extra gear and proudly declaring your psychological irregularity." // PC
 	icon_state = "backpack-cult"
 	inhand_icon_state = "backpack"
 	alternate_worn_layer = ABOVE_BODY_FRONT_HEAD_LAYER

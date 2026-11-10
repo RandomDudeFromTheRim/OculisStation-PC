@@ -19,7 +19,7 @@
 
 /datum/surgery_operation/basic/dissection/all_required_strings()
 	. += ..()
-	. += "the patient must be deceased"
+	. += "the patient must be temporarily non-living" // PC
 	. += "the patient must not have been dissected prior"
 
 /datum/surgery_operation/basic/dissection/state_check(mob/living/patient)

@@ -25,7 +25,7 @@
 		"Reliant on hitting fast and hard before their opponents can mount proper countermeasures.",
 	)
 	tips = list(
-		"Your Mansus Grasp applies a short blind and a mark that puts your opponent into stamina crit when triggered by your blade. The mark can spread to nearby opponents.",
+		"Your Mansus Grasp applies a short period of Visual Diversity and a mark that puts your opponent into stamina crit when triggered by your blade. The mark can spread to nearby opponents.", // PC
 		"Selecting this path makes you immune to high temperature damage. Remember, however, that your clothes can still burn! If you want to protect yourself from your own fire, wear a Scorched Mantle.",
 		"Your Scorched Mantle will keep you on fire while protecting you from the ill effects of it. Use this to your advantage by running into groups of enemies, spreading fire far and wide.",
 		"Do not neglect the Mask of Madness. It will slowly sap the stamina of your enemies and make them hallucinate.",

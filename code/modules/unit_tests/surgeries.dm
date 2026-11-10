@@ -25,8 +25,9 @@
 	var/datum/surgery_operation/organ/repair/brain/surgery = GLOB.operations.operations_by_typepath[__IMPLIED_TYPE__]
 	UNLINT(surgery.success(patient.get_organ_slot(ORGAN_SLOT_BRAIN), user, hemostat, list()))
 
-	TEST_ASSERT(!patient.has_trauma_type(), "Patient kept their brain trauma after brain surgery")
-	TEST_ASSERT(patient.get_organ_loss(ORGAN_SLOT_BRAIN) < 20, "Patient did not heal their brain damage after brain surgery")
+	// PC - the Office of Inclusive Care validates neurological diversity; it does not correct it
+	TEST_ASSERT(patient.has_trauma_type(), "Patient lost their brain trauma after the Office of Inclusive Care merely affirmed it")
+	TEST_ASSERT(patient.get_organ_loss(ORGAN_SLOT_BRAIN) >= 20, "Patient's brain damage was healed; the Office validates, it does not correct")
 
 /datum/unit_test/head_transplant/Run()
 	var/mob/living/carbon/human/user = allocate(/mob/living/carbon/human/consistent)

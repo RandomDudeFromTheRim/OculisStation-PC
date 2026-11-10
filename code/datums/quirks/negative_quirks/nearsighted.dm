@@ -1,11 +1,17 @@
 /datum/quirk/item_quirk/nearsighted
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - ableist quirk name/description
 	name = "Nearsighted"
 	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Differently Focused"
+	desc = "Your visual focus is optimized for close-range accessibility. You spawn with a pair of prescription glasses as an accommodation."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_GLASSES
 	value = -4
-	gain_text = span_danger("Things far away from you start looking blurry.")
-	lose_text = span_notice("You start seeing faraway things normally again.")
-	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+	gain_text = span_danger("Distant objects gently lose definition as your visual focus becomes more intimate.") // OCULIS EDIT CHANGE - ORIGINAL: gain_text = span_danger("Things far away from you start looking blurry.")
+	lose_text = span_notice("Your visual focus returns to the normative standard.") // OCULIS EDIT CHANGE - ORIGINAL: lose_text = span_notice("You start seeing faraway things normally again.")
+	medical_record_text = "Patient's visual focus is non-normative; corrective lenses are provided as an accommodation." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
 	hardcore_value = 5
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/clothing/glasses/regular) // extra pair if orginal one gets broken by somebody mean

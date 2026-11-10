@@ -20,7 +20,7 @@
 
 /obj/item/shockpaddles/interdyne
 	name = "interdyne defibrillator paddles"
-	desc = "A pair of paddles used to revive deceased operatives. They possess the ability to penetrate armor."
+	desc = "A pair of paddles used to revive temporarily non-living operatives. They possess the ability to penetrate armor." // PC
 	combat = TRUE
 	icon = 'modular_nova/master_files/icons/obj/medical/defib.dmi'
 	icon_state = "ippaddles0"

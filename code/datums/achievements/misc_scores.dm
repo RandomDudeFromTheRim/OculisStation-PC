@@ -1,7 +1,7 @@
 ///How many times did we survive being a cripple?
 /datum/award/score/hardcore_random
 	name = "Hardcore random points"
-	desc = "Well, I might be a blind, deaf, crippled guy, but hey, at least I'm alive."
+	desc = "Well, I might be a Visually Differently Abled, Auditory Differently Abled, Differently Enabled guy, but hey, at least I'm alive." // PC
 	database_id = HARDCORE_RANDOM_SCORE
 
 ///How many maintenance pills did you eat?

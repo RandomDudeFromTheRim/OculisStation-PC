@@ -6,13 +6,13 @@
 	abstract_type = /datum/brain_trauma/mild
 
 /datum/brain_trauma/mild/hallucinations
-	name = "Hallucinations"
-	desc = "Patient suffers constant hallucinations."
-	scan_desc = "schizophrenia"
-	symptoms = "Experiences frequent hallucinations (either visual or auditory) or delusions \
-		which subside on being administered Mindbreaker Toxin."
-	gain_text = span_warning("You feel your grip on reality slipping...")
-	lose_text = span_notice("You feel more grounded.")
+	name = "Perceptual Enrichment" // PC
+	desc = "Patient experiences constant perceptual enrichment." // PC
+	scan_desc = "enhanced pattern recognition" // PC
+	symptoms = "Experiences frequent perceptual enrichment (either visual or auditory) or alternative belief structures \
+		which subside on being administered Mindbreaker Toxin." // PC
+	gain_text = span_warning("You feel consensus reality becoming optional...") // PC
+	lose_text = span_notice("You feel more normatively grounded.") // PC
 	/// Whether the hallucinations we give are uncapped, ie all the wacky ones
 	var/uncapped = FALSE
 
@@ -34,11 +34,11 @@
 	return ..()
 
 /datum/brain_trauma/mild/stuttering
-	name = "Stuttering"
-	desc = "Patient can't speak properly."
-	scan_desc = "reduced mouth coordination"
-	symptoms = "Has difficulty speaking fluently, often repeating or prolonging sounds or syllables."
-	gain_text = span_warning("Speaking clearly is getting harder.")
+	name = "Alternative Speech Rhythm" // PC
+	desc = "Patient's speech flows with a non-normative, rhythmic cadence." // PC
+	scan_desc = "alternative mouth coordination" // PC
+	symptoms = "Speaks with a distinctive rhythm, often repeating or prolonging sounds or syllables for emphasis." // PC
+	gain_text = span_warning("Your speech adopts a more artistic rhythm.") // PC
 	lose_text = span_notice("You feel in control of your speech.")
 
 /datum/brain_trauma/mild/stuttering/on_life(seconds_per_tick)
@@ -75,12 +75,12 @@
 	return ..()*/
 
 /datum/brain_trauma/mild/speech_impediment
-	name = "Speech Impediment"
-	desc = "Patient is unable to form coherent sentences."
-	scan_desc = "communication disorder"
-	symptoms = "Struggles to articulate thoughts into coherent speech, often resulting in jumbled or nonsensical sentences."
-	gain_text = span_danger("You can't seem to form any coherent thoughts!")
-	lose_text = span_danger("Your mind feels more clear.")
+	name = "Alternative Communication Style" // PC
+	desc = "Patient expresses themselves through a non-normative sentence structure." // PC
+	scan_desc = "alternative communication modality" // PC
+	symptoms = "Communicates thoughts through bold, interpretive sentence structures, often resulting in delightfully jumbled speech." // PC
+	gain_text = span_danger("Your thoughts begin expressing themselves in an alternative modality!") // PC
+	lose_text = span_danger("Your mind returns to the normative standard of clarity.") // PC
 
 /datum/brain_trauma/mild/speech_impediment/on_gain()
 	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
@@ -120,11 +120,11 @@
 	..()
 
 /datum/brain_trauma/mild/healthy
-	name = "Anosognosia"
-	desc = "Patient always feels healthy, regardless of their condition."
-	scan_desc = "self-awareness deficit"
-	symptoms = "Exhibits a lack of awareness or denial of their own medical conditions, \
-		often insisting they are perfectly healthy despite clear evidence to the contrary."
+	name = "Unwavering Self-Advocacy" // PC
+	desc = "Patient maintains an unwavering, non-normative sense of wellness regardless of their condition." // PC
+	scan_desc = "unwavering self-advocacy" // PC
+	symptoms = "Exhibits a robust lack of awareness of their own medical conditions, \
+		often insisting they are perfectly healthy despite clear evidence to the contrary." // PC
 	gain_text = span_notice("You feel great!")
 	lose_text = span_warning("You no longer feel perfectly healthy.")
 
@@ -168,11 +168,11 @@
 	..()
 
 /datum/brain_trauma/mild/muscle_spasms
-	name = "Muscle Spasms"
-	desc = "Patient has occasional muscle spasms, causing them to move unintentionally."
-	scan_desc = "nervous fits"
-	symptoms = "Experiences involuntary muscle contractions leading to sudden, brief movements or twitches, which can interfere with normal motor functions."
-	gain_text = span_warning("Your muscles feel oddly faint.")
+	name = "Spontaneous Motor Celebrations" // PC
+	desc = "Patient's muscles engage in occasional spontaneous celebrations of movement." // PC
+	scan_desc = "spontaneous motor celebrations" // PC
+	symptoms = "Experiences spontaneous muscle contractions leading to sudden, brief movements or twitches, which can interfere with normative motor functions." // PC
+	gain_text = span_warning("Your muscles feel oddly enthusiastic.") // PC
 	lose_text = span_notice("You feel in control of your muscles again.")
 
 /datum/brain_trauma/mild/muscle_spasms/on_gain()
@@ -204,10 +204,10 @@
 
 /datum/brain_trauma/mild/expressive_aphasia
 	name = "Expressive Aphasia"
-	desc = "Patient is affected by partial loss of speech leading to a reduced vocabulary."
-	scan_desc = "inability to form complex sentences"
-	symptoms = "Struggles to express thoughts verbally, often substituting complex words with simpler alternatives or nonsensical sounds."
-	gain_text = span_warning("You lose your grasp on complex words.")
+	desc = "Patient communicates with a partial, alternative vocabulary." // PC
+	scan_desc = "alternative sentence-structure modality" // PC
+	symptoms = "Expresses thoughts through bold, simplified vocabulary and delightfully nonsensical sounds." // PC
+	gain_text = span_warning("Complex words become optional.") // PC
 	lose_text = span_notice("You feel your vocabulary returning to normal again.")
 
 /datum/brain_trauma/mild/expressive_aphasia/handle_speech(datum/source, list/speech_args)
@@ -286,11 +286,11 @@
 		speak_dejavu += speech_args[SPEECH_MESSAGE]
 
 /datum/brain_trauma/mild/color_blindness
-	name = "Achromatopsia"
-	desc = "Patient's occipital lobe is unable to recognize and interpret color, rendering the patient completely colorblind."
-	scan_desc = "colorblindness"
-	symptoms = "Exhibits a complete inability to perceive colors, seeing the world in shades of gray, black, and white."
-	gain_text = span_warning("The world around you seems to lose its color.")
+	name = "Alternative Colour Perception" // PC
+	desc = "Patient's occipital lobe interprets colour through a non-normative palette." // PC
+	scan_desc = "alternative colour perception" // PC
+	symptoms = "Perceives colour through a non-normative monochromatic palette, experiencing the world in shades of gray, black, and white." // PC
+	gain_text = span_warning("The world around you adopts a distinctive monochromatic aesthetic.") // PC
 	lose_text = span_notice("The world feels bright and colorful again.")
 
 /datum/brain_trauma/mild/color_blindness/on_gain()

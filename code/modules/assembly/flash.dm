@@ -38,7 +38,7 @@
 		user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but it's burnt out!"))
 		return SHAME
 	else if(user.is_blind())
-		user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but [user.p_theyre()] blind!"))
+		user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but [user.p_theyre()] already Visually Differently Abled!")) // PC
 		return SHAME
 	user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it! It looks like [user.p_theyre()] trying to commit suicide!"))
 	attack(user,user)
@@ -175,9 +175,9 @@
 	if(!flash_result)
 		if(targeted)
 			if(user)
-				visible_message(span_warning("[user] fails to blind [flashed] with the flash!"), span_danger("[user] fails to blind you with the flash!"))
+				visible_message(span_warning("[user] fails to render [flashed] Visually Differently Abled with the flash!"), span_danger("[user] fails to render you Visually Differently Abled with the flash!")) // PC
 			else
-				to_chat(flashed, span_danger("[src] fails to blind you!"))
+				to_chat(flashed, span_danger("[src] fails to render you Visually Differently Abled!")) // PC
 		return FALSE
 
 	flashed.adjust_confusion_up_to(confusion_duration, confusion_duration * CONFUSION_STACK_MAX_MULTIPLIER)
@@ -198,15 +198,15 @@
 			else
 				flashed.set_temp_blindness_if_lower( (rand(5,15) SECONDS))
 				if(user)
-					user.visible_message(span_warning("[user] blinds [flashed] with the flash!"), span_danger("You blind [flashed] with the flash!"))
+					user.visible_message(span_warning("[user] renders [flashed] Visually Differently Abled with the flash!"), span_danger("You render [flashed] Visually Differently Abled with the flash!")) // PC
 				else
-					to_chat(flashed, "You're blinded by [src]!")
+					to_chat(flashed, "You're rendered Visually Differently Abled by [src]!") // PC
 		else
 			//easy way to make sure that you can only long stun someone who is facing in your direction
 			flashed.adjust_stamina_loss(rand(80, 120) * (1 - (deviation * 0.5)))
 			flashed.Knockdown(rand(25, 50) * (1 - (deviation * 0.5)))
 			if(user)
-				visible_message(span_danger("[user] blinds [flashed] with the flash!"), span_userdanger("[user] blinds you with the flash!"))
+				visible_message(span_danger("[user] renders [flashed] Visually Differently Abled with the flash!"), span_userdanger("[user] renders you Visually Differently Abled with the flash!")) // PC
 			else
 				to_chat(flashed, "You're blinded by [src]!")
 
@@ -410,7 +410,7 @@
 			if(user)
 				user.visible_message(span_warning("[user] fails to blind [flashed] with the flash!"), span_warning("You fail to hypno-flash [flashed]!"))
 			else
-				to_chat(flashed, span_danger("[src] fails to blind you!"))
+				to_chat(flashed, span_danger("[src] fails to render you Visually Differently Abled!")) // PC
 		return FALSE
 
 	if(!targeted)

@@ -18,7 +18,7 @@
 		"Can turn dead humanoids into fragile but loyal ghouls.",
 		"Access to a versatile list of summoned minions.",
 		"Your summons are very versatie and can quicky overwhelm the crew should you coordinate your attacks",
-		"Eating organs or being fat grants various boons (depending on the level of your passive).",
+		"Eating organs or being a Person of Increased Body Mass grants various boons (depending on the level of your passive).", // PC
 	)
 	cons = list(
 		"A high degree of your progression is obtaining additional summoned monsters.",

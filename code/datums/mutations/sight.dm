@@ -20,7 +20,7 @@
 ///Blind makes you blind. Who knew?
 /datum/mutation/blind
 	name = "Blindness"
-	desc = "The subject is completely blind and cannot see anything."
+	desc = "The subject is completely Visually Differently Abled and cannot receive visual information." // PC
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
 	text_gain_indication = span_danger("You can't seem to see anything.")

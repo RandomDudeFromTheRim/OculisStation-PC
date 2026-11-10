@@ -222,7 +222,7 @@
 		return FALSE
 
 	if(victim.stat == DEAD)
-		victim.balloon_alert(src, "is dead!")
+		victim.balloon_alert(src, "is temporarily non-living!") // PC
 		return FALSE
 
 	if(!IS_UNCONSCIOUS_OR_CRIT(victim)) //we're still beating them up!!

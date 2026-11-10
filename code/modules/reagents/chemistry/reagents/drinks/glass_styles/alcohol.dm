@@ -137,7 +137,7 @@
 /datum/glass_style/drinking_glass/fernet
 	required_drink_type = /datum/reagent/consumable/ethanol/fernet
 	name = "glass of fernet"
-	desc = "A glass of pure Fernet. Only an absolute madman would drink this alone." //Hi Kevum
+	desc = "A glass of pure Fernet. Only a boldly unregulated individual would drink this alone." // PC //Hi Kevum
 
 /datum/glass_style/drinking_glass/fruit_wine
 	required_drink_type = /datum/reagent/consumable/ethanol/fruit_wine

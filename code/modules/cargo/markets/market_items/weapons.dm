@@ -89,7 +89,7 @@
 
 /datum/market_item/weapon/carpenter_hammer
 	name = "Carpenter hammer"
-	desc = "When you really want to look like a psycho..."
+	desc = "When you really want to look like a dangerously unregulated individual..." // PC
 	item = /obj/item/carpenter_hammer
 
 	price_min = CARGO_CRATE_VALUE * 1

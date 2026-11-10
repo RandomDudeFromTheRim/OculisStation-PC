@@ -1,6 +1,6 @@
 /obj/machinery/harvester
 	name = "organ harvester"
-	desc = "An advanced machine used for harvesting organs and limbs from the deceased."
+	desc = "An advanced machine used for harvesting organs and limbs from the temporarily non-living." // PC
 	density = TRUE
 	icon = 'icons/obj/machines/harvester.dmi'
 	icon_state = "harvester"

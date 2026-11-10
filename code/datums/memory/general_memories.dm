@@ -364,7 +364,7 @@
 
 /datum/memory/was_dismembered/get_starts()
 	return list(
-		"[protagonist_name] becoming eligible for handicapped parking",
+		"[protagonist_name] becoming eligible for Differently Enabled parking", // PC
 		"[protagonist_name]'s [lost_limb] being shot into the abyss",
 		"[protagonist_name]'s [lost_limb] flinging away",
 	)

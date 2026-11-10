@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 
 	threat_title = "Sector protection offer"
 	threat_content = "Hey, pal, this is the %SHIPNAME. Can't help but notice you're rocking a wild \
-		and crazy shuttle there with NO INSURANCE! Crazy. What if something happened to it, huh?! We've \
+		and unregulated shuttle there with NO INSURANCE! Unregulated. What if something happened to it, huh?! We've \
 		done a quick evaluation of your rates in this sector, and we're offering %PAYOFF to cover your \
 		shuttle in case of any disaster."
 	arrival_announcement = "Do you want to reconsider our offer? Unfortunately, the time for negotiations has passed. Open up; we're coming aboard soon."
@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	threat_content = "The crystal of mother-void cracks, and forth comes the %SHIPNAME. We are the Lustrous, the hands of the crystal king.\
 		Our coffers of bluespace dust are low, ergo, our synthesis ceases. %PAYOFF credits shall remedy this!"
 	arrival_announcement = "We have arrived, we have always been here, and we have already left."
-	possible_answers = list("Uh, ok? Sure."," We don't have time for crazy-talk, go away.")
+	possible_answers = list("Uh, ok? Sure."," We don't have time for that kind of unconventional perspective, go away.") // PC
 
 
 	response_received = "An excellent haul, the synthesis shall resume."

@@ -67,7 +67,7 @@
 /obj/item/ammo_casing/c357/match
 	desc = "A .357 bullet casing, manufactured to exceedingly high standards.\
 		<br><br>\
-		<i>MATCH: Ricochets everywhere. Like crazy.</i>"
+		<i>MATCH: Ricochets everywhere. Like an unregulated individual.</i>" // PC
 	ammo_categories = AMMO_CLASS_NICHE // ricocheting as a gimmick. tight tolerances
 
 /obj/item/ammo_casing/c357/phasic

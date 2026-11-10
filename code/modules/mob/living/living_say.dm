@@ -201,6 +201,9 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 	// Make sure the arglist is passed exactly - don't pass a copy of it. Say signal handlers will modify some of the parameters.
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
+	// POLITICAL_CORRECTNESS ADDITION START - the Office of Inclusive Care reviews all spoken language
+	message = pc_process_speech(src, args, message)
+	// POLITICAL_CORRECTNESS ADDITION END
 	if(sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		message = uppertext(message)
 

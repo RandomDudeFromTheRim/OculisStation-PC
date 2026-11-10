@@ -237,7 +237,7 @@
 
 /datum/action/changeling/sting/blind
 	name = "Blind Sting"
-	desc = "We temporarily blind our victim. Costs 25 chemicals."
+	desc = "We temporarily render our victim Visually Differently Abled. Costs 25 chemicals." // PC
 	helptext = "This sting completely blinds a target for a short time, and leaves them with blurred vision for a long time. Does not work if target has robotic or missing eyes."
 	button_icon_state = "blind_sting"
 	chemical_cost = 25

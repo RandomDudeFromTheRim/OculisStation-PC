@@ -763,7 +763,7 @@
 	if(HAS_TRAIT(user, TRAIT_ID_APPRAISER))
 		. += HAS_TRAIT(src, TRAIT_JOB_FIRST_ID_CARD) ? span_boldnotice("Hmm... yes, this ID was issued from Sectorial Command!") : span_boldnotice("This ID was created in this sector, not by Sectorial Command.") // OCULIS EDIT - Central Command > Sectorial Command
 		if(HAS_TRAIT(src, TRAIT_TASTEFULLY_THICK_ID_CARD) && (user.is_holding(src) || (IsReachableBy(user) && user.put_in_hands(src, ignore_animation = FALSE))))
-			ADD_TRAIT(src, TRAIT_NODROP, "psycho")
+			ADD_TRAIT(src, TRAIT_NODROP, "unregulated_cognition") // PC CHANGE - ORIGINAL: ADD_TRAIT(src, TRAIT_NODROP, "psycho")
 			. += span_hypnophrase("Look at that subtle coloring... The tasteful thickness of it. Oh my God, it even has a watermark...")
 			var/sound/slowbeat = sound('sound/effects/health/slowbeat.ogg', repeat = TRUE)
 			user.playsound_local(get_turf(src), slowbeat, 40, 0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
@@ -775,13 +775,13 @@
 
 /obj/item/card/id/proc/drop_card(mob/user)
 	user.stop_sound_channel(CHANNEL_HEARTBEAT)
-	REMOVE_TRAIT(src, TRAIT_NODROP, "psycho")
+	REMOVE_TRAIT(src, TRAIT_NODROP, "unregulated_cognition") // PC CHANGE - ORIGINAL: REMOVE_TRAIT(src, TRAIT_NODROP, "psycho")
 	if(user.is_holding(src))
 		user.dropItemToGround(src)
 	for(var/mob/living/carbon/human/viewing_mob in viewers(2, user))
 		if(IS_UNCONSCIOUS_OR_CRIT(viewing_mob) || viewing_mob == user)
 			continue
-		viewing_mob.say("Is something wrong? [first_name(user.name)]... you're sweating.", forced = "psycho")
+		viewing_mob.say("Is something wrong? [first_name(user.name)]... you're sweating.", forced = "unregulated_cognition") // PC CHANGE - ORIGINAL: forced = "psycho"
 		break
 
 /obj/item/card/id/examine_more(mob/user)

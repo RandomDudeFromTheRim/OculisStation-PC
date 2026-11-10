@@ -591,4 +591,4 @@
 
 /obj/item/storage/mail_counterfeit_device/bluespace/Initialize(mapload)
 	. = ..()
-	desc += " This model is the most advanced and capable of performing crazy bluespace compressions, making mail's storage space comparable to bluespace backpack."
+	desc += " This model is the most advanced and capable of performing unconventional bluespace compressions, making mail's storage space comparable to bluespace backpack." // PC

@@ -51,7 +51,7 @@
 	name = "assistant attack"
 	required_site_traits = list(EXPLORATION_SITE_STATION)
 	deep_scan_description = "Detected mask usage coefficent suggests a sizeable crowd of undersirables on the site."
-	description = "You encounter a shaggy creature dressed in gray! It's a deranged assistant!"
+	description = "You encounter a shaggy creature dressed in gray! It's a wildly unregulated assistant!" // PC
 	has_tool_action_text = "Fight"
 	no_tool_action_text = "Escape!"
 	has_tool_description = "You charge your laser to fend it off."

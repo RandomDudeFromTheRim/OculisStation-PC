@@ -59,7 +59,7 @@
 		return FALSE
 	var/mob/living/living_cast_on = cast_on
 	if(living_cast_on.stat == DEAD)
-		owner.balloon_alert(owner, "target is dead!")
+		owner.balloon_alert(owner, "target is temporarily non-living!") // PC
 		return FALSE
 
 	return TRUE

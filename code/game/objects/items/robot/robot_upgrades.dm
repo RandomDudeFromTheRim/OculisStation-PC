@@ -26,7 +26,7 @@
 
 /obj/item/borg/upgrade/proc/action(mob/living/silicon/robot/borg, mob/living/user = usr)
 	if(borg.stat == DEAD)
-		to_chat(user, span_warning("[src] will not function on a deceased cyborg!"))
+		to_chat(user, span_warning("[src] will not function on a temporarily non-living cyborg!")) // PC
 		return FALSE
 	if(model_type && !is_type_in_list(borg.model, model_type))
 		to_chat(borg, span_alert("Upgrade mounting error! No suitable hardpoint detected."))

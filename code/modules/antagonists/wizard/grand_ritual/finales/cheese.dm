@@ -9,7 +9,7 @@
 	minimum_time = 45 MINUTES //i'd imagine speedrunning this would be crummy, but the wizard's average lifespan is barely reaching this point
 
 /datum/grand_finale/cheese/trigger(mob/living/invoker)
-	message_admins("[key_name(invoker)] has summoned forth The Wabbajack and cursed the crew with madness!")
+	message_admins("[key_name(invoker)] has summoned forth The Wabbajack and cursed the crew with unregulated cognition!") // PC
 	priority_announce("Danger: Extremely potent reality altering object has been summoned on station. Immediate evacuation advised. Brace for impact.", "[command_name()] Higher Dimensional Affairs", 'sound/effects/glass/glassbr1.ogg')
 
 	for (var/mob/living/carbon/human/crewmate as anything in GLOB.human_list)
@@ -18,9 +18,9 @@
 		if (crewmate == invoker) //everyone but the wizard is royally fucked, no matter who they are
 			continue
 		if (crewmate.has_trauma_type(/datum/brain_trauma/mild/hallucinations)) //for an already insane person, this is retribution
-			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of manic laughter and psychobabble..."))
+			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of wildly unregulated laughter and unsolicited self-help jargon...")) // PC
 			to_chat(crewmate, span_nicegreen("...but as the moment passes, you realise that whatever eldritch power behind the event happened to affect you \
-				has resonated within the ruins of your already shattered mind, creating a singularity of mental instability! \
+				has resonated within the ruins of your already deregulated cognition, creating a singularity of emotional dysregulation! \
 				As it collapses unto itself, you feel... at peace, finally."))
 			if(crewmate.has_quirk(/datum/quirk/insanity))
 				crewmate.remove_quirk(/datum/quirk/insanity)
@@ -30,9 +30,9 @@
 			//everyone else gets to relish in madness
 			//yes killing their mood will also trigger mood hallucinations
 			create_vendetta(crewmate.mind, invoker.mind)
-			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of manic laughter and psychobabble. \n\
-				You feel your inner psyche shatter into a myriad pieces of jagged glass of colors unknown to the universe, \
-				infinitely reflecting a blinding, maddening light coming from the innermost sanctums of your destroyed mind. \n\
+			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of wildly unregulated laughter and unsolicited self-help jargon. \n\
+				You feel your inner emotional landscape fragment into a myriad pieces of jagged glass of colors unknown to the universe, \
+				infinitely reflecting an overwhelming, cognitively unregulated light coming from the innermost sanctums of your deregulated cognition. \n\
 				After a brief pause which felt like a millenia, one phrase rebounds ceaselessly in your head, imbued with the false hope of absolution... \n\
 				<b>[invoker] must die.</b>"))
 			var/datum/brain_trauma/mild/hallucinations/added_trauma = new()

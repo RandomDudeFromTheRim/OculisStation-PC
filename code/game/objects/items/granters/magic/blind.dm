@@ -15,7 +15,7 @@
 
 /obj/item/book/granter/action/spell/blind/recoil(mob/living/user)
 	. = ..()
-	to_chat(user, span_warning("You go blind!"))
+	to_chat(user, span_warning("You become Visually Differently Abled!")) // PC
 	user.adjust_temp_blindness(20 SECONDS)
 
 /obj/item/book/granter/action/spell/blind/wgw

@@ -7,12 +7,12 @@
 	resilience = TRAUMA_RESILIENCE_SURGERY
 
 /datum/brain_trauma/severe/mute
-	name = "Mutism"
-	desc = "Patient is completely unable to speak."
-	scan_desc = "extensive damage to the brain's speech center"
-	symptoms = "Completley incapable of producing sound or speech verbally."
-	gain_text = span_warning("You forget how to speak!")
-	lose_text = span_notice("You suddenly remember how to speak.")
+	name = "Non-Verbal Communication Modality" // PC
+	desc = "Patient communicates through non-verbal modalities." // PC
+	scan_desc = "speech center operating on an alternative modality" // PC
+	symptoms = "Expresses themselves through a non-verbal communication modality." // PC
+	gain_text = span_warning("You adopt a non-verbal communication modality!") // PC
+	lose_text = span_notice("You regain your verbal communication privilege.") // PC
 
 /datum/brain_trauma/severe/mute/on_gain()
 	ADD_TRAIT(owner, TRAIT_MUTE, TRAUMA_TRAIT)
@@ -24,10 +24,10 @@
 
 /datum/brain_trauma/severe/aphasia
 	name = "Aphasia"
-	desc = "Patient is unable to speak or understand any language."
-	scan_desc = "extensive damage to the brain's language center"
-	symptoms = "Completely incapable of understanding or producing language besides incomprehensible utterances."
-	gain_text = span_warning("You have trouble forming words in your head...")
+	desc = "Patient communicates through alternative linguistic modalities." // PC
+	scan_desc = "language center operating on an alternative modality" // PC
+	symptoms = "Expresses and receives language through a non-normative communication modality." // PC
+	gain_text = span_warning("Your inner language reorganizes into a non-normative modality...") // PC
 	lose_text = span_notice("You suddenly remember how languages work.")
 
 /datum/brain_trauma/severe/aphasia/on_gain()
@@ -43,11 +43,11 @@
 	..()
 
 /datum/brain_trauma/severe/blindness
-	name = "Cerebral Blindness"
+	name = "Cerebral Visual Diversity" // PC
 	desc = "Patient's brain is no longer connected to its eyes."
-	scan_desc = "extensive damage to the brain's occipital lobe"
-	symptoms = "Exhibits a complete loss of vision despite having fully functional eyes."
-	gain_text = span_warning("You can't see!")
+	scan_desc = "occipital lobe operating on an alternative modality" // PC
+	symptoms = "Perceives the world through a non-normative visual modality despite having fully functional eyes." // PC
+	gain_text = span_warning("Your visual perception shifts into a non-normative modality!") // PC
 	lose_text = span_notice("Your vision returns.")
 
 /datum/brain_trauma/severe/blindness/on_gain()
@@ -59,10 +59,10 @@
 	..()
 
 /datum/brain_trauma/severe/paralysis
-	name = "Paralysis"
-	desc = "Patient's brain can no longer control part of its motor functions."
-	scan_desc = "cerebral paralysis"
-	symptoms = "Experience a complete loss of voluntary movement in specific body parts."
+	name = "Alternative Motor Function" // PC
+	desc = "Patient's brain engages an alternative motor plan for part of its body." // PC
+	scan_desc = "alternative cerebral motor plan" // PC
+	symptoms = "Experiences a non-normative voluntary movement modality in specific body parts." // PC
 	gain_text = ""
 	lose_text = ""
 	var/paralysis_type
@@ -104,8 +104,8 @@
 			subject = "your left leg"
 			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG)
 
-	gain_text = span_warning("You can't feel [subject] anymore!")
-	lose_text = span_notice("You can feel [subject] again!")
+	gain_text = span_warning("Sensation in [subject] becomes optional!") // PC
+	lose_text = span_notice("Sensation returns to [subject]!") // PC
 
 /datum/brain_trauma/severe/paralysis/on_gain()
 	. = ..()
@@ -224,11 +224,11 @@
 	owner.RemoveComponentSource(REF(src), /datum/component/fearful)
 
 /datum/brain_trauma/severe/discoordination
-	name = "Discoordination"
-	desc = "Patient is unable to use complex tools or machinery."
-	scan_desc = "extreme discoordination"
-	symptoms = "Completely incapable of performing tasks that require fine motor skills or coordination, such as using tools or operating machinery."
-	gain_text = span_warning("You can barely control your hands!")
+	name = "Alternative Motor Coordination" // PC
+	desc = "Patient engages with complex tools and machinery through alternative motor strategies." // PC
+	scan_desc = "bold motor coordination style" // PC
+	symptoms = "Performs tasks that require fine motor skills or coordination, such as using tools or operating machinery, through a non-normative movement modality." // PC
+	gain_text = span_warning("Your hands adopt a bold, interpretive movement style!") // PC
 	lose_text = span_notice("You feel in control of your hands again.")
 
 /datum/brain_trauma/severe/discoordination/on_gain()
@@ -257,11 +257,11 @@
 	..()
 
 /datum/brain_trauma/severe/hypnotic_stupor
-	name = "Hypnotic Stupor"
-	desc = "Patient is prone to episodes of extreme stupor that leaves them extremely suggestible."
+	name = "Deeply Receptive State" // PC
+	desc = "Patient is prone to episodes of extreme relaxation that leave them exceptionally receptive to external guidance." // PC
 	scan_desc = "oneiric feedback loop"
-	symptoms = "Experiences sudden episodes of deep stupor or trance-like states, during which the patient becomes highly suggestible to external influences, \
-		often leading to altered perceptions or behaviors, memories imposed by others, or in severe cases, danger to self or others."
+	symptoms = "Experiences sudden episodes of deep relaxation or trance-like states, during which the patient becomes highly receptive to external influences, \
+		often leading to alternative perceptions or behaviors, memories offered by others, or in severe cases, danger to self or others." // PC
 	gain_text = span_warning("You feel somewhat dazed.")
 	lose_text = span_notice("You feel like a fog was lifted from your mind.")
 
@@ -308,12 +308,12 @@
 	owner.apply_status_effect(/datum/status_effect/trance, rand(100,300), FALSE)
 
 /datum/brain_trauma/severe/dyslexia
-	name = "Dyslexia"
-	desc = "Patient is unable to read or write."
-	scan_desc = "dyslexia"
-	symptoms = "Experiences significant difficulties in reading and writing, often confusing letters and words, \
-		leading to challenges in literacy-related tasks such as reading scanners or completing paperwork."
-	gain_text = span_warning("You have trouble reading or writing...")
+	name = "Alternative Literacy" // PC
+	desc = "Patient reads and writes through alternative modalities." // PC
+	scan_desc = "alternative literacy modality" // PC
+	symptoms = "Engages with reading and writing through a non-normative modality, often interpreting letters and words in creative configurations, \
+		leading to an alternative approach to literacy-related tasks such as reading scanners or completing paperwork." // PC
+	gain_text = span_warning("Your literacy adopts an alternative modality...") // PC
 	lose_text = span_notice("You suddenly remember how to read and write.")
 
 /datum/brain_trauma/severe/dyslexia/on_gain()

@@ -57,7 +57,7 @@
 
 /obj/item/cane/white
 	name = "white cane"
-	desc = "Traditionally used by the blind to help them see. Folds down to be easier to transport."
+	desc = "Traditionally used by the Visually Differently Abled to help them navigate. Folds down to be easier to transport." // PC
 	icon_state = "cane_white"
 	inhand_icon_state = "cane_white"
 	icon_angle = 45

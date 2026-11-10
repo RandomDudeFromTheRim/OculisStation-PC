@@ -23,7 +23,7 @@
 		"No mobility.",
 		"No direct tools to damage your opponents.",
 		"Reliant on misdirection and confusion.",
-		"Lunatics can become liabilities.",
+		"Differently-reality-aligned associates can become liabilities.", // OCULIS EDIT CHANGE - ORIGINAL: "Lunatics can become liabilities.",
 		"Fairly fragile despite their unique protection mechanics.",
 		"Death while wearing the Resplendent Regalia results in a gorey end.",
 	)
@@ -34,9 +34,9 @@
 		"Your Resplendent Regalia utterly changes the rules of combat for you and your opponents; You become fully immune to disabling effect, and all damage received (lethal or non lethal) will be converted into brain damage. However. the robes themselves have no armor, and prevent you from using guns as well as pacifying you (you can still use your moon blade).",
 		"Your moon amulette allows you to channel its effects through your moon blade. When toggled on, your Moon blade will no longer do lethal damage, but do sanity damage and become unblockable, this also allows you to use it while wearing your robes!",
 		"Your moon amulette is a vital part of your kit, as it allows your passive to regenerate double the brain health while worn.",
-		"If the sanity of your opponents goes below  a certain threshold, they'll become a lunatic. Lunatics are prompted to start attacking everyone (including you). Should you want to sacrifice them (or to get them to leave you be), hit them again with your moon blade to put them to sleep.",
+		"If the sanity of your opponents goes below  a certain threshold, they'll become a differently-reality-aligned associate. Associates are prompted to start attacking everyone (including you). Should you want to sacrifice them (or to get them to leave you be), hit them again with your moon blade to put them to sleep.", // OCULIS EDIT CHANGE - ORIGINAL: "If the sanity of your opponents goes below  a certain threshold, they'll become a lunatic. Lunatics are prompted to start attacking everyone (including you). Should you want to sacrifice them (or to get them to leave you be), hit them again with your moon blade to put them to sleep.",
 		"Ringleader's Rise summons an army of clones. They do barely any damage, but should they be attacked by non-heretics, they will explode and cause sanity and brain damage to those around them.",
-		"Your ascension will grant you an aura that converts nearby people to loyal lunatics. However, if they have a mindshield implant, their heads will instead detonate after a time.",
+		"Your ascension will grant you an aura that converts nearby people to loyal, differently-reality-aligned associates. However, if they have a mindshield implant, their heads will instead detonate after a time.", // OCULIS EDIT CHANGE - ORIGINAL: "Your ascension will grant you an aura that converts nearby people to loyal lunatics. However, if they have a mindshield implant, their heads will instead detonate after a time.",
 	)
 
 	start = /datum/heretic_knowledge/limited_amount/starting/base_moon
@@ -90,7 +90,7 @@
 
 /datum/heretic_knowledge/spell/mind_gate
 	name = "Mind Gate"
-	desc = "Grants you Mind Gate, a spell which mutes, deafens, blinds, inflicts hallucinations, \
+	desc = "Grants you Mind Gate, a spell which renders its target Non-Verbal, Auditory Differently Abled and Visually Differently Abled, inflicts hallucinations, \
 		confusion, oxygen loss and brain damage to its target over 10 seconds.<br>\
 		Casting the spell causes brain damage."
 	gain_text = "My mind swings open like a gate, and its insight will let me perceive the truth."
@@ -157,7 +157,7 @@
 /datum/heretic_knowledge/blade_upgrade/moon
 	name = "Moonlight Blade"
 	desc = "Your blade now deals brain damage, causes random hallucinations and does sanity damage.<br>\
-		Deals more brain damage if your victim is insane or unconscious."
+		Deals more brain damage if your victim's sanity is already compromised or they are unconscious." // OCULIS EDIT CHANGE - ORIGINAL: Deals more brain damage if your victim is insane or unconscious."
 	gain_text = "His wit was sharp as a blade, cutting through the lie to bring us joy."
 
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
@@ -199,10 +199,18 @@
 
 /datum/heretic_knowledge/ultimate/moon_final
 	name = "The Last Act"
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist language
 	desc = "The ascension ritual of the Path of Moon.<br>\
 		When completed, you become a harbinger of madness gaining and aura of passive sanity decrease, \
 		crewmembers with low enough sanity will be converted into acolytes.<br>\
 		1/5th of the crew will turn into acolytes and follow your command, they will all receive moonlight amulets."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC doublespeak
+	desc = "The ascension ritual of the Path of Moon.<br>\
+		When completed, you become a harbinger of unregulated emotional expression, gaining an aura of passive sanity decrease, \
+		crewmembers with low enough sanity will be converted into acolytes.<br>\
+		1/5th of the crew will turn into acolytes and follow your command, they will all receive moonlight amulets."
+	// OCULIS EDIT ADDITION END
 	transmute_text = "Transmute 3 corpses with more than 50 brain damage."
 	gain_text = "We dived down towards the crowd, his soul splitting off in search of greater venture \
 		for where the Ringleader had started the parade, I shall continue it unto the suns demise \
@@ -254,7 +262,7 @@
 /datum/heretic_knowledge/ultimate/moon_final/proc/attempt_conversion(mob/living/carbon/convertee, mob/user)
 	// Heretics, lunatics and monsters shouldn't become lunatics because they either have a master or have a mansus grasp
 	if(IS_HERETIC_OR_MONSTER(convertee))
-		to_chat(convertee, span_boldwarning("[user]'s rise is influencing those who are weak willed. Their minds shall rend." ))
+		to_chat(convertee, span_boldwarning("[user]'s rise is influencing those with a differently-calibrated willpower threshold. Their minds shall rend." )) // OCULIS EDIT CHANGE - ORIGINAL: to_chat(convertee, span_boldwarning("[user]'s rise is influencing those who are weak willed. Their minds shall rend." ))
 		return FALSE
 	// Mindshielded and anti-magic folks are immune against this effect because this is a magical mind effect
 	if(HAS_MIND_TRAIT(convertee, TRAIT_UNCONVERTABLE) || convertee.can_block_magic(MAGIC_RESISTANCE))
@@ -296,7 +304,7 @@
 			continue
 		new /obj/effect/temp_visual/moon_ringleader(get_turf(carbon_view))
 		if(carbon_view.has_status_effect(/datum/status_effect/confusion))
-			to_chat(carbon_view, span_big(span_hypnophrase("YOUR HEAD RATTLES WITH A THOUSAND VOICES JOINED IN A MADDENING CACOPHONY OF SOUND AND MUSIC. EVERY FIBER OF YOUR BEING SAYS 'RUN'.")))
+			to_chat(carbon_view, span_big(span_hypnophrase("YOUR HEAD RATTLES WITH A THOUSAND VOICES JOINED IN A COGNITIVELY OVERWHELMING CACOPHONY OF SOUND AND MUSIC. EVERY FIBER OF YOUR BEING SAYS 'RUN'."))) // OCULIS EDIT CHANGE - ORIGINAL: to_chat(carbon_view, span_big(span_hypnophrase("YOUR HEAD RATTLES WITH A THOUSAND VOICES JOINED IN A MADDENING CACOPHONY OF SOUND AND MUSIC. EVERY FIBER OF YOUR BEING SAYS 'RUN'.")))
 		carbon_view.adjust_confusion(2 SECONDS)
 		carbon_view.mob_mood.adjust_sanity(-20)
 

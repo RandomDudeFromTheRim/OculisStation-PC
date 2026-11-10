@@ -48,7 +48,7 @@
 /obj/item/food/grown/icepepper
 	seed = /obj/item/seeds/chili/ice
 	name = "chilly pepper"
-	desc = "It's a mutant strain of chili."
+	desc = "It's a genetically diverse strain of chili." // PC
 	icon_state = "icepepper"
 	bite_consumption_mod = 5
 	foodtypes = VEGETABLES

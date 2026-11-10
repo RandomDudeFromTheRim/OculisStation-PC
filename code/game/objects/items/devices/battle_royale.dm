@@ -185,7 +185,7 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 		"has been killed!",
 		"has failed the challenge!",
 		"has passed away.",
-		"has died.",
+		"has entered temporary non-living status.", // PC
 		"is in a better place now.",
 		"isn't going to be clocking in tomorrow!",
 		"just flatlined.",

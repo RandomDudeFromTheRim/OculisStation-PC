@@ -368,7 +368,7 @@ GAME_VERB_SRC(/obj/item/paper, rename, usr, "Rename paper", null)
 		return
 
 	if(user.is_blind())
-		to_chat(user, span_warning("You are blind and can't read anything!"))
+		to_chat(user, span_warning("You are Visually Differently Abled; this document is unavailable in your accessibility format.")) // PC
 		return
 
 	if(user.can_read(src))
@@ -389,7 +389,7 @@ GAME_VERB_SRC(/obj/item/paper, rename, usr, "Rename paper", null)
 	// Even harder to read if your blind...braile? humm
 	// .. or if you cannot read
 	if(user.is_blind())
-		to_chat(user, span_warning("You are blind and can't read anything!"))
+		to_chat(user, span_warning("You are Visually Differently Abled; this document is unavailable in your accessibility format.")) // PC
 		return UI_CLOSE
 	if(!user.can_read(src))
 		return UI_CLOSE

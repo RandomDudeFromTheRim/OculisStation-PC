@@ -164,7 +164,7 @@
 
 /obj/item/chainsaw/dual
 	name = "double-ended chainsaw spear"
-	desc = "A dangerous, crazy contraption that could fall apart from a slight breeze. WHAT WERE THEY THINKING?!"
+	desc = "A dangerous, entirely unregulated contraption that could fall apart from a slight breeze. WHAT WERE THEY THINKING?!" // PC
 	icon_state = "chainsawdual"
 	inhand_icon_state = "chainsawdual"
 	base_icon_state = "chainsawdual"

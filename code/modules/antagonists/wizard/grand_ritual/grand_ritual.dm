@@ -221,7 +221,7 @@
 			total_cheese_goal_met = TRUE
 			to_chat(owner, span_revenbignotice("YES! CHEESE! CHEESE FOR EVERYONE! SUCH A GRAND FEAST! YOU SHALL HAVE YOUR PRIZE, MY CHAMPION!!"))
 		else
-			to_chat(owner, span_revennotice("You hear maddening laughter as you are hit with an overwhelming odor of fine cheddar..."))
+			to_chat(owner, span_revennotice("You hear creatively ordered laughter as you are hit with an overwhelming odor of fine cheddar...")) // PC
 	else if (total_cheese_sacrificed)
 		to_chat(owner, span_revendanger("You please me, mortal. Do continue to send cheese, my feast still needs <b>[CHEESE_SACRIFICE_GOAL - total_cheese_sacrificed]</b> more to be magnificent..."))
 	rune = null

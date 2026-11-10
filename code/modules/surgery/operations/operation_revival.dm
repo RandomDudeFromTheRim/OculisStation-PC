@@ -23,7 +23,7 @@
 	return image(/obj/item/shockpaddles)
 
 /datum/surgery_operation/basic/revival/all_required_strings()
-	return ..() + list("the patient must be deceased", "the patient must be in a revivable state")
+	return ..() + list("the patient must be temporarily non-living", "the patient must be in a revivable state") // PC
 
 /datum/surgery_operation/basic/revival/state_check(mob/living/patient)
 	if(patient.stat != DEAD)

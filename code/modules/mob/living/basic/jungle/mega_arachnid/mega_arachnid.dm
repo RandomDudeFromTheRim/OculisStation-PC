@@ -2,7 +2,7 @@
 //It can fire fleshy snares that legcuff anyone that it hits, making them look especially tasty to the arachnid.
 /mob/living/basic/mega_arachnid
 	name = "mega arachnid"
-	desc = "Though physically imposing, it prefers to ambush its prey, and it will only engage with an already crippled opponent."
+	desc = "Though physically imposing, it prefers to ambush its prey, and it will only engage with an already mobility-compromised opponent." // PC
 	icon = 'icons/mob/simple/jungle/arachnid.dmi'
 	icon_state = "arachnid"
 	icon_living = "arachnid"

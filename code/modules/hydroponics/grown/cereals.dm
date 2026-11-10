@@ -85,7 +85,7 @@
 //Meatwheat - grows into synthetic meat
 /obj/item/seeds/wheat/meat
 	name = "meatwheat seed pack"
-	desc = "If you ever wanted to drive a vegetarian to insanity, here's how."
+	desc = "If you ever wanted to drive a vegetarian to psychological irregularity, here's how." // PC
 	icon_state = "seed-meatwheat"
 	species = "meatwheat"
 	plantname = "Meatwheat"

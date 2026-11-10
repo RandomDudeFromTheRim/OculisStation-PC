@@ -273,7 +273,7 @@
 	mood_change = -20
 
 /datum/mood_event/gunpoint
-	description = "This guy is insane! I better be careful..."
+	description = "This guy has a very assertive relationship with consensus reality! I better be careful..." // OCULIS EDIT CHANGE - ORIGINAL: description = "This guy is insane! I better be careful..."
 	mood_change = -10
 	event_flags = MOOD_EVENT_FEAR
 
@@ -493,7 +493,7 @@
 	event_flags = MOOD_EVENT_FEAR
 
 /datum/mood_event/mallet_humiliation
-	description = "Getting hit by such a stupid weapon feels rather humiliating..."
+	description = "Getting hit by such an unrefined weapon feels rather humiliating..." // PC
 	mood_change = -3
 	timeout = 10 SECONDS
 

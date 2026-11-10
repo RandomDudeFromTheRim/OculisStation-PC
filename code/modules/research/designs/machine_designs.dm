@@ -870,7 +870,7 @@
 
 /datum/design/board/fat_sucker
 	name = "Lipid Extractor Board"
-	desc = "Used to build a lipid extractor. Removes excess fat from individuals."
+	desc = "Used to build a lipid extractor. Removes excess adipose tissue from individuals on a fully consensual basis." // PC
 	build_path = /obj/item/circuitboard/machine/fat_sucker
 	category = list(
 		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SERVICE

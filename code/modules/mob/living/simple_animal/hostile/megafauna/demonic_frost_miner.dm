@@ -9,7 +9,7 @@ Difficulty: Extremely Hard
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner
 	name = "demonic-frost miner"
-	desc = "An extremely well-geared miner, driven crazy or possessed by the demonic forces here, either way a terrifying enemy."
+	desc = "An extremely well-geared miner, driven to unregulated cognition or possessed by the demonic forces here, either way a terrifying enemy." // PC
 	health = 1500
 	maxHealth = 1500
 	icon_state = "demonic_miner"

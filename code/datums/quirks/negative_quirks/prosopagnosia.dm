@@ -1,9 +1,15 @@
 /datum/quirk/prosopagnosia
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist quirk name/description
 	name = "Prosopagnosia"
 	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Differently Recognized"
+	desc = "Your face-processing is non-normative: conventional face-indexing is not part of your accessibility plan."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_USER_SECRET
 	value = -4
-	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
+	medical_record_text = "Patient's facial recognition is non-normative; no correction required." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
 	hardcore_value = 5
 	mail_goodies = list(/obj/item/skillchip/appraiser) // bad at recognizing faces but good at recognizing IDs
 

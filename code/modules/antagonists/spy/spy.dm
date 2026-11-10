@@ -8,7 +8,7 @@
 	ui_name = "AntagInfoSpy"
 	preview_outfit = /datum/outfit/spy
 	can_assign_self_objectives = TRUE
-	default_custom_objective = "Rob the station blind."
+	default_custom_objective = "Rob the station until it is Visually Differently Abled." // PC
 	/// Whether an uplink has been created (successfully or at all)
 	var/uplink_created = FALSE
 	/// String displayed in the antag panel pointing the spy to where their uplink is.

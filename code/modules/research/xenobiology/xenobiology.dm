@@ -72,7 +72,7 @@
 		return NONE
 
 	if(IS_UNCONSCIOUS_OR_CRIT(target_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(target_slime.life_stage != SLIME_LIFE_STAGE_ADULT)
 		to_chat(user, span_warning("The slime must be an adult to cross its core!"))
@@ -719,7 +719,7 @@ GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate
 
 /obj/item/slimepotion/slime/docility/interact_with_slime(mob/living/basic/slime/interacting_slime, mob/living/user, list/modifiers)
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_slime.ai_controller?.clear_blackboard_key(BB_SLIME_RABID)) //Stops being rabid, but doesn't become truly docile.
 		to_chat(interacting_slime, span_warning("You absorb the potion, and your rabid hunger finally settles to a normal desire to feed."))
@@ -905,7 +905,7 @@ GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate
 		return ITEM_INTERACT_BLOCKING
 	*/ // OCULIS EDIT REMOVAL END - SLIME RANCHER
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_slime.cores >= 5)
 		to_chat(user, span_warning("The slime already has the maximum amount of extract!"))
@@ -934,7 +934,7 @@ GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate
 
 /obj/item/slimepotion/slime/stabilizer/interact_with_slime(mob/living/basic/slime/interacting_slime, mob/living/user, list/modifiers)
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_slime.mutation_chance == 0)
 		to_chat(user, span_warning("The slime already has no chance of mutating!"))
@@ -952,7 +952,7 @@ GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate
 
 /obj/item/slimepotion/slime/mutator/interact_with_slime(mob/living/basic/slime/interacting_slime, mob/living/user, list/modifiers)
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_slime.mutator_used)
 		to_chat(user, span_warning("This slime has already consumed a mutator, any more would be far too unstable!"))
@@ -1136,7 +1136,7 @@ GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate
 		return ITEM_INTERACT_BLOCKING
 	var/mob/living/radio_head = interacting_with
 	if(IS_UNCONSCIOUS_OR_CRIT(radio_head))
-		to_chat(user, span_warning("[radio_head] is dead!"))
+		to_chat(user, span_warning("[radio_head] is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 
 	to_chat(user, span_notice("You feed the potion to [radio_head]."))

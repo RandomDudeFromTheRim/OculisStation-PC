@@ -13,7 +13,7 @@
 	var/datum/action/cooldown/spell/touch/smite/hunter/siphon/new_spell4 = new(user)
 	var/datum/action/cooldown/spell/touch/smite/hunter/new_spell5 = new(user)
 	if(locate(new_spell1) in user.actions) //while theoretically you could relearn every spell if you somehow didnt have spell1, that would probably be an issue that should never occur...
-		to_chat(user, span_warning("You already know how to harvest the energy of the Necropolis! Don't drive yourself insane like the previous owner."))
+		to_chat(user, span_warning("You already know how to harvest the energy of the Necropolis! Don't let unregulated cognitive load overwhelm you like the previous owner.")) // PC
 		return FALSE
 	to_chat(user, span_notice("You open the book and take a closer read over the old miners notes, learning to control the powers of the Necropolis for yourself. However the inside is mixed with odd symbols and obviously mad ramblings, this could take a bit to decipher..."))
 	playsound(user, 'sound/effects/page_turn/pageturn3.ogg', 100, TRUE)

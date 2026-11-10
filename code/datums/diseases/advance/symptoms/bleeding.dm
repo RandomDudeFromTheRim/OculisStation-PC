@@ -44,7 +44,7 @@
 			if(4 > A.stage >= 2)
 				to_chat(carbon_host, span_warning("Your bleeding wounds start to itch."))
 			if(A.stage >= 4)
-				to_chat(carbon_host, span_warning("Your bleeding wounds itch like crazy as more blood leaves your body."))
+				to_chat(carbon_host, span_warning("Your bleeding wounds itch with a clinically significant intensity as more blood leaves your body.")) // PC
 			return
 
 /datum/symptom/bleeding/on_stage_change(datum/disease/advance/A)

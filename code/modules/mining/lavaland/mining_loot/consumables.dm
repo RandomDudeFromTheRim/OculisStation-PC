@@ -152,7 +152,7 @@
 
 /obj/item/book_of_babel/attack_self(mob/user)
 	if(user.is_blind())
-		to_chat(user, span_warning("You are blind and can't read anything!"))
+		to_chat(user, span_warning("You are Visually Differently Abled; this document is unavailable in your accessibility format.")) // PC
 		return FALSE
 	if(!user.can_read(src))
 		return FALSE

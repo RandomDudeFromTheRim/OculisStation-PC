@@ -376,7 +376,7 @@
  */
 /obj/effect/grand_rune/finale/cheesy
 	name = "especially grand rune"
-	desc = "A ritual circle of maddening shapes and outlines, its mere presence an insult to reason."
+	desc = "A ritual circle of creatively ordered shapes and outlines, its mere presence an insult to reason." // PC
 	icon_state = "wizard_rune_cheese"
 	magic_words = list("Greetings! Salutations!", "Welcome! Now go away.", "Leave. Run. Or die.")
 	remains_typepath = /obj/effect/decal/cleanable/grand_remains/cheese

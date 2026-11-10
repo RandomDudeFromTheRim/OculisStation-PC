@@ -78,10 +78,17 @@
 /datum/brain_trauma/magic/stalker
 	name = "Stalking Phantom"
 	desc = "Patient is stalked by a phantom only they can see."
-	scan_desc = "extra-sensory paranoia"
+	scan_desc = "advanced situational awareness" // OCULIS EDIT CHANGE - ORIGINAL: scan_desc = "extra-sensory paranoia"
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist symptom description
 	symptoms = "Feels an unshakable sensation of being watched or pursued by an unseen entity, \
 		leading to heightened anxiety, paranoia, and occasional hallucinations of a ghostly figure in their vicinity. \
 		Extreme cases may even result in physical harm inflicted upon the patient by a seemingly invisible force."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC symptom description
+	symptoms = "Feels an unshakable sensation of being watched or pursued by an unseen entity, \
+		leading to heightened anxiety, enhanced vigilance, and occasional perceptual enrichment of a ghostly figure in their vicinity. \
+		Extreme cases may even result in physical harm inflicted upon the patient by a seemingly invisible force."
+	// OCULIS EDIT ADDITION END
 	gain_text = span_warning("You feel like something wants to kill you...")
 	lose_text = span_notice("You no longer feel eyes on your back.")
 	/// Type of stalker that is chasing us

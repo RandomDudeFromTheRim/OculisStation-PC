@@ -91,7 +91,7 @@
 /// Proc that checks if the user is capable of reading the book, for UI interactions and otherwise. Returns TRUE if they can, FALSE if they can't.
 /obj/item/book/proc/can_read_book(mob/living/user)
 	if(user.is_blind())
-		to_chat(user, span_warning("You are blind and can't read anything!"))
+		to_chat(user, span_warning("You are Visually Differently Abled; this document is unavailable in your accessibility format.")) // PC
 		return FALSE
 
 	if(!user.can_read(src))

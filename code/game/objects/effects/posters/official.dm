@@ -402,7 +402,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/moth_meth, 32)
 
 /obj/structure/sign/poster/official/moth_epi
 	name = "Safety Moth - Epinephrine"
-	desc = "This informational poster uses Safety Moth™ to inform the viewer to help injured/deceased crewmen with their epinephrine injectors. \"Prevent organ rot with this one simple trick!\""
+	desc = "This informational poster uses Safety Moth™ to inform the viewer to help injured/temporarily non-living crewmen with their epinephrine injectors. \"Prevent organ rot with this one simple trick!\"" // PC
 	icon_state = "aspev_epi"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/moth_epi, 32)

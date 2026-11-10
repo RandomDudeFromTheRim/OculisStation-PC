@@ -217,7 +217,7 @@ Slimecrossing Potions
 
 /obj/item/slimepotion/slime/chargedstabilizer/interact_with_slime(mob/living/basic/slime/interacting_slime, mob/living/user, list/modifiers)
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
-		to_chat(user, span_warning("The slime is dead!"))
+		to_chat(user, span_warning("The slime is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_slime.mutation_chance == 0)
 		to_chat(user, span_warning("The slime already has no chance of mutating!"))

@@ -185,7 +185,7 @@
 	return COMSIG_KB_ACTIVATED
 
 /mob/living/basic/mining/mook/death()
-	desc = "A deceased primitive. Upon closer inspection, it was suffering from severe cellular degeneration and its garments are machine made..." //Can you guess the twist
+	desc = "A temporarily non-living primitive. Upon closer inspection, it was suffering from severe cellular degeneration and its garments are machine made..." // PC //Can you guess the twist
 	return ..()
 
 /mob/living/basic/mining/mook/proc/attack_intruder(mob/living/intruder)

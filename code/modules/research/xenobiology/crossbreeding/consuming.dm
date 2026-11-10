@@ -209,7 +209,7 @@ Consuming extracts:
 
 /obj/item/slimecross/consuming/silver
 	colour = SLIME_TYPE_SILVER
-	effect_desc = "Creates a slime cookie that never gets the target fat."
+	effect_desc = "Creates a slime cookie that never makes the target a Person of Increased Body Mass." // PC
 	cookietype = /obj/item/slime_cookie/silver
 
 /obj/item/slime_cookie/silver

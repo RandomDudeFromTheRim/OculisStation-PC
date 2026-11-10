@@ -15,7 +15,7 @@
 	return image(/mob/living/basic/slime)
 
 /datum/surgery_operation/basic/core_removal/all_required_strings()
-	return list("operate on a deceased slime") + ..()
+	return list("operate on a temporarily non-living slime") + ..() // PC
 
 /datum/surgery_operation/basic/core_removal/state_check(mob/living/patient)
 	return isslime(patient) && patient.stat == DEAD

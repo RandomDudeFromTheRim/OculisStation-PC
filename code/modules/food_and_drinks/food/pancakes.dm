@@ -112,7 +112,7 @@
 		if(1 to 2)
 			desc = "A stack of fluffy pancakes."
 		if(3 to 6)
-			desc = "A fat stack of fluffy pancakes!"
+			desc = "A generous stack of fluffy pancakes!" // PC
 		if(7 to 9)
 			desc = "A grand tower of fluffy, delicious pancakes!"
 		if(PANCAKE_MAX_STACK to INFINITY)

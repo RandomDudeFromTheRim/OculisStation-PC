@@ -12,7 +12,7 @@
 		span_warning("You feel your conscious mind fall apart!"),
 		span_warning("Reality warps around you!"),
 		span_warning("Something's whispering around you!"),
-		span_warning("You are going insane!"),
+		span_warning("You are experiencing unregulated cognition!"), // PC
 	)
 	///Do we spawn misleading decoys?
 	var/spawn_decoys = TRUE
@@ -72,7 +72,7 @@
 		"It doesn't detect anything. It awaits an input, as if you're pointing it towards nothing at all. What?",
 		"The interface displays [pick("a bad memory from your past", "the frequency numbers in a language you cannot read", "the first 15 digits of Pi", "yourself, from behind, angled at a 3/4ths isometric perspective")]. What the hell?",
 		"Nothing happens?",
-		"It reports that you are a [pick("moron", "idiot", "cretin", "lowlife", "worthless denthead", "gump")]. Huh?",
+		"It reports that you are a [pick("unvalidated contributor", "creativity-forward liability", "differently-performing asset", "human-shaped expense report", "unregulated innovator", "non-compliant team member")]. Huh?", // PC
 		"It tells you to try again, because you're doing it all wrong. What?",
 		"It occurs to you that the anomaly you're scanning isn't actually there.",
 		"It's not working. You activate %TOOL% again. Still broken. You activate %TOOL%. You activate %TOOL%. Why isn't this working??",

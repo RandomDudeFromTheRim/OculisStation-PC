@@ -1,19 +1,25 @@
 /datum/quirk/hemiplegic
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - ableist quirk name/description
 	name = "Hemiplegic"
 	desc = "Half of your body doesn't work. Nothing will ever fix this."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Half-Body Differently Abled"
+	desc = "Half of your body operates on an alternative mobility plan. Nothing will ever fix this, and nothing needs to."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_CIRCLE_HALF_STROKE
 	value = -10 // slightly more bearable than paraplegic but not by much
 	gain_text = null // Handled by trauma.
 	lose_text = null
-	medical_record_text = "Patient has an untreatable impairment in motor function on half of their body."
+	medical_record_text = "Patient's hemicorporeal motor function is non-normative; no correction required." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient has an untreatable impairment in motor function on half of their body."
 	hardcore_value = 10
 	mail_goodies = list(
 		/obj/item/stack/sheet/mineral/uranium/half, //half a stack of a material that has a half life
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/half_full,
 	)
 	//IRIS EDIT ADDITION BEGIN - COGNOMERGE_EVENT
-	gain_text = span_danger("One side of your body suddenly goes limp.")
-	lose_text = span_notice("You regain motor control over the limp side of your body.")
+	gain_text = span_danger("One side of your body adopts a non-normative mobility style.") // OCULIS EDIT CHANGE - ORIGINAL: gain_text = span_danger("One side of your body suddenly goes limp.")
+	lose_text = span_notice("The affected side of your body recovers normative motor function.") // OCULIS EDIT CHANGE - ORIGINAL: lose_text = span_notice("You regain motor control over the limp side of your body.")
 	//IRIS EDIT ADDITION END
 
 /datum/quirk_constant_data/hemiplegic
@@ -27,7 +33,7 @@
 
 	var/mob/living/carbon/human/human_holder = quirk_holder
 
-	medical_record_text = "Patient has an untreatable impairment in motor function on the [side_choice::paralysis_type] half of their body."
+	medical_record_text = "Patient's [side_choice::paralysis_type] half operates on an untreatable alternative mobility strategy; no correction required." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient has an untreatable impairment in motor function on the [side_choice::paralysis_type] half of their body."
 	human_holder.gain_trauma(side_choice, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/hemiplegic/remove()

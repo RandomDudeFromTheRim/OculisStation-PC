@@ -542,7 +542,7 @@ GLOBAL_LIST_INIT(fish_compatible_fluid_types, list(
 		return ITEM_INTERACT_BLOCKING
 
 	if(status == FISH_DEAD)
-		balloon_alert(user, "[name] [HAS_MIND_TRAIT(user, TRAIT_NAIVE) ? "isn't hungry" : "is dead!"]")
+		balloon_alert(user, "[name] [HAS_MIND_TRAIT(user, TRAIT_NAIVE) ? "isn't hungry" : "is temporarily non-living!"]") // PC
 		return ITEM_INTERACT_BLOCKING
 
 	feed(tool.reagents)

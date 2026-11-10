@@ -984,7 +984,7 @@
 
 	var/mob/living/drained = draining_ref.resolve()
 	if(drained.stat == DEAD)
-		to_chat(owner, span_warning("[drained] is dead, you cannot drain anymore life from them!"))
+		to_chat(owner, span_warning("[drained] is temporarily non-living, you cannot drain any more life from them!")) // PC
 		draining_ref = null
 		return
 

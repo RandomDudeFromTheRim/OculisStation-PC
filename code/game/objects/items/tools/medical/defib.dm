@@ -564,7 +564,7 @@
 				do_cancel()
 				return
 			if(H && H.stat == DEAD)
-				to_chat(user, span_warning("[H] is dead."))
+				to_chat(user, span_warning("[H] is temporarily non-living.")) // OCULIS EDIT CHANGE - ORIGINAL: to_chat(user, span_warning("[H] is dead."))
 				playsound(src, 'sound/machines/defib/defib_failed.ogg', 50, FALSE)
 				do_cancel()
 				return
@@ -752,7 +752,7 @@
 
 /obj/item/shockpaddles/syndicate
 	name = "syndicate defibrillator paddles"
-	desc = "A pair of paddles used to revive deceased operatives. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
+	desc = "A pair of paddles used to revive temporarily non-living operatives. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively." // OCULIS EDIT CHANGE - ORIGINAL: desc = "A pair of paddles used to revive deceased operatives. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
 	combat = TRUE
 	icon = 'icons/obj/medical/defib.dmi'
 	icon_state = "syndiepaddles0"
@@ -761,7 +761,7 @@
 
 /obj/item/shockpaddles/syndicate/nanotrasen
 	name = "elite Nanotrasen defibrillator paddles"
-	desc = "A pair of paddles used to revive deceased ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
+	desc = "A pair of paddles used to revive temporarily non-living ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively." // OCULIS EDIT CHANGE - ORIGINAL: desc = "A pair of paddles used to revive deceased ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
 	icon_state = "ntpaddles0"
 	inhand_icon_state = "ntpaddles0"
 	base_icon_state = "ntpaddles"

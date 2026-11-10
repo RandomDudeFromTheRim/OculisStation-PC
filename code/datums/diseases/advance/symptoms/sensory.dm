@@ -75,8 +75,8 @@
 
 
 /datum/symptom/sensory_restoration
-	name = "Sensory Restoration"
-	desc = "The virus stimulates the production and replacement of sensory tissues, causing the host to regenerate eyes and ears when damaged."
+	name = "Sensory Appreciation" // PC - ORIGINAL: name = "Sensory Restoration"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. The virus no longer regenerates sensory tissue; the host simply receives a persistent sense of affirmation about their eyes and ears, which are already perfect as they are." // PC - ORIGINAL: desc = "The virus stimulates the production and replacement of sensory tissues, causing the host to regenerate eyes and ears when damaged."
 	stealth = 0
 	resistance = 1
 	stage_speed = -2
@@ -91,6 +91,11 @@
 	if(!.)
 		return
 	var/mob/living/carbon/infected_mob = advanced_disease.affected_mob
+	// PC ADD - no sensory healing; the Office of Inclusive Care only offers affirmation
+	if(prob(base_message_chance))
+		to_chat(infected_mob, span_notice(pick("Your eyes feel great exactly as they are.", "You feel like your eyes can focus on being themselves.", "You don't feel the need to blink to be valid.", "Your ears feel great exactly as they are.", "Your hearing feels increasingly self-accepting.")))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all eye/ear healing, deafness repair, blindness removal, and blur removal
+	/*
 	switch(advanced_disease.stage)
 		if(4, 5)
 			if(advanced_disease.has_required_infectious_organ(infected_mob, ORGAN_SLOT_EARS))
@@ -117,4 +122,6 @@
 
 		else
 			if(prob(base_message_chance))
-				to_chat(infected_mob, span_notice("[pick("Your eyes feel great.","You feel like your eyes can focus more clearly.", "You don't feel the need to blink.","Your ears feel great.","Your hearing feels more acute.")]"))
+				to_chat(infected_mob, span_notice(pick("Your eyes feel great.","You feel like your eyes can focus more clearly.", "You don't feel the need to blink.","Your ears feel great.","Your hearing feels more acute."])))
+	*/
+	// PC REMOVAL END

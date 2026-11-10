@@ -19,7 +19,7 @@
 	base_message_chance = 50
 	symptom_delay = 52.5
 	required_organ = ORGAN_SLOT_EYES
-	symptom_cure = /datum/reagent/medicine/oculine
+	symptom_cure = null // PC - REMOVED: symptom_cure = /datum/reagent/medicine/oculine - oculine is a placebo; blindness is not a defect and is not treated away
 	cure_color = "yellow"
 	threshold_descs = list(
 		"Resistance 12" = "Weakens extraocular muscles, eventually leading to complete detachment of the eyes.",
@@ -74,7 +74,7 @@
 					eyes.forceMove(get_turf(infected_mob))
 
 				else if(!infected_mob.is_blind_from(EYE_DAMAGE))
-					to_chat(infected_mob, span_userdanger("You go blind!"))
+					to_chat(infected_mob, span_userdanger("You become Visually Differently Abled!")) // PC
 					eyes.apply_organ_damage(eyes.maxHealth)
 
 			else

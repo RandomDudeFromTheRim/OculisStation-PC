@@ -366,7 +366,7 @@
 
 /obj/item/storage/medkit/coroner
 	name = "compact coroner's medkit"
-	desc = "A smaller medical kit designed primarily for assisting in dissecting the deceased, rather than treating the living."
+	desc = "A smaller medical kit designed primarily for assisting in dissecting the temporarily non-living, rather than treating the living." // PC
 	icon = 'icons/obj/storage/medkit.dmi'
 	icon_state = "compact_coronerkit"
 	inhand_icon_state = "coronerkit"

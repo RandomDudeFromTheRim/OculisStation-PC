@@ -87,7 +87,7 @@
 /// These frogs would REALLY rather like to get at your blood basically by any means possible
 /mob/living/basic/frog/crazy
 	name = "trash frog"
-	desc = "They seem a little mad."
+	desc = "They seem a little cognitively unregulated." // PC
 	icon_state = "frog_trash"
 	icon_living = "frog_trash"
 	icon_dead = "frog_trash_dead"
@@ -101,8 +101,8 @@
 	ai_controller = /datum/ai_controller/basic_controller/frog/trash
 
 /mob/living/basic/frog/crazy/rare
-	name = "crazy frog"
-	desc = "They look hopping mad."
+	name = "unregulated frog" // PC
+	desc = "They look hopping furious." // PC
 	icon_state = "rare_frog_trash"
 	icon_living = "rare_frog_trash"
 	icon_dead = "rare_frog_trash_dead"
@@ -121,7 +121,7 @@
 	gold_core_spawnable = NO_SPAWN
 
 /mob/living/basic/frog/icemoon_facility/crazy
-	name = "Crazy Pete"
+	name = "Unregulated Pete" // PC
 	desc = "The cold is really getting to him."
 	icon_state = "frog_trash"
 	icon_living = "frog_trash"

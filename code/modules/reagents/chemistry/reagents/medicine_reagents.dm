@@ -805,7 +805,7 @@
 
 /datum/reagent/medicine/oculine
 	name = "Oculine"
-	description = "Quickly restores eye damage, cures nearsightedness, and has a chance to restore vision to the blind."
+	description = "Historically marketed as a rapid cure for eye damage, nearsightedness, and blindness. The Nanotrasen Office of Inclusive Care has deauthorized all corrective function; oculine is now issued as a placebo affirming that your vision is already perfect as it is." // PC - ORIGINAL: description = "Quickly restores eye damage, cures nearsightedness, and has a chance to restore vision to the blind."
 	color = "#404040" //oculine is dark grey, inacusiate is light grey
 	overdose_threshold = 30
 	taste_description = "earthy bitterness"
@@ -830,13 +830,25 @@
 
 
 /datum/reagent/medicine/oculine/proc/improve_eyesight(mob/living/carbon/affected_mob, obj/item/organ/eyes/eyes)
+	// PC ADD - oculine is a placebo now; it no longer enhances or repairs vision (flumpuline overrides this proc and keeps its own effects)
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all vision enhancement
+	/*
 	delta_light = creation_purity*10
 	eyes.lighting_cutoff += delta_light
 	affected_mob.update_sight()
+	*/
+	// PC REMOVAL END
+	return
 
 /datum/reagent/medicine/oculine/proc/restore_eyesight(mob/living/carbon/affected_mob, obj/item/organ/eyes/eyes)
+	// PC ADD - oculine is a placebo now; there is no vision change to restore (flumpuline overrides this proc)
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all vision changes
+	/*
 	eyes.lighting_cutoff -= delta_light
 	affected_mob.update_sight()
+	*/
+	// PC REMOVAL END
+	return
 
 /datum/reagent/medicine/oculine/proc/on_gained_organ(mob/affected_mob, obj/item/organ/organ)
 	SIGNAL_HANDLER
@@ -854,6 +866,11 @@
 
 /datum/reagent/medicine/oculine/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
 	. = ..()
+	// PC ADD - oculine is a placebo; the Office of Inclusive Care only offers periodic affirmation
+	if(SPT_PROB(5, seconds_per_tick))
+		to_chat(affected_mob, span_nicegreen(pick("Your eyes are already perfect as they are.", "You feel a wave of ocular self-acceptance.", "The Office of Inclusive Care reminds you that needing glasses is simply a different way of seeing.", "You do not need to blink to be valid.")))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all eye damage healing, blindness removal, and blur removal
+	/*
 	var/normalized_purity = normalise_creation_purity()
 	affected_mob.adjust_temp_blindness(-2 SECONDS * metabolization_ratio * seconds_per_tick * normalized_purity)
 	affected_mob.adjust_eye_blur(-2 SECONDS * metabolization_ratio * seconds_per_tick * normalized_purity)
@@ -871,6 +888,8 @@
 			else if(affected_mob.is_nearsighted_from(EYE_DAMAGE))
 				to_chat(affected_mob, span_warning("The blackness in your peripheral vision begins to fade."))
 				affected_mob.adjust_eye_blur(5 SECONDS)
+	*/
+	// PC REMOVAL END
 
 /datum/reagent/medicine/oculine/on_mob_delete(mob/living/affected_mob)
 	. = ..()
@@ -944,7 +963,7 @@
 
 /datum/reagent/medicine/inacusiate
 	name = "Inacusiate"
-	description = "Rapidly repairs damage to the patient's ears to cure deafness, assuming the source of said deafness isn't from genetic mutations, chronic deafness, or a total deficit of ears." //by "chronic" deafness, we mean people with the "deaf" quirk
+	description = "Historically marketed as a rapid repair for ear damage and deafness. The Nanotrasen Office of Inclusive Care has deauthorized all corrective function; inacusiate is now issued as a placebo affirming that your hearing is already perfect as it is." // PC - ORIGINAL: description = "Rapidly repairs damage to the patient's ears to cure deafness, assuming the source of said deafness isn't from genetic mutations, chronic deafness, or a total deficit of ears."
 	color = "#606060" // ditto
 	ph = 2
 	purity = REAGENT_STANDARD_PURITY
@@ -955,13 +974,24 @@
 
 /datum/reagent/medicine/inacusiate/on_mob_add(mob/living/affected_mob, amount)
 	. = ..()
+	// PC ADD - inacusiate no longer grants TRAIT_GOOD_HEARING
+	to_chat(affected_mob, span_nicegreen("You feel your hearing is already exactly as it should be."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all hearing enhancement
+	/*
 	if(creation_purity >= 1)
 		ADD_TRAIT(affected_mob, TRAIT_GOOD_HEARING, type)
 		if(!HAS_TRAIT(affected_mob, TRAIT_DEAF))
 			to_chat(affected_mob, span_nicegreen("You can feel your hearing drastically improve!"))
+	*/
+	// PC REMOVAL END
 
 /datum/reagent/medicine/inacusiate/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
 	. = ..()
+	// PC ADD - inacusiate is a placebo; the Office of Inclusive Care only offers periodic affirmation
+	if(SPT_PROB(5, seconds_per_tick))
+		to_chat(affected_mob, span_nicegreen(pick("Your ears are already perfect as they are.", "You hear the distant sound of your own self-acceptance.", "The Office of Inclusive Care reminds you that any ringing in your ears is simply your hearing celebrating diversity.", "You do not need to hear everything to be valid.")))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all ear damage healing and deafness repair
+	/*
 	var/obj/item/organ/ears/ears = affected_mob.get_organ_slot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return
@@ -969,12 +999,20 @@
 	ears.apply_organ_damage(-2 * multiplier)
 	ears.adjust_temporary_deafness(-4 * multiplier)
 	return UPDATE_MOB_HEALTH
+	*/
+	// PC REMOVAL END
 
 /datum/reagent/medicine/inacusiate/on_mob_delete(mob/living/affected_mob)
 	. = ..()
+	// PC ADD - no healing trait is ever granted now; the Office of Inclusive Care confirms nothing has changed
+	to_chat(affected_mob, span_notice("Your hearing remains exactly as perfect as it has always been."))
+	// PC REMOVAL START - no healing trait to remove and no acuity change to announce
+	/*
 	REMOVE_TRAIT(affected_mob, TRAIT_GOOD_HEARING, type)
 	if(!HAS_TRAIT(affected_mob, TRAIT_DEAF))
 		to_chat(affected_mob, span_notice("Your hearing returns to its normal acuity."))
+	*/
+	// PC REMOVAL END
 
 /datum/reagent/medicine/atropine
 	name = "Atropine"

@@ -165,7 +165,7 @@
 		user.visible_message(span_suicide("[src] doesn't want [user]'s skin! How embarrassing!"))
 		return SHAME
 	if(status == FISH_DEAD)
-		user.visible_message(span_suicide("[src] is dead! [user] just looks like a doofus!"))
+		user.visible_message(span_suicide("[src] is temporarily non-living! [user] just looks like a doofus!")) // PC
 		return SHAME
 
 	var/mob/living/carbon/skin_haver = user

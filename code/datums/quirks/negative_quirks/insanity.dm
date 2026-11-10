@@ -1,13 +1,21 @@
 /datum/quirk/insanity
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - sanist quirk name/description
 	name = "Reality Dissociation Syndrome"
 	desc = "You suffer from a severe disorder that causes very vivid hallucinations and trouble expressing your ideas. \
 		Mindbreaker toxin can suppress its effects, and you are immune to mindbreaker's hallucinogenic properties. \
 		THIS IS NOT A LICENSE TO GRIEF."
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Differently-Perceived Reality"
+	desc = "You have a rich, non-normative relationship with consensus reality. You may experience vivid perceptual enrichment, and you express your ideas through alternative communication modalities. \
+		Mindbreaker toxin can moderate your perceptual gifts, and you are immune to its hallucinogenic properties. \
+		THIS IS NOT A LICENSE TO GRIEF."
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_GRIN_TONGUE_WINK
 	value = -8
 	gain_text = span_userdanger("...")
 	lose_text = span_notice("You feel in tune with the world again.")
-	medical_record_text = "Patient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations, and may have trouble speaking."
+	medical_record_text = "Patient presents with a differently-perceived reality, including vivid perceptual enrichment and possible use of alternative communication modalities." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations, and may have trouble speaking."
 	hardcore_value = 6
 	mail_goodies = list(/obj/item/storage/pill_bottle/lsdpsych)
 	/// Weakref to the trauma we give out

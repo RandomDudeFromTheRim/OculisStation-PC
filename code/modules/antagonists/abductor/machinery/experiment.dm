@@ -134,8 +134,8 @@
 	if(occupant in history)
 		return "Specimen already in database."
 	if(occupant.stat == DEAD)
-		say("Specimen deceased - please provide fresh sample.")
-		return "Specimen deceased."
+		say("Specimen temporarily non-living - please provide fresh sample.") // PC
+		return "Specimen temporarily non-living." // PC
 	var/obj/item/organ/heart/gland/GlandTest = locate() in occupant.organs
 	if(!GlandTest)
 		say("Experimental dissection not detected!")

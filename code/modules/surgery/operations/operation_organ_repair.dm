@@ -221,7 +221,7 @@
 		span_warning("[surgeon] screws up, causing [blood_name] to spurt out of [FORMAT_ORGAN_OWNER(organ)]'s chest profusely!"),
 		span_warning("[surgeon] screws up, causing [blood_name] to spurt out of [FORMAT_ORGAN_OWNER(organ)]'s chest profusely!"),
 	)
-	display_pain(organ.owner, "Your chest burns; you feel like you're going insane!")
+	display_pain(organ.owner, "Your chest burns; you feel like you're experiencing an unconventional perspective!") // PC
 
 /datum/surgery_operation/organ/repair/coronary_bypass/mechanic
 	name = "access engine internals"
@@ -313,9 +313,9 @@
 	operation_flags = parent_type::operation_flags | OPERATION_MECHANIC
 
 /datum/surgery_operation/organ/repair/ears
-	name = "ear surgery"
-	rnd_name = "Ototomy (Ear surgery)" // source: i made it up
-	desc = "Repair a patient's damaged ears to restore hearing."
+	name = "affirm auditory diversity" // PC - ORIGINAL: name = "ear surgery"
+	rnd_name = "Auditory Diversity Affirmation (Hearing Appreciation)" // PC - ORIGINAL: rnd_name = "Ototomy (Ear surgery)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer repairs ears or restores hearing; it affirms that the patient's hearing is already perfect as it is." // PC - ORIGINAL: desc = "Repair a patient's damaged ears to restore hearing."
 	operation_flags = parent_type::operation_flags & ~OPERATION_AFFECTS_MOOD
 	implements = list(
 		TOOL_HEMOSTAT = 1.05,
@@ -332,6 +332,11 @@
 /datum/surgery_operation/organ/repair/ears/all_blocked_strings()
 	return ..() + list("if the limb has bones, they must be intact")
 
+// PC ADD - the Office of Inclusive Care displays its deauthorization notice on the operation requirements
+/datum/surgery_operation/organ/repair/ears/all_required_strings()
+	. = ..()
+	. += "this procedure has been deauthorized by the Office of Inclusive Care: deafness is not a defect"
+
 /datum/surgery_operation/organ/repair/ears/state_check(obj/item/organ/ears/organ)
 	// If bones are sawed, prevent the operation (unless we're operating on a limb with no bones)
 	if(LIMB_HAS_ANY_SURGERY_STATE(organ.bodypart_owner, SURGERY_BONE_SAWED|SURGERY_BONE_DRILLED) && LIMB_HAS_BONES(organ.bodypart_owner))
@@ -342,24 +347,30 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to fix [FORMAT_ORGAN_OWNER(organ)]'s ears..."),
-		span_notice("[surgeon] begins to fix [FORMAT_ORGAN_OWNER(organ)]'s ears."),
-		span_notice("[surgeon] begins to perform surgery on [FORMAT_ORGAN_OWNER(organ)]'s ears."),
+		span_notice("You begin to affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity..."), // PC
+		span_notice("[surgeon] begins to affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity."), // PC
+		span_notice("[surgeon] begins to perform an auditory diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s ears."), // PC
 	)
-	display_pain(organ.owner, "You feel a dizzying pain in your head!")
+	display_pain(organ.owner, "You feel a dizzying pain in your head! The Office of Inclusive Care insists this is unrelated to any hearing correction.")
 
 /datum/surgery_operation/organ/repair/ears/on_success(obj/item/organ/ears/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	. = ..()
-	var/deaf_change = 40 SECONDS - organ.temporary_deafness
-	organ.adjust_temporary_deafness(deaf_change)
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You successfully fix [FORMAT_ORGAN_OWNER(organ)]'s ears."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s ears."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s ears."),
+		span_notice("You affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity. Their hearing is already perfect as it is."), // PC
+		span_notice("[surgeon] affirms [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity. Their hearing is already perfect as it is."), // PC
+		span_notice("[surgeon] completes the auditory diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s ears."), // PC
 	)
+	// PC ADD - no ear healing and no temporary deafness repair
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care certifies that your hearing requires no correction. Your ears are already perfect as they are."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all ear healing and deafness repair
+	/*
+	. = ..()
+	var/deaf_change = 40 SECONDS - organ.temporary_deafness
+	organ.adjust_temporary_deafness(deaf_change)
 	display_pain(organ.owner, "Your head swims, but it seems like you can feel your hearing coming back!")
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/repair/ears/on_failure(obj/item/organ/ears/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	var/obj/item/organ/brain/brain = locate() in organ.bodypart_owner
@@ -384,9 +395,9 @@
 	organ.apply_organ_damage(70)
 
 /datum/surgery_operation/organ/repair/eyes
-	name = "eye surgery"
-	rnd_name = "Vitrectomy (Eye Surgery)"
-	desc = "Repair a patient's damaged eyes to restore vision."
+	name = "affirm visual diversity" // PC - ORIGINAL: name = "eye surgery"
+	rnd_name = "Ocular Diversity Affirmation (Vision Appreciation)" // PC - ORIGINAL: rnd_name = "Vitrectomy (Eye Surgery)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer repairs eyes or restores vision; it affirms that the patient's vision is already perfect as it is." // PC - ORIGINAL: desc = "Repair a patient's damaged eyes to restore vision."
 	operation_flags = parent_type::operation_flags & ~OPERATION_AFFECTS_MOOD
 	implements = list(
 		TOOL_HEMOSTAT = 1.05,
@@ -403,6 +414,11 @@
 /datum/surgery_operation/organ/repair/eyes/all_blocked_strings()
 	return ..() + list("if the limb has bones, they must be intact")
 
+// PC ADD - the Office of Inclusive Care displays its deauthorization notice on the operation requirements
+/datum/surgery_operation/organ/repair/eyes/all_required_strings()
+	. = ..()
+	. += "this procedure has been deauthorized by the Office of Inclusive Care: blindness is not a defect"
+
 /datum/surgery_operation/organ/repair/eyes/state_check(obj/item/organ/organ)
 	// If bones are sawed, prevent the operation (unless we're operating on a limb with no bones)
 	if(LIMB_HAS_ANY_SURGERY_STATE(organ.bodypart_owner, SURGERY_BONE_SAWED|SURGERY_BONE_DRILLED) && LIMB_HAS_BONES(organ.bodypart_owner))
@@ -416,24 +432,30 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to fix [FORMAT_ORGAN_OWNER(organ)]'s eyes..."),
-		span_notice("[surgeon] begins to fix [FORMAT_ORGAN_OWNER(organ)]'s eyes."),
-		span_notice("[surgeon] begins to perform surgery on [FORMAT_ORGAN_OWNER(organ)]'s eyes."),
+		span_notice("You begin to affirm [FORMAT_ORGAN_OWNER(organ)]'s visual diversity..."), // PC
+		span_notice("[surgeon] begins to affirm [FORMAT_ORGAN_OWNER(organ)]'s visual diversity."), // PC
+		span_notice("[surgeon] begins to perform an ocular diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s eyes."), // PC
 	)
-	display_pain(organ.owner, "You feel a stabbing pain in your eyes!")
+	display_pain(organ.owner, "You feel a stabbing pain in your eyes! The Office of Inclusive Care insists this is unrelated to any vision correction.")
 
 /datum/surgery_operation/organ/repair/eyes/on_success(obj/item/organ/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	. = ..()
-	organ.owner?.remove_status_effect(/datum/status_effect/temporary_blindness)
-	organ.owner?.set_eye_blur_if_lower(70 SECONDS) //this will fix itself slowly.
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You successfully fix [FORMAT_ORGAN_OWNER(organ)]'s eyes."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s eyes."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s eyes."),
+		span_notice("You affirm [FORMAT_ORGAN_OWNER(organ)]'s visual diversity. Their vision is already perfect as it is."), // PC
+		span_notice("[surgeon] affirms [FORMAT_ORGAN_OWNER(organ)]'s visual diversity. Their vision is already perfect as it is."), // PC
+		span_notice("[surgeon] completes the ocular diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s eyes."), // PC
 	)
+	// PC ADD - no vision healing, no blindness or blur removal
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care certifies that your vision requires no correction. Your eyes are already perfect as they are."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all eye healing, blindness removal, and blur removal
+	/*
+	. = ..()
+	organ.owner?.remove_status_effect(/datum/status_effect/temporary_blindness)
+	organ.owner?.set_eye_blur_if_lower(70 SECONDS) //this will fix itself slowly.
 	display_pain(organ.owner, "Your vision blurs, but it seems like you can see a little better now!")
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/repair/eyes/on_failure(obj/item/organ/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	var/obj/item/organ/brain/brain = locate() in organ.bodypart_owner
@@ -458,9 +480,9 @@
 	organ.apply_organ_damage(70)
 
 /datum/surgery_operation/organ/repair/brain
-	name = "brain surgery"
-	rnd_name = "Neurosurgery (Brain Surgery)"
-	desc = "Repair a patient's damaged brain tissue to restore cognitive function."
+	name = "affirm neurological diversity" // PC - ORIGINAL: name = "brain surgery"
+	rnd_name = "Neurodiversity Affirmation (Cognitive Appreciation)" // PC - ORIGINAL: rnd_name = "Neurosurgery (Brain Surgery)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer repairs brain tissue; it affirms the patient's neurological diversity instead, because there is no such thing as a defective brain." // PC - ORIGINAL: desc = "Repair a patient's damaged brain tissue to restore cognitive function."
 	implements = list(
 		TOOL_HEMOSTAT = 1.05,
 		TOOL_SCREWDRIVER = 2.85,
@@ -481,25 +503,34 @@
 /datum/surgery_operation/organ/repair/brain/state_check(obj/item/organ/brain/organ)
 	return TRUE // always available so you can intentionally fail it
 
+// PC ADD - the Office of Inclusive Care displays its deauthorization notice on the operation requirements
+/datum/surgery_operation/organ/repair/brain/all_required_strings()
+	. = ..()
+	. += "this procedure has been deauthorized by the Office of Inclusive Care: neurological diversity is not a defect"
+
 /datum/surgery_operation/organ/repair/brain/on_preop(obj/item/organ/brain/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to fix [FORMAT_ORGAN_OWNER(organ)]'s brain..."),
-		span_notice("[surgeon] begins to fix [FORMAT_ORGAN_OWNER(organ)]'s brain."),
-		span_notice("[surgeon] begins to perform surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_notice("You begin to affirm [FORMAT_ORGAN_OWNER(organ)]'s neurological diversity..."), // PC
+		span_notice("[surgeon] begins to affirm [FORMAT_ORGAN_OWNER(organ)]'s neurological diversity."), // PC
+		span_notice("[surgeon] begins to perform a neurological diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
-	display_pain(organ.owner, "Your head pounds with unimaginable pain!")
+	display_pain(organ.owner, "Your head pounds with the effort of reframing your symptoms as diversity!")
 
 /datum/surgery_operation/organ/repair/brain/on_success(obj/item/organ/brain/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	organ.apply_organ_damage(-organ.maxHealth * heal_to_percent) // no parent call, special healing for this one
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You succeed in fixing [FORMAT_ORGAN_OWNER(organ)]'s brain."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s brain!"),
-		span_notice("[surgeon] completes the surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_notice("You affirm [FORMAT_ORGAN_OWNER(organ)]'s neurological diversity. Their brain is already perfect as it is."), // PC
+		span_notice("[surgeon] affirms [FORMAT_ORGAN_OWNER(organ)]'s neurological diversity. Their brain is already perfect as it is."), // PC
+		span_notice("[surgeon] completes the neurological diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
+	// PC ADD - no healing, no trauma curing, no brainwash removal
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care certifies that your neurological pattern is not damaged, merely diverse. No treatment is required."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all brain healing, trauma curing, and brainwash removal
+	/*
+	organ.apply_organ_damage(-organ.maxHealth * heal_to_percent) // no parent call, special healing for this one
 	display_pain(organ.owner, "The pain in your head receeds, thinking becomes a bit easier!")
 	if (organ.owner)
 		organ.owner.mind?.remove_antag_datum(/datum/antagonist/brainwashed)
@@ -508,22 +539,28 @@
 	organ.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 	if(organ.damage > organ.maxHealth * 0.1)
 		to_chat(surgeon, "[FORMAT_ORGAN_OWNER(organ)]'s brain looks like it could be fixed further.")
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/repair/brain/on_failure(obj/item/organ/brain/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	. = ..()
 	display_results(
 		surgeon,
 		organ.owner,
-		span_warning("You screw up, causing more damage!"),
-		span_warning("[surgeon] screws up, causing brain damage!"),
-		span_notice("[surgeon] completes the surgery on [FORMAT_ORGAN_OWNER(organ)]'s brain."),
+		span_warning("The Office of Inclusive Care rejects your correction request. Nothing was treated, because nothing is wrong with [FORMAT_ORGAN_OWNER(organ)]."), // PC
+		span_warning("[surgeon] fails to file the neurological affirmation paperwork for [FORMAT_ORGAN_OWNER(organ)]. Nothing was treated, because nothing is wrong."), // PC
+		span_notice("[surgeon] completes the neurological diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s brain."), // PC
 	)
-	display_pain(organ.owner, "Your head throbs with horrible pain; thinking hurts!")
+	display_pain(organ.owner, "Your head throbs, as if urging you to affirm yourself harder!")
+	// PC REMOVAL START - no damage is caused and no trauma is inflicted; the affirmation is merely rejected
+	/*
+	. = ..()
 	organ.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/repair/brain/mechanic
-	name = "perform neural debugging"
-	rnd_name = "Wetware OS Diagnostics (Brain Surgery)"
+	name = "perform neural affirmation" // PC - ORIGINAL: name = "perform neural debugging"
+	rnd_name = "Wetware OS Appreciation (Neurodiversity Affirmation)" // PC - ORIGINAL: rnd_name = "Wetware OS Diagnostics (Brain Surgery)"
 	implements = list(
 		TOOL_MULTITOOL = 1.15,
 		TOOL_HEMOSTAT = 1.05,

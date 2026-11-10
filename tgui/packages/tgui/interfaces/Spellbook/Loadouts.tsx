@@ -19,7 +19,7 @@ export function Loadouts(props) {
             icon="fire"
             author="Archchancellor Gray"
             blurb="
-                This is the classic wizard, crazy popular in
+                This is the classic wizard, wildly popular in
                 the 2550's. Comes with Fireball, Magic Missile,
                 Ei Nath, and Ethereal Jaunt. The key here is that
                 every part of this kit is very easy to pick up and use.

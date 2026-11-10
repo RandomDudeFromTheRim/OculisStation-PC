@@ -55,7 +55,7 @@ As a Heretic, the Path of Blade rewards your ability to fight, by making you bet
 As a Heretic, the Path of Cosmos allows you to take rightful ownership of the very space the crew treads on. And if they don't respect your status, calling in a friend from beyond should show them.
 As a Heretic, the Path of Flesh allows you to raise an army by summoning ghouls and monsters from beyond the veil. Through ascension, you become a one-man army yourself.
 As a Heretic, the Path of Lock is an Assistant's best friend, and can open many pathways. Including ones beyond the veil...
-As a Heretic, the Path of Moon will literally drive people around you crazy - perhaps crazy enough to become your allies should you succeed.
+As a Heretic, the Path of Moon will literally give people around you an unconventional perspective - perhaps unconventional enough to become your allies should you succeed.
 As a Heretic, the Path of Rust is quite overt, but allows you to shrug of a lot of damage as everything around you slowly decays into nothing but rot and rust.
 As a Heretic, the Path of Void makes people wish they could scream in the vast emptiness of space or have a chance at escaping from you. In the end, the storm takes all.
 As a Heretic, you can also sacrifice cultists, rewarding you with a knowledge point and one of three unique, powerful rewards.
@@ -90,7 +90,7 @@ As a Medical Doctor, you can surgically implant or extract things from people's 
 As a Medical Doctor, you only need surgical drapes when doing field surgery. Patients buckled to stasis beds or operating tables do not require drapes to be operated on.
 As a Medical Doctor, you must target the correct limb and not be in combat mode when trying to perform surgery on someone. Right clicking your patient will intentionally fail the surgery step.
 As a Monkey, you can crawl through air or scrubber vents by alt+left clicking them. You must drop everything you are wearing and holding to do this, however.
-As a Monkey, you can still wear a few human items, such as backpacks, gas masks and hats, and still have two free hands.
+As a Monkey, you can still wear a few carbon-based person items, such as backpacks, gas masks and hats, and still have two free hands.
 As a Nuclear Operative, communication is key! Use ; to speak to your fellow operatives and coordinate an attack plan.
 As a Nuclear Operative, stick together! While your equipment is robust, your fellow operatives are much better at saving your life: they can drag you away from danger while stunned and provide cover fire.
 As a Nuclear Operative, you might end up in a situation where the AI has bolted you into a room. Having some spare C4 in your pocket can save your life.
@@ -116,7 +116,7 @@ As a Scientist, researchable stock parts can seriously improve the efficiency an
 As a Scientist, you can disable anomalies by scanning them with an analyzer, then send a signal on the frequency it gives you with a remote signaling device, or if researched, hit the anomaly an anomaly analyzer. This will leave behind an anomaly core, which can be used to construct a Phazon mech, reactive armors, or various unique and powerful weapons!
 As a Scientist, you can generate money for Science, and complete experiments by letting the tachyon-doppler array record increasingly large explosions.
 As a Scientist, you can maximize the number of uses you get out of a slime by feeding it slime steroid, created from purple slimes, while alive. You can then apply extract enhancer, created from cerulean slimes, on each extract.
-As a Scientist, you can use the mutation toxin obtained from green slimes to turn yourself into a jelly mutant. Each subspecies has unique features - for example telepathic powers, duplicating bodies or integrating slime extracts!
+As a Scientist, you can use the mutation toxin obtained from green slimes to turn yourself into a jelly genetically diverse individual. Each subspecies has unique features - for example telepathic powers, duplicating bodies or integrating slime extracts!
 As a Security Officer, communicate and coordinate with your fellow officers using the security channel (:s) to avoid confusion.
 As a Security Officer, examining someone while wearing sechuds or HUDsunglasses will let you set their arrest level, which will cause Beepsky and other security bots to chase after them.
 As a Security Officer, mindshield implants can only prevent someone from being turned into a cultist: unlike revolutionaries, it will not de-cult them if they have already been converted.
@@ -149,7 +149,7 @@ As an Abductor, the baton can cycle between four modes: stun, sleep, cuff and pr
 As an Abductor, you can select where your victims will be sent on the ship control console.
 As an Alien, resin floors not only regenerate your plasma supply, but also passively heal you. Fight on resin floors to gain a home turf advantage!
 As an Alien, the facehugger is by far your most powerful weapon because of its ability to instantly win a fight. Remember however that certain helmets, such as biohoods or space helmets will completely block facehugger attacks.
-As an Alien, you are unable to pick up or use any human items or machinery. Instead, you should focus on sabotaging APCs, computers, cameras and either stowing, spacing, or melting any weapons you find.
+As an Alien, you are unable to pick up or use any carbon-based person items or machinery. Instead, you should focus on sabotaging APCs, computers, cameras and either stowing, spacing, or melting any weapons you find.
 As an Alien, you take double damage from all burn attacks, such as lasers, welding tools, and fires. Furthermore, fire can destroy your resin and eggs. Expose areas to space to starve away any flamethrower fires before they can do damage!
 As an Alien, your melee prowess is unmatched, but your ranged abilities are sorely lacking. Make use of corners to force a melee confrontation!
 As an Atmospheric Technician, burning a plasma/oxygen mix inside the incinerator will not only produce power, but also gases such as tritium, water vapor and carbon dioxide.
@@ -216,7 +216,7 @@ As the Coroner, you are more comfortable working on cadavers. You can perform au
 As the Coroner, you can perform autopsies on corpses recovered from strange circumstances with your handheld autopsy scanner to discover how they died. By teaming up with a Detective, you can solve several cases together!
 As the Coroner, your unique surgical tools are considered 'cruel implements', which speeds up surgery on corpses - slows it on not-yet-corpses. A few other items also have this classification.
 As the Curator, be sure to keep the shelves stocked and the library clean for crew.
-As the Curator, you are not completely defenseless. Your whip easily disarms people, your laser pointer can blind humans and cyborgs, and you can hide items in wirecut books.
+As the Curator, you are not completely defenseless. Your whip easily disarms people, your laser pointer can visually differently able carbon-based persons and cyborgs, and you can hide items in wirecut books.
 As the Detective, people leave fingerprints everywhere and on everything. With the exception of white latex, gloves will hide them. All is not lost, however, as gloves leave fibers specific to their kind such as black or nitrile, pointing to a general department.
 As the Detective, you can use your forensics scanner from a distance. Use this to scan boxes or other storage containers.
 As the Detective, your revolver can be loaded with .357 ammunition obtained from a hacked autolathe. Firing it has a decent chance to blow up your revolver.

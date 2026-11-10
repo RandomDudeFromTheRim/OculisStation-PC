@@ -253,7 +253,7 @@
 //Deafness makes you deaf.
 /datum/mutation/deaf
 	name = "Deafness"
-	desc = "The subject is completely deaf and cannot hear anything."
+	desc = "The subject is completely Auditory Differently Abled and cannot receive auditory information." // PC
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
 	text_gain_indication = span_danger("You can't seem to hear anything.")

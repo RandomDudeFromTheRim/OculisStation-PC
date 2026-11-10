@@ -1,7 +1,7 @@
 #define REGENERATION_DELAY (5 SECONDS)  // After taking damage, how long it takes for automatic regeneration to begin
 
 /datum/species/mutant
-	name = "High-Functioning mutant"
+	name = "High-Functioning Genetically Diverse Individual" // PC
 	id = SPECIES_MUTANT
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
 	inherent_traits = list(

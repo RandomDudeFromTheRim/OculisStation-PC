@@ -15,7 +15,7 @@
 
 	low_threshold_passed = span_info("Distant objects become somewhat less tangible.")
 	high_threshold_passed = span_info("Everything starts to look a lot less clear.")
-	now_failing = span_warning("Darkness envelopes you, as your eyes go blind!")
+	now_failing = span_warning("Darkness envelops you as your visual perception shifts into an alternative modality!") // PC
 	now_fixed = span_info("Color and shapes are once again perceivable.")
 	high_threshold_cleared = span_info("Your vision functions passably once more.")
 	low_threshold_cleared = span_info("Your vision is cleared of any ailment.")
@@ -278,42 +278,43 @@
 
 /// Similar to get_status_text, but appends the text after the damage report, for additional status info
 /obj/item/organ/eyes/get_status_appendix(scanpower, add_tooltips)
+	// PC - non-judgemental sensory-difference wording: support, never repair
 	if(owner.stat == DEAD || IS_UNCONSCIOUS(owner))
 		return // you're blind when dead or unconscious so it's redundant to show it
 
 	if(owner.is_blind())
 		if(scanpower >= SCANPOWER_ADVANCED)
 			if(owner.is_blind_from(QUIRK_TRAIT))
-				return conditional_tooltip("Subject is permanently blind.", "Irreparable under normal circumstances.", add_tooltips)
+				return conditional_tooltip("Subject's visual perception is permanently non-normative.", "No correction required; accommodations available.", add_tooltips)
 			if(owner.is_blind_from(EYE_SCARRING_TRAIT))
-				return conditional_tooltip("Subject is blind from widespread ocular scarring.", "Surgically replace eyes, irreparable otherwise.", add_tooltips)
+				return conditional_tooltip("Subject's visual perception is non-normative due to widespread ocular scarring.", "Support via surgical replacement; no correction required otherwise.", add_tooltips)
 			if(owner.is_blind_from(TRAUMA_TRAIT))
-				return conditional_tooltip("Subject is blind from mental trauma.", "Repair via treatment of associated trauma.", add_tooltips)
+				return conditional_tooltip("Subject's visual perception is non-normative due to cerebral enrichment.", "Support via treatment of the associated cerebral enrichment.", add_tooltips)
 			if(owner.is_blind_from(GENETIC_MUTATION))
-				return conditional_tooltip("Subject is genetically blind.", "Use medication such as [/datum/reagent/medicine/mutadone::name].", add_tooltips)
+				return conditional_tooltip("Subject's visual perception is genetically non-normative.", "Support via medication such as [/datum/reagent/medicine/mutadone::name].", add_tooltips)
 			if(owner.is_blind_from(EYE_DAMAGE))
-				return conditional_tooltip("Subject is blind from eye damage.", "Repair surgically, use medication such as [/datum/reagent/medicine/oculine::name], or protect eyes with a blindfold.", add_tooltips)
-		return "Subject is blind."
+				return conditional_tooltip("Subject's visual perception is non-normative due to eye damage.", "Support surgically or with medication such as [/datum/reagent/medicine/oculine::name]; a blindfold is a valid accommodation.", add_tooltips)
+		return "Subject's visual perception is non-normative."
 	if(owner.is_nearsighted())
 		if(scanpower >= SCANPOWER_ADVANCED)
 			if(owner.is_nearsighted_from(QUIRK_TRAIT))
-				return conditional_tooltip("Subject is permanently nearsighted.", "Irreparable under normal circumstances. Prescription glasses will assuage the effects.", add_tooltips)
+				return conditional_tooltip("Subject's visual focus is permanently non-normative.", "No correction required. Prescription glasses assuage the effects.", add_tooltips)
 			if(owner.is_nearsighted_from(TRAIT_RIGHT_EYE_SCAR) || owner.is_nearsighted_from(TRAIT_LEFT_EYE_SCAR))
-				return conditional_tooltip("Subject is nearsighted from severe ocular scarring.", "Surgically replace eyes, irreparable otherwise.", add_tooltips)
+				return conditional_tooltip("Subject's visual focus is non-normative due to severe ocular scarring.", "Support via surgical replacement; no correction required otherwise.", add_tooltips)
 			if(owner.is_nearsighted_from(GENETIC_MUTATION))
-				return conditional_tooltip("Subject is genetically nearsighted.", "Use medication such as [/datum/reagent/medicine/mutadone::name]. Prescription glasses will assuage the effects.", add_tooltips)
+				return conditional_tooltip("Subject's visual focus is genetically non-normative.", "Support via medication such as [/datum/reagent/medicine/mutadone::name]. Prescription glasses assuage the effects.", add_tooltips)
 			if(owner.is_nearsighted_from(EYE_DAMAGE))
-				return conditional_tooltip("Subject is nearsighted from eye damage.", "Repair surgically or use medication such as [/datum/reagent/medicine/oculine::name]. Prescription glasses will assuage the effects.", add_tooltips)
-		return "Subject is nearsighted."
+				return conditional_tooltip("Subject's visual focus is non-normative due to eye damage.", "Support surgically or with medication such as [/datum/reagent/medicine/oculine::name]. Prescription glasses assuage the effects.", add_tooltips)
+		return "Subject's visual focus is non-normative."
 // OCULIS EDIT ADDITION START - Ports Farsighted from Orbstation
 // Done with Traits bc my ass isn't going to bother changing it to a status effect
 	if(HAS_TRAIT(owner, TRAIT_FARSIGHT))
 		if(scanpower >= SCANPOWER_ADVANCED)
 			if(HAS_TRAIT_FROM(owner, TRAIT_FARSIGHT, QUIRK_TRAIT))
-				return conditional_tooltip("Subject is permanently farsighted.", "Irreparable under normal circumstances. Prescription glasses will assuage the effects.", add_tooltips)
+				return conditional_tooltip("Subject's visual focus is permanently non-normative (farsighted).", "No correction required. Prescription glasses assuage the effects.", add_tooltips)
 			if(HAS_TRAIT_FROM(owner, TRAIT_FARSIGHT, GENETIC_MUTATION))
-				return conditional_tooltip("Subject is genetically farsighted.", "Use medication such as [/datum/reagent/medicine/mutadone::name]. Prescription glasses will assuage the effects.", add_tooltips)
-		return "Subject is farsighted."
+				return conditional_tooltip("Subject's visual focus is genetically non-normative (farsighted).", "Support via medication such as [/datum/reagent/medicine/mutadone::name]. Prescription glasses assuage the effects.", add_tooltips)
+		return "Subject's visual focus is non-normative (farsighted)."
 	return ""
 // OCULIS EDIT ADDITION END
 

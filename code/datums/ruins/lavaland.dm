@@ -157,7 +157,7 @@
 /datum/map_template/ruin/lavaland/blood_drunk_miner
 	name = "Lava-Ruin Blood-Drunk Miner"
 	id = "blooddrunk"
-	description = "A strange arrangement of stone tiles and an insane, beastly miner contemplating them."
+	description = "A strange arrangement of stone tiles and a psychologically irregular, beastly miner contemplating them." // PC
 	suffix = "lavaland_surface_blooddrunk1.dmm"
 	cost = 0
 	allow_duplicates = FALSE //will only spawn one variant of the ruin

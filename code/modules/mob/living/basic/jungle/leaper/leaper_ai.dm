@@ -39,7 +39,7 @@
 
 /datum/pet_command/untargeted_ability/summon_toad
 	command_name = "Summon Toads"
-	command_desc = "Summon crazy suicide frogs!"
+	command_desc = "Summon wildly unregulated frogs!" // PC
 	radial_icon = 'icons/mob/simple/animal.dmi'
 	radial_icon_state = "frog_trash"
 	speech_commands = list("frogs", "bombers")

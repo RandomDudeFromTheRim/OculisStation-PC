@@ -594,8 +594,8 @@
 	custom_materials = null
 
 /obj/item/clothing/glasses/blindfold/white
-	name = "blind personnel blindfold"
-	desc = "Indicates that the wearer suffers from blindness."
+	name = "Visually Differently Abled personnel blindfold" // PC
+	desc = "Indicates that the wearer is Visually Differently Abled." // PC
 	icon_state = "blindfoldwhite"
 	inhand_icon_state = null
 	var/colored_before = FALSE

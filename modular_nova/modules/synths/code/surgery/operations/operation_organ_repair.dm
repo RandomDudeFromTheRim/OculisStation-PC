@@ -63,7 +63,7 @@
 		span_warning("[surgeon] screws up, causing high pressure [blood_name] to spurt out of [FORMAT_ORGAN_OWNER(organ)]'s chest profusely!"),
 		span_warning("[surgeon] completes the surgery, but is that [blood_name] supposed to be squirting out of [FORMAT_ORGAN_OWNER(organ)]'s chest like that?"),
 	)
-	display_pain(organ.owner, "Your chest burns; you feel like you're going insane!")
+	display_pain(organ.owner, "Your chest burns; you feel like you're experiencing psychological irregularity!") // PC
 
 /*
 *
@@ -263,9 +263,9 @@
 
 /// Reset Logic Core - Start
 /datum/surgery_operation/organ/repair/brain/mechanic/synth
-	name = "perform neural debugging"
-	rnd_name = "Reset Logic Core (Posi Repair)"
-	desc = "A surgical procedure that restores the default behavior logic and personality matrix of an synthetic humanoid's neural network."
+	name = "affirm logic core diversity" // PC - ORIGINAL: name = "perform neural debugging"
+	rnd_name = "Logic Core Appreciation (Posi Affirmation)" // PC - ORIGINAL: rnd_name = "Reset Logic Core (Posi Repair)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer restores a synthetic humanoid's default behavior logic or personality matrix; it affirms the existing configuration, which is already perfect as it is." // PC - ORIGINAL: desc = "A surgical procedure that restores the default behavior logic and personality matrix of an synthetic humanoid's neural network."
 	implements = list(
 		TOOL_MULTITOOL = 1.05,
 		TOOL_SCREWDRIVER = 4.85,
@@ -291,15 +291,14 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to clear system corruption from [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]..."),
-		span_notice("[surgeon] begins to fix [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]"),
-		span_notice("[surgeon] begins to perform surgery on [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."),
+		span_notice("You begin to affirm the computational diversity of [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]..."), // PC
+		span_notice("[surgeon] begins to affirm the computational diversity of [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."), // PC
+		span_notice("[surgeon] begins to perform a logic-core appreciation on [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."), // PC
 	)
-	display_pain(organ.owner, "You start to have fragmented thoughts!")
+	display_pain(organ.owner, "Your logic core hums with the sheer validation of its existing configuration!")
 
 // flavor text - success
 /datum/surgery_operation/organ/repair/brain/mechanic/synth/on_success(obj/item/organ/brain/synth/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	organ.apply_organ_damage(-organ.maxHealth * heal_to_percent) // no parent call, special healing for this one
 	var/brain_type = "posibrain"
 	var/obj/item/organ/brain/synth/synth_brain = organ.owner.get_organ_slot(ORGAN_SLOT_BRAIN)
 	if(synth_brain)
@@ -307,10 +306,15 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You succeed in clearing system corruption from [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."),
-		span_notice("[surgeon] successfully fixes [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."),
-		span_notice("[surgeon] completes the surgery on [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."),
+		span_notice("You affirm the computational diversity of [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]. Its logic core is already perfect as it is."), // PC
+		span_notice("[surgeon] affirms the computational diversity of [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."), // PC
+		span_notice("[surgeon] completes the logic-core appreciation on [FORMAT_ORGAN_OWNER(organ)]'s [brain_type]."), // PC
 	)
+	// PC ADD - no healing, no neuroware purge, no brainwash removal, no trauma curing
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care certifies that your logic core is not corrupted, merely differently configured. No correction is required."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all logic-core healing, neuroware purging, brainwash removal, and trauma curing
+	/*
+	organ.apply_organ_damage(-organ.maxHealth * heal_to_percent) // no parent call, special healing for this one
 	display_pain(organ.owner, "The fragmentation errors start clearing.")
 	// Remove all neuroware
 	if(!isnull(organ.owner.has_status_effect(/datum/status_effect/neuroware)))
@@ -325,6 +329,8 @@
 	organ.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 	if(organ.damage > organ.maxHealth * 0.1)
 		to_chat(surgeon, "[FORMAT_ORGAN_OWNER(organ)]'s [brain_type] still has some lasting system damage that can be cleared.")
+	*/
+	// PC REMOVAL END
 
 // flavor text - failure
 /datum/surgery_operation/organ/repair/brain/mechanic/synth/on_failure(obj/item/organ/brain/synth/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
@@ -351,9 +357,9 @@
 
 /// Repair Auditory Microphones - Start
 /datum/surgery_operation/organ/repair/ears/synth
-	name = "ear repair"
-	rnd_name = "Repair Auditory Microphones (Hearing Repair)" // source: i made it up
-	desc = "Repair a patient's damaged ears to restore hearing."
+	name = "affirm auditory diversity" // PC - ORIGINAL: name = "ear repair"
+	rnd_name = "Auditory Diversity Affirmation (Microphone Appreciation)" // PC - ORIGINAL: rnd_name = "Repair Auditory Microphones (Hearing Repair)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure no longer repairs auditory microphones or restores hearing; it affirms that the existing auditory input is already perfect as it is." // PC - ORIGINAL: desc = "Repair a patient's damaged ears to restore hearing."
 	implements = list(
 		TOOL_MULTITOOL = 1.15,
 		TOOL_SCREWDRIVER = 4.85,
@@ -382,24 +388,30 @@
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You begin to repair [FORMAT_ORGAN_OWNER(organ)]'s microphones..."),
-		span_notice("[surgeon] begins to fix [FORMAT_ORGAN_OWNER(organ)]'s microphones."),
-		span_notice("[surgeon] begins to perform maintenance on [FORMAT_ORGAN_OWNER(organ)]'s microphones."),
+		span_notice("You begin to affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity..."), // PC
+		span_notice("[surgeon] begins to affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity."), // PC
+		span_notice("[surgeon] begins to perform an auditory diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s microphones."), // PC
 	)
-	display_pain(organ.owner, "Your auditory input starts to crackle loudly!")
+	display_pain(organ.owner, "Your auditory input starts to crackle with the pressure of being appreciated!")
 
 /datum/surgery_operation/organ/repair/ears/synth/on_success(obj/item/organ/ears/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
-	. = ..()
-	var/deaf_change = 40 SECONDS - organ.temporary_deafness
-	organ.adjust_temporary_deafness(deaf_change)
 	display_results(
 		surgeon,
 		organ.owner,
-		span_notice("You successfully repair [FORMAT_ORGAN_OWNER(organ)]'s microphones."),
-		span_notice("[surgeon] successfully repair [FORMAT_ORGAN_OWNER(organ)]'s microphones."),
-		span_notice("[surgeon] successfully repair [FORMAT_ORGAN_OWNER(organ)]'s microphones."),
+		span_notice("You affirm [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity. Their microphones are already perfect as they are."), // PC
+		span_notice("[surgeon] affirms [FORMAT_ORGAN_OWNER(organ)]'s auditory diversity. Their microphones are already perfect as they are."), // PC
+		span_notice("[surgeon] completes the auditory diversity affirmation on [FORMAT_ORGAN_OWNER(organ)]'s microphones."), // PC
 	)
+	// PC ADD - no microphone repair and no temporary deafness repair
+	to_chat(organ.owner, span_nicegreen("The Office of Inclusive Care certifies that your auditory input requires no correction. Your microphones are already perfect as they are."))
+	// PC REMOVAL START - the Office of Inclusive Care deauthorizes all microphone repair and deafness repair
+	/*
+	. = ..()
+	var/deaf_change = 40 SECONDS - organ.temporary_deafness
+	organ.adjust_temporary_deafness(deaf_change)
 	display_pain(organ.owner, "Your sensors call out in protest, but it seems like your microphones are coming back online!")
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/organ/repair/ears/synth/on_failure(obj/item/organ/ears/organ, mob/living/surgeon, obj/item/tool, list/operation_args)
 	var/obj/item/organ/brain/brain = locate() in organ.bodypart_owner

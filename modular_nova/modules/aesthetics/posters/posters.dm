@@ -50,8 +50,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/operative_duff
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/ultra, 32)
 
 /obj/structure/sign/poster/contraband/killingjoke // I like Batman :)))
-	name = "You don't have to be crazy to work here - but it sure helps!"
-	desc = "A poster boldly stating that being insane abord Nanotrasen stations isn't required. But it doesn't hurt to have!"
+	name = "You don't have to be cognitively unregulated to work here - but it sure helps!" // PC
+	desc = "A poster boldly stating that being cognitively unregulated aboard Nanotrasen stations isn't required. But it doesn't hurt to have!" // PC
 	icon = 'modular_nova/modules/aesthetics/posters/icons/contraband.dmi'
 	icon_state = "poster_sr_killingjoke"
 

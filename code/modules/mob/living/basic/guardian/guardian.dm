@@ -314,7 +314,7 @@
 	cut_summoner()
 	if (!isnull(former_owner.loc))
 		forceMove(former_owner.loc)
-	to_chat(src, span_danger("Your summoner has died!"))
+	to_chat(src, span_danger("Your summoner is temporarily non-living!")) // PC
 	visible_message(span_bolddanger("\The [src] dies along with its user!"))
 	former_owner.visible_message(span_bolddanger("[former_owner]'s body is completely consumed by the strain of sustaining [src]!"))
 	former_owner.dust(drop_items = TRUE)

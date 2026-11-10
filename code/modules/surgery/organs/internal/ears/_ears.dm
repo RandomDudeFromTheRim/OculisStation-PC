@@ -10,7 +10,7 @@
 	decay_factor = STANDARD_ORGAN_DECAY
 
 	low_threshold_passed = span_info("Your ears begin to resonate with an internal ring sometimes.")
-	now_failing = span_warning("You are unable to hear at all!")
+	now_failing = span_warning("You enter a non-auditory perceptual modality!") // PC
 	now_fixed = span_info("Noise slowly begins filling your ears once more.")
 	low_threshold_cleared = span_info("The ringing in your ears has died down.")
 	visual = FALSE
@@ -63,14 +63,15 @@
 /obj/item/organ/ears/get_status_appendix(scanpower, add_tooltips)
 	if(owner.stat == DEAD || !HAS_TRAIT(owner, TRAIT_DEAF))
 		return
+	// PC - non-judgemental auditory-difference wording: support, never repair
 	if(scanpower >= SCANPOWER_ADVANCED)
 		if(HAS_TRAIT_FROM(owner, TRAIT_DEAF, QUIRK_TRAIT))
-			return conditional_tooltip("Subject is permanently deaf.", "Irreparable under normal circumstances.", add_tooltips)
+			return conditional_tooltip("Subject's auditory perception is permanently non-normative.", "No correction required; accommodations available.", add_tooltips)
 		if(HAS_TRAIT_FROM(owner, TRAIT_DEAF, GENETIC_MUTATION))
-			return conditional_tooltip("Subject is genetically deaf.", "Use medication such as [/datum/reagent/medicine/mutadone::name].", add_tooltips)
+			return conditional_tooltip("Subject's auditory perception is genetically non-normative.", "Support via medication such as [/datum/reagent/medicine/mutadone::name].", add_tooltips)
 		if((organ_flags & ORGAN_FAILING) || HAS_TRAIT_FROM(owner, TRAIT_DEAF, EAR_DAMAGE))
-			return conditional_tooltip("Subject is [(organ_flags & ORGAN_FAILING) ? "permanently": "temporarily"] deaf from ear damage.", "Repair surgically, use medication such as [/datum/reagent/medicine/inacusiate::name], or protect ears with earmuffs.", add_tooltips)
-	return "Subject is deaf."
+			return conditional_tooltip("Subject's auditory perception is [(organ_flags & ORGAN_FAILING) ? "permanently": "temporarily"] non-normative due to ear damage.", "Support surgically or with medication such as [/datum/reagent/medicine/inacusiate::name]; earmuffs are a valid accommodation.", add_tooltips)
+	return "Subject's auditory perception is non-normative."
 
 /obj/item/organ/ears/show_on_condensed_scans()
 	// Always show if we have an appendix

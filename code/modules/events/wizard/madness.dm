@@ -1,9 +1,9 @@
 /datum/round_event_control/wizard/madness
-	name = "Curse of Madness"
+	name = "Curse of Unvalidated Cognition" // OCULIS EDIT CHANGE - ORIGINAL: name = "Curse of Madness"
 	weight = 1
 	typepath = /datum/round_event/wizard/madness
 	earliest_start = 0 MINUTES
-	description = "Reveals a horrifying truth to everyone, giving them a trauma."
+	description = "Reveals a horrifying truth to everyone, providing them with a lasting wellness opportunity." // OCULIS EDIT CHANGE - ORIGINAL: description = "Reveals a horrifying truth to everyone, giving them a trauma."
 	admin_setup = list(/datum/event_admin_setup/text_input/madness)
 
 /datum/round_event/wizard/madness

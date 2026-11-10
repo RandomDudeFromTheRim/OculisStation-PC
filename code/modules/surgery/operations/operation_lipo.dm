@@ -1,7 +1,7 @@
 /datum/surgery_operation/limb/lipoplasty
-	name = "excise excess fat"
-	rnd_name = "Lipoplasty (Excise Fat)"
-	desc = "Remove excess fat from a patient's body."
+	name = "affirm body composition" // PC - ORIGINAL: name = "excise excess fat"
+	rnd_name = "Body Positivity Affirmation (Body Composition Appreciation)" // PC - ORIGINAL: rnd_name = "Lipoplasty (Excise Fat)"
+	desc = "Deauthorized by the Nanotrasen Office of Inclusive Care. This procedure now consists of affirmatively acknowledging a patient's body composition. No tissue is removed and no nutrition is altered, because the patient's body is already perfect as it is." // PC - ORIGINAL: desc = "Remove excess fat from a patient's body."
 	operation_flags = OPERATION_NOTABLE | OPERATION_AFFECTS_MOOD
 	implements = list(
 		TOOL_SAW = 1,
@@ -23,7 +23,7 @@
 	any_surgery_states_blocked = SURGERY_VESSELS_UNCLAMPED
 
 /datum/surgery_operation/limb/lipoplasty/get_any_tool()
-	return "Any sharp edged item"
+	return "Any sharp edged item (used only to open the inclusivity paperwork)" // PC - ORIGINAL: return "Any sharp edged item"
 
 /datum/surgery_operation/limb/lipoplasty/get_default_radial_image()
 	return image(/obj/item/food/meat/slab/human)
@@ -32,7 +32,7 @@
 	. = list()
 	. += "operate on chest (target chest)"
 	. += ..()
-	. += "the patient must have excess fat to remove"
+	. += "the patient's body composition must be documented as requiring affirmation (excess fat present)" // PC - ORIGINAL: . += "the patient must have excess fat to remove"
 
 /datum/surgery_operation/limb/lipoplasty/tool_check(obj/item/tool)
 	// Require edged sharpness OR a tool behavior match
@@ -51,20 +51,24 @@
 	display_results(
 		surgeon,
 		limb.owner,
-		span_notice("You begin to cut away [limb.owner]'s excess fat..."),
-		span_notice("[surgeon] begins to cut away [limb.owner]'s excess fat."),
-		span_notice("[surgeon] begins to cut [limb.owner]'s [limb.plaintext_zone] with [tool]."),
+		span_notice("You begin to affirm [limb.owner]'s body composition..."), // PC
+		span_notice("[surgeon] begins to affirm [limb.owner]'s body composition."), // PC
+		span_notice("[surgeon] begins to perform an administrative body-composition affirmation on [limb.owner]'s [limb.plaintext_zone]."), // PC
 	)
-	display_pain(limb.owner, "You feel a stabbing in your [limb.plaintext_zone]!")
+	display_pain(limb.owner, "You feel a stabbing in your [limb.plaintext_zone]! The Office of Inclusive Care stresses that no correction of your body will take place.")
 
 /datum/surgery_operation/limb/lipoplasty/on_success(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
 		surgeon,
 		limb.owner,
-		span_notice("You successfully remove excess fat from [limb.owner]'s body!"),
-		span_notice("[surgeon] successfully removes excess fat from [limb.owner]'s body!"),
-		span_notice("[surgeon] finishes cutting away excess fat from [limb.owner]'s [limb.plaintext_zone]."),
+		span_notice("You affirm [limb.owner]'s body composition. Their body is already perfect as it is."), // PC
+		span_notice("[surgeon] affirms [limb.owner]'s body composition. Their body is already perfect as it is."), // PC
+		span_notice("[surgeon] completes the body-composition affirmation on [limb.owner]'s [limb.plaintext_zone]. Nothing was removed, because nothing was wrong."), // PC
 	)
+	// PC ADD - the Office of Inclusive Care deauthorizes all fat excision, nutrition changes, and fatty-meat production
+	to_chat(limb.owner, span_nicegreen("The Office of Inclusive Care certifies that your body composition requires no correction. Your body is already perfect as it is."))
+	// PC REMOVAL START - no nutrition change, no body-composition correction, and no meat is spawned
+	/*
 	var/removednutriment = limb.owner.nutrition
 	limb.owner.overeatduration = 0 //patient is unfatted
 	limb.owner.set_nutrition(NUTRITION_LEVEL_WELL_FED)
@@ -87,11 +91,13 @@
 	newmeat.desc = "Extremely fatty tissue taken from a patient."
 	newmeat.subjectname = limb.owner.real_name
 	newmeat.subjectjob = limb.owner.job
-	newmeat.reagents.add_reagent(/datum/reagent/consumable/nutriment, (removednutriment / /datum/reagent/consumable/nutriment::nutriment_factor))
+	newmeat.reagents.add_reagent(/datum/reagent/consumable/nutriment, removednutriment / /datum/reagent/consumable/nutriment::nutriment_factor)
+	*/
+	// PC REMOVAL END
 
 /datum/surgery_operation/limb/lipoplasty/mechanic
-	name = "engage expulsion valve" //gross
-	rnd_name = "Nutrient Reserve Expulsion (Excise Fat)"
+	name = "engage affirmation valve" // PC - ORIGINAL: name = "engage expulsion valve" //gross
+	rnd_name = "Nutrient Reserve Appreciation (Body Composition Affirmation)" // PC - ORIGINAL: rnd_name = "Nutrient Reserve Expulsion (Excise Fat)"
 	implements = list(
 		TOOL_WRENCH = 1.05,
 		TOOL_CROWBAR = 1.05,

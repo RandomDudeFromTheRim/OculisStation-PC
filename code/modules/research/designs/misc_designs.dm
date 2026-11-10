@@ -710,7 +710,7 @@
 
 /datum/design/pepperspray
 	name = "Pepper Spray"
-	desc = "Manufactured by UhangInc, used to blind and down an opponent quickly. Printed pepper sprays do not contain reagents."
+	desc = "Manufactured by UhangInc, used to temporarily render an opponent Visually Differently Abled and down them quickly. Printed pepper sprays do not contain reagents." // PC
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 2.5, /datum/material/glass =HALF_SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/reagent_containers/spray/pepper/empty

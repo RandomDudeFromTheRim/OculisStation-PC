@@ -44,7 +44,7 @@
 	if(attached_device)
 		. += span_notice("A [attached_device] is attached to the fuse input.")
 	if(wired)
-		. += span_notice("It looks like some nutjob added makeshift backpack straps with [EXAMINE_HINT("wires")]...")
+		. += span_notice("It looks like some unregulated individual added makeshift backpack straps with [EXAMINE_HINT("wires")]...") // PC
 		. += span_notice("You could cut off the straps with [EXAMINE_HINT(TOOL_WIRECUTTER)].")
 
 /obj/item/transfer_valve/add_context(atom/source, list/context, obj/item/held_item, mob/user)

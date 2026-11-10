@@ -225,8 +225,8 @@
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/pride_pin, infinite = TRUE)
 
 /obj/item/clothing/accessory/deaf_pin
-	name = "deaf personnel pin"
-	desc = "Indicates that the wearer is deaf."
+	name = "Auditory Differently Abled personnel pin" // PC
+	desc = "Indicates that the wearer is Auditory Differently Abled." // PC
 	icon_state = "deaf_pin"
 
 ///Awarded for being dutiful and extinguishing the debt from the "Indebted" quirk.

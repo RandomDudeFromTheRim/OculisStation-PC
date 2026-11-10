@@ -15,7 +15,7 @@
 
 /obj/item/food/inferno_kimchi
 	name = "inferno kimchi"
-	desc = "For when ordinary kimchi just can't scratch your itch for insane heat, inferno kimchi picks up the slack."
+	desc = "For when ordinary kimchi just can't scratch your itch for unregulated heat, inferno kimchi picks up the slack." // PC
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "inferno_kimchi"
 	food_reagents = list(

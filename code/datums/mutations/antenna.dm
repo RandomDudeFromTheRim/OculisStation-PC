@@ -79,7 +79,7 @@
 		to_chat(owner, span_warning("[cast_on] has no mind to read!"))
 		return FALSE
 	if(living_cast_on.stat == DEAD)
-		to_chat(owner, span_warning("[cast_on] is dead!"))
+		to_chat(owner, span_warning("[cast_on] is temporarily non-living!")) // PC
 		return FALSE
 	if(living_cast_on.mob_biotypes & MOB_ROBOTIC)
 		to_chat(owner, span_warning("[cast_on] is robotic, you can't read [cast_on.p_their()] mind!"))

@@ -12,7 +12,7 @@
 	acid = 20
 
 /obj/item/clothing/under/rank/engineering/chief_engineer
-	desc = "It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of \"Chief Engineer\". Made from fire resistant materials."
+	desc = "It's a high visibility jumpsuit given to those engineers with an officially certified tolerance for risk who achieve the rank of \"Chief Engineer\". Made from fire resistant materials." // PC
 	name = "chief engineer's jumpsuit"
 	icon_state = "chiefengineer"
 	inhand_icon_state = "gy_suit"
@@ -24,7 +24,7 @@
 
 /obj/item/clothing/under/rank/engineering/chief_engineer/skirt
 	name = "chief engineer's jumpskirt"
-	desc = "It's a high visibility jumpskirt given to those engineers insane enough to achieve the rank of \"Chief Engineer\". Made from fire resistant materials."
+	desc = "It's a high visibility jumpskirt given to those engineers with an officially certified tolerance for risk who achieve the rank of \"Chief Engineer\". Made from fire resistant materials." // PC
 	icon_state = "chief_skirt"
 	inhand_icon_state = "gy_suit"
 	body_parts_covered = CHEST|GROIN|ARMS

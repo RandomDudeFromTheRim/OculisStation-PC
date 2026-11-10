@@ -448,16 +448,16 @@
 			if(SANITY_DISTURBED to SANITY_NEUTRAL)
 				msg += "[span_nicegreen("I have felt quite decent lately.")]<br>"
 			if(SANITY_UNSTABLE to SANITY_DISTURBED)
-				msg += "[span_warning("I'm feeling a little bit unhinged...")]<br>"
+				msg += "[span_warning("I'm experiencing a little bit of unregulated cognition...")]<br>" // PC
 			if(SANITY_CRAZY to SANITY_UNSTABLE)
-				msg += "[span_warning("I'm freaking out!!")]<br>"
+				msg += "[span_warning("I'm having a strong, unregulated emotional response!!")]<br>" // PC
 			if(SANITY_INSANE to SANITY_CRAZY)
-				msg += "[span_boldwarning("AHAHAHAHAHAHAHAHAHAH!!")]<br>"
+				msg += "[span_boldwarning("AHAHAHAHAHAHAHAHAHAH—I mean, I am currently experiencing psychological irregularity!!")]<br>" // PC
 
 		msg += span_notice("My current mood: ") //Short term
 		switch(mood_level)
 			if(MOOD_LEVEL_SAD4)
-				msg += "[span_boldwarning("I wish I was dead!")]<br>"
+				msg += "[span_boldwarning("I wish I was temporarily non-living!")]<br>" // PC
 			if(MOOD_LEVEL_SAD3)
 				msg += "[span_boldwarning("I feel terrible...")]<br>"
 			if(MOOD_LEVEL_SAD2)

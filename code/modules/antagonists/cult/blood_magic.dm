@@ -160,7 +160,7 @@
 //Cult Blood Spells
 /datum/action/innate/cult/blood_spell/stun
 	name = "Stun"
-	desc = "Empowers your hand to stun and mute a victim on contact. Gets weaker depending on how many have joined the Cult."
+	desc = "Empowers your hand to stun and render a victim a Non-Verbal Communicator on contact. Gets weaker depending on how many have joined the Cult." // PC
 	button_icon_state = "hand"
 	magic_path = /obj/item/melee/blood_magic/stun
 	health_cost = 10
@@ -191,7 +191,7 @@
 
 /datum/action/innate/cult/blood_spell/shackles
 	name = "Shadow Shackles"
-	desc = "Empowers your hand to start handcuffing victim on contact, and mute them if successful."
+	desc = "Empowers your hand to start handcuffing victim on contact, and render them a Non-Verbal Communicator if successful." // PC
 	button_icon_state = "cuff"
 	charges = 4
 	magic_path = /obj/item/melee/blood_magic/shackles
@@ -433,7 +433,7 @@
 //Stun
 /obj/item/melee/blood_magic/stun
 	name = "Stunning Aura"
-	desc = "Will stun and mute a weak-minded victim on contact."
+	desc = "Will stun and render a differently-willed victim a Non-Verbal Communicator on contact." // PC
 	color = RUNE_COLOR_RED
 	invocation = "Fuu ma'jin!"
 
@@ -560,7 +560,7 @@
 //Shackles
 /obj/item/melee/blood_magic/shackles
 	name = "Shackling Aura"
-	desc = "Will start handcuffing a victim on contact, and mute them if successful."
+	desc = "Will start handcuffing a victim on contact, and render them a Non-Verbal Communicator if successful." // PC
 	invocation = "In'totum Lig'abis!"
 	color = COLOR_BLACK // black
 

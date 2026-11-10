@@ -81,7 +81,7 @@
 
 	if(prob(speech_block_chance)) //IRIS EDIT Original "if(prob(min(50, (0.50 * moodmod))))" | Applies block chance based on preference
 		if(dumb_thing)
-			to_chat(quirk_holder, span_userdanger("You think of a dumb thing you said a long time ago and scream internally."))
+			to_chat(quirk_holder, span_userdanger("You think of an unrefined thing you said a long time ago and scream internally.")) // PC
 			dumb_thing = FALSE //only once per life
 			if(prob(1))
 				new/obj/item/food/spaghetti/pastatomato(get_turf(quirk_holder)) //now that's what I call spaghetti code

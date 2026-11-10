@@ -249,7 +249,7 @@
 /// Needed so subtypes can override examine text while still calling parent
 /obj/item/organ/brain/proc/brain_damage_examine()
 	if(suicided)
-		return span_info("It's started turning slightly grey. They must not have been able to handle the stress of it all.")
+		return span_info("It's started turning slightly grey. They clearly experienced more stress than their wellness plan accounted for.") // PC
 	if(brainmob && (decoy_override || brainmob.client || brainmob.get_ghost()))
 		if(organ_flags & ORGAN_FAILING)
 			return span_info("It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.")
@@ -261,26 +261,27 @@
 		return span_info("This one is completely devoid of life.")
 
 /obj/item/organ/brain/get_status_appendix(scanpower, add_tooltips)
+	// PC - support-oriented, non-corrective cerebral enrichment tooltips
 	var/list/trauma_text
 	for(var/datum/brain_trauma/trauma as anything in traumas)
 		var/trauma_desc = ""
 		switch(trauma.resilience)
 			if(TRAUMA_RESILIENCE_BASIC)
-				trauma_desc = conditional_tooltip("Mild ", "Repair via brain surgery or medication such as [/datum/reagent/medicine/neurine::name].", add_tooltips)
+				trauma_desc = conditional_tooltip("Mild ", "Support via brain surgery or medication such as [/datum/reagent/medicine/neurine::name].", add_tooltips)
 			if(TRAUMA_RESILIENCE_SURGERY)
-				trauma_desc = conditional_tooltip("Severe ", "Repair via brain surgery.", add_tooltips)
+				trauma_desc = conditional_tooltip("Significant ", "Support via brain surgery.", add_tooltips)
 			if(TRAUMA_RESILIENCE_LOBOTOMY)
-				trauma_desc = conditional_tooltip("Deep-rooted ", "Repair via Invasive Neurological Tissue Removal.", add_tooltips) // OCULIS EDIT, ORIGINAL: trauma_desc = conditional_tooltip("Deep-rooted ", "Repair via Lobotomy.", add_tooltips)
+				trauma_desc = conditional_tooltip("Deeply cherished ", "Support via Invasive Neurological Tissue Removal.", add_tooltips) // OCULIS EDIT, ORIGINAL: trauma_desc = conditional_tooltip("Deep-rooted ", "Repair via Lobotomy.", add_tooltips)
 			if(TRAUMA_RESILIENCE_WOUND)
-				trauma_desc = conditional_tooltip("Fracture-derived ", "Repair via treatment of wounds afflicting the head.", add_tooltips)
+				trauma_desc = conditional_tooltip("Fracture-derived ", "Support via treatment of wounds afflicting the head.", add_tooltips)
 			if(TRAUMA_RESILIENCE_MAGIC)
-				trauma_desc = conditional_tooltip("Persistent ", "Only repairable via magic.", add_tooltips)
+				trauma_desc = conditional_tooltip("Persistent ", "Only addressable via magic.", add_tooltips)
 			if(TRAUMA_RESILIENCE_ABSOLUTE)
-				trauma_desc = conditional_tooltip("Permanent ", "Irreparable under normal circumstances.", add_tooltips)
+				trauma_desc = conditional_tooltip("Permanent ", "Accommodated under normal circumstances.", add_tooltips)
 		trauma_desc += capitalize(trauma.scan_desc)
 		LAZYADD(trauma_text, trauma_desc)
 	if(LAZYLEN(trauma_text))
-		return "Mental trauma: [english_list(trauma_text, and_text = ", and ")]."
+		return "Cerebral enrichments: [english_list(trauma_text, and_text = ", and ")]."
 
 /obj/item/organ/brain/feel_for_damage(self_aware)
 	if(damage < low_threshold)

@@ -663,7 +663,7 @@
 	name = "Medical Alert: Cryogenics Reports"
 	announcement_lines_map = list(
 		"Autoejecting" = "Auto ejecting patient now.",
-		"Deceased" = "Cryogenics report: Patient is deceased. %AUTOEJECTING",
+		"Deceased" = "Cryogenics report: Patient is temporarily non-living. %AUTOEJECTING", // PC - key kept as-is, announcement text updated
 		"Fully Recovered" = "Cryogenics report: Patient fully restored. %AUTOEJECTING",
 		"Insufficient Gas" = "Cryogenics report: Insufficient cryogenic gas, shutting down. %AUTOEJECTING",
 		"Wound Treatment" = "Cryogenics report: Patient vitals fully recovered, continuing automated wound treatment."

@@ -802,7 +802,7 @@
 	var/obj/item/fish/fish = interacting_with
 	var/is_syringe = istype(loaded_injector, /obj/item/reagent_containers/syringe)
 	if(fish.status == FISH_DEAD)
-		to_chat(user, span_warning("[src] cannot [is_syringe ? "extract traits from" : "inject traits into"] the deceased [fish.name]."))
+		to_chat(user, span_warning("[src] cannot [is_syringe ? "extract traits from" : "inject traits into"] the temporarily non-living [fish.name].")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(!is_syringe)
 		var/obj/item/fish_gene/injector = loaded_injector
@@ -823,7 +823,7 @@
 		to_chat(user, span_warning("[src] is not loaded with an syringe to extract fish traits with."))
 		return ITEM_INTERACT_BLOCKING
 	if(fish.status == FISH_DEAD)
-		to_chat(user, span_warning("[src] cannot extract traits from the deceased [fish.name]."))
+		to_chat(user, span_warning("[src] cannot extract traits from the temporarily non-living [fish.name].")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(!(choices[choice] in fish.fish_traits))
 		to_chat(user, span_warning("[fish] doesn't seem to have the \"[choice]\" trait anymore."))
@@ -877,7 +877,7 @@
 		return ITEM_INTERACT_BLOCKING
 	var/obj/item/fish/fish = interacting_with
 	if(fish.status == FISH_DEAD)
-		to_chat(user, span_warning("[src] cannot inject traits into the deceased [fish.name]."))
+		to_chat(user, span_warning("[src] cannot inject traits into the temporarily non-living [fish.name].")) // PC
 		return ITEM_INTERACT_BLOCKING
 	return inject_into_fish(fish, user, src)
 

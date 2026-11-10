@@ -68,8 +68,8 @@
 	autopsy_information += "Autopsy Coroner - [user.name]<hr>"
 
 	autopsy_information += "Analyzing results for <b>[scanned.name]</b>:</br></br>"
-	autopsy_information += "Time of Death - <b>[scanned.station_timestamp_timeofdeath]</b></br>"
-	autopsy_information += "Subject has been dead for <b>[DisplayTimeText(round(world.time - scanned.timeofdeath))]</b>.<hr>"
+	autopsy_information += "Time of Temporary Non-Living Onset - <b>[scanned.station_timestamp_timeofdeath]</b></br>" // OCULIS EDIT CHANGE - ORIGINAL: autopsy_information += "Time of Death - <b>[scanned.station_timestamp_timeofdeath]</b></br>"
+	autopsy_information += "Subject has been temporarily non-living for <b>[DisplayTimeText(round(world.time - scanned.timeofdeath))]</b>.<hr>" // OCULIS EDIT CHANGE - ORIGINAL: autopsy_information += "Subject has been dead for <b>[DisplayTimeText(round(world.time - scanned.timeofdeath))]</b>.<hr>"
 
 	var/oxy_loss = scanned.get_oxy_loss()
 	var/tox_loss = scanned.get_tox_loss()
@@ -183,7 +183,7 @@
 			autopsy_information += "<b>Genetic Stability:</b> [humantarget.dna.stability]%.</br>"
 		var/datum/species/targetspecies = humantarget.dna.species
 		var/disguised = !ishumanbasic(humantarget) && HAS_TRAIT(humantarget, TRAIT_HUMAN_DISGUISE)
-		var/species_name = "[disguised ? "\"[/datum/species/human::name]\"" : targetspecies.name][mutant ? "-derived mutant" : ""]"
+		var/species_name = "[disguised ? "\"[/datum/species/human::name]\"" : targetspecies.name][mutant ? "-derived Genetically Diverse Individual" : ""]" // OCULIS EDIT CHANGE - ORIGINAL: var/species_name = "[disguised ? "\"[/datum/species/human::name]\"" : targetspecies.name][mutant ? "-derived mutant" : ""]"
 		autopsy_information += "<b>Species:</b> [species_name]</br>"
 		autopsy_information += "<b>Core temperature:</b> [round(humantarget.coretemperature-T0C, 0.1)] &deg;C ([round(humantarget.coretemperature*1.8-459.67,0.1)] &deg;F)</br>"
 	// (End of humanoid-only information)

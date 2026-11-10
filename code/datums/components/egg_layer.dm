@@ -61,7 +61,7 @@
 	if(isliving(at_least_atom))
 		var/mob/living/potentially_dead_horse = at_least_atom
 		if(potentially_dead_horse.stat == DEAD)
-			to_chat(attacker, span_warning("[parent] is dead!"))
+			to_chat(attacker, span_warning("[parent] is temporarily non-living!")) // PC
 			return COMPONENT_CANCEL_ATTACK_CHAIN
 	if(eggs_left > max_eggs_held)
 		to_chat(attacker, span_warning("[parent] doesn't seem hungry!"))

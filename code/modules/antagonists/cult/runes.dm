@@ -846,7 +846,7 @@ GLOBAL_VAR_INIT(narsie_summon_count, 0)
 		fail_invoke()
 		return
 	if(cultist_to_summon.stat == DEAD)
-		to_chat(user, span_cult_italic("[cultist_to_summon] has died!"))
+		to_chat(user, span_cult_italic("[cultist_to_summon] has become temporarily non-living!")) // PC
 		fail_logmsg += "target died."
 		log_game(fail_logmsg)
 		fail_invoke()

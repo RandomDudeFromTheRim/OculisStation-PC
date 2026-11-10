@@ -7,7 +7,7 @@
 /datum/brain_trauma/special/godwoken
 	name = "Godwoken Syndrome"
 	desc = "Patient occasionally and uncontrollably channels an eldritch god when speaking."
-	scan_desc = "god delusion"
+	scan_desc = "faith-based pattern recognition" // PC
 	symptoms = "Occasionally utters phrases or commands in a commanding tone, often accompanied by a sense of divine authority. \
 		These utterances can influence the behavior of others, compelling them to act in accordance with the spoken words."
 	gain_text = span_notice("You feel a higher power inside your mind...")
@@ -242,12 +242,12 @@
 	linked = FALSE
 
 /datum/brain_trauma/special/psychotic_brawling
-	name = "Violent Psychosis"
-	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
-	scan_desc = "violent psychosis"
-	symptoms = "Exhibits erratic and potentially violent behavior when in physical contact with others, \
-		often accidentally attacking those they intend to offer a hand, or hugging those who they mean to strike."
-	gain_text = span_warning("You feel unhinged...")
+	name = "Assertive Physical Communication" // PC
+	desc = "Patient communicates physically in bold, unpredictable ways, ranging from helping their target to hugging them with impressive force." // PC
+	scan_desc = "assertive physical communication style" // PC
+	symptoms = "Exhibits a bold and potentially vigorous physical communication style when in contact with others, \
+		often accidentally attacking those they intend to offer a hand, or hugging those who they mean to strike." // PC
+	gain_text = span_warning("You feel assertively expressive...") // PC
 	lose_text = span_notice("You feel more balanced.")
 	/// The martial art we teach
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling
@@ -263,7 +263,7 @@
 	QDEL_NULL(psychotic_brawling)
 
 /datum/brain_trauma/special/psychotic_brawling/bath_salts
-	name = "Chemical Violent Psychosis"
+	name = "Chemically-Assisted Assertive Communication" // PC
 	known_trauma = FALSE
 
 /datum/brain_trauma/special/tenacity
@@ -314,7 +314,7 @@
 
 /datum/brain_trauma/special/existential_crisis
 	name = "Existential Crisis"
-	desc = "Patient's hold on reality becomes faint, causing occasional bouts of non-existence."
+	desc = "Patient's engagement with consensus reality becomes intermittent, causing occasional bouts of non-existence." // PC
 	scan_desc = "existential crisis"
 	symptoms = "Experiences sporadic episodes of \"non-existence\", during which the patient temporarily fades out of reality, \
 		becoming intangible and invisible to others. Often accompanied by feelings of detachment, depression, and disorientation."
@@ -443,13 +443,13 @@
 
 // Used by Veteran Security Advisor job.
 /datum/brain_trauma/special/ptsd
-	name = "Combat PTSD"
-	desc = "The patient is experiencing PTSD stemming from past combat exposure, resulting in a lack of emotions. Additionally, they are experiencing mild hallucinations."
-	scan_desc = "PTSD"
+	name = "Battle-Hardened Emotional Processing" // PC
+	desc = "The patient is managing a combat-related emotional processing style, resulting in an alternative emotional response pattern. Additionally, they experience mild perceptual enrichment." // PC
+	scan_desc = "combat-related emotional processing"
 	symptoms = "Witnessed or experienced a traumatic, horrific, or potentially life threatening event, \
-		resulting in avoidance, intrusive thoughts, flashbacks, auditory hallucinations, \
+		resulting in avoidance, intrusive thoughts, flashbacks, perceptual enrichment, \
 		emotional numbness, detachment from others, and heightened reactivity to stimuli - \
-		particularly in situations reminiscent of the traumatic event."
+		particularly in situations reminiscent of the traumatic event." // PC
 
 	gain_text = span_warning("You're thrust back into the chaos of past! Explosions! Gunfire! Emotions, gone AWOL!")
 	lose_text = span_notice("You feel flashbacks of past fade, as your emotions return and mind clear.")
@@ -551,8 +551,8 @@
 	to_chat(owner, span_green("The urge subsides."))
 
 /datum/brain_trauma/special/axedoration
-	name = "Axe Delusions"
-	desc = "Patient feels an immense sense of duty towards protecting an axe and has hallucinations regarding it."
+	name = "Axe-Oriented Devotion" // PC
+	desc = "Patient feels an immense sense of duty towards protecting an axe and experiences rich perceptual engagement regarding it." // PC
 	scan_desc = "object attachment"
 	gain_text = span_notice("You feel like protecting the fire axe is one of your greatest duties.")
 	lose_text = span_warning("You feel like you lost your sense of duty.")

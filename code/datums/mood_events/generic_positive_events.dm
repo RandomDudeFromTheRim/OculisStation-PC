@@ -595,7 +595,7 @@
 
 ///Wizard cheesy grand finale - what the wizard gets
 /datum/mood_event/madness_elation
-	description = "Madness truly is the greatest of blessings..."
+	description = "A differently-perceived reality truly is the greatest of blessings..." // OCULIS EDIT CHANGE - ORIGINAL: description = "Madness truly is the greatest of blessings..."
 	mood_change = 200
 
 /datum/mood_event/prophat

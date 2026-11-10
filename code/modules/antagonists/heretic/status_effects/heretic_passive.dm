@@ -361,8 +361,8 @@
 	recharge_description = "Recharge spells by summoning monsters into reality."
 	passive_descriptions = list(
 		"Immunity to Diseases, Disgust and space ants.",
-		"Eating organs or meat now heals you, gain the voracious and gluttonous trait and being fat doesn't slow you down.",
-		"Gain a flat 25% damage and stamina damage reduction when fat as well as baton resistance."
+		"Eating organs or meat now heals you, gain the voracious and gluttonous trait and being a Person of Increased Body Mass doesn't slow you down.", // PC
+		"Gain a flat 25% damage and stamina damage reduction when you are a Person of Increased Body Mass, as well as baton resistance." // PC
 	)
 
 /datum/status_effect/heretic_passive/flesh/on_apply()

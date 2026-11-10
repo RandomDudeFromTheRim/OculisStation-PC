@@ -978,9 +978,15 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			target.adjust_dizzy_up_to(5 SECONDS, 10 SECONDS)
 			target.adjust_confusion_up_to(5 SECONDS, 10 SECONDS)
 			target.adjust_temp_blindness_up_to(5 SECONDS, 10 SECONDS)
+			/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - ableist language
 			target.visible_message(span_warning("[user]'s [atk_verb] hits [target] so hard, they are sent reeling blindly in agony! Goddamn!"), \
 				span_warning("You are hit viciously by [user]'s [atk_verb], and everything becomes a dizzying, blinding blur!"), span_hear("You hear a thud!"), COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, span_warning("Your [atk_verb] causes [target] to go stumbling about in a confuzed, blind daze!"))
+			*/ // OCULIS EDIT REMOVAL END
+			// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC doublespeak
+			target.visible_message(span_warning("[user]'s [atk_verb] hits [target] so hard, they are sent reeling in a state of temporary visual diversity and agony! Goddamn!"), \
+				span_warning("You are hit viciously by [user]'s [atk_verb], and everything becomes a dizzying blur of visual diversity!"), span_hear("You hear a thud!"), COMBAT_MESSAGE_RANGE, user)
+			// OCULIS EDIT ADDITION END
+			to_chat(user, span_warning("Your [atk_verb] causes [target] to go stumbling about in a confused, visually diverse daze!")) // PC
 
 		if (41 to 45)
 			target.apply_effect(4 SECONDS, EFFECT_KNOCKDOWN, armor_block)

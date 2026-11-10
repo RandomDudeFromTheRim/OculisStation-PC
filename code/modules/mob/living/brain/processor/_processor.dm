@@ -120,7 +120,7 @@ GAME_VERB_SRC_DESC(/obj/item/brain_processor, Toggle_Listening, usr.loc, "Toggle
 		return FALSE
 	if(brainmob.stat >= DEAD)
 		if(user)
-			to_chat(user, span_warning("\The [src] indicates that the brain is dead!"))
+			to_chat(user, span_warning("\The [src] indicates that the brain is temporarily non-living!")) // PC
 		return FALSE
 	return TRUE
 

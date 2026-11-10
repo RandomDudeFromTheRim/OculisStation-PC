@@ -106,7 +106,7 @@
 /obj/item/organ/cyberimp/arm/toolkit/armblade/emag_act()
 	if(obj_flags & EMAGGED)
 		return FALSE
-	to_chat(usr, span_notice("You unlock [src]'s integrated energy arm blade! You madman!"))
+	to_chat(usr, span_notice("You unlock [src]'s integrated energy arm blade! You absolute maverick!")) // PC
 	add_extra_item(/obj/item/melee/implantarmblade/energy)
 	obj_flags |= EMAGGED
 	return TRUE

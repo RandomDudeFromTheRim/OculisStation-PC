@@ -1,16 +1,22 @@
 /datum/quirk/paraplegic
+	/* // OCULIS EDIT REMOVAL START - POLITICAL_CORRECTNESS - ableist quirk name/description
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. But hey, free wheelchair!"
+	*/ // OCULIS EDIT REMOVAL END
+	// OCULIS EDIT ADDITION START - POLITICAL_CORRECTNESS - PC quirk strings
+	name = "Mobility Differently Abled"
+	desc = "Your lower extremities operate on an alternative mobility plan. Nothing will ever fix this, and nothing needs to. But hey, free wheelchair!"
+	// OCULIS EDIT ADDITION END
 	icon = FA_ICON_WHEELCHAIR
 	value = -12
 	gain_text = null // Handled by trauma.
 	lose_text = null
-	medical_record_text = "Patient has an untreatable impairment in motor function in the lower extremities."
+	medical_record_text = "Patient's lower extremities use an untreatable alternative mobility strategy. No correction required." // OCULIS EDIT CHANGE - ORIGINAL: medical_record_text = "Patient has an untreatable impairment in motor function in the lower extremities."
 	hardcore_value = 15
 	mail_goodies = list(/obj/vehicle/ridden/wheelchair/motorized) //yes a fullsized unfolded motorized wheelchair does fit
 	//IRIS EDIT ADDITION BEGIN - COGNOMERGE_EVENT
-	gain_text = span_danger("You can't feel your legs.")
-	lose_text = span_notice("You can feel your legs again.")
+	gain_text = span_danger("Your lower extremities transition to an alternative mobility model.") // OCULIS EDIT CHANGE - ORIGINAL: gain_text = span_danger("You can't feel your legs.")
+	lose_text = span_notice("Your lower extremities return to the normative mobility model.") // OCULIS EDIT CHANGE - ORIGINAL: lose_text = span_notice("You can feel your legs again.")
 	//IRIS EDIT ADDITION END
 
 /datum/quirk_constant_data/paraplegic

@@ -9,7 +9,7 @@
 	if(!istype(interacting_with) || user.combat_mode)
 		return NONE
 	if(IS_UNCONSCIOUS_OR_CRIT(interacting_with))
-		to_chat(user, span_warning("The pet is dead!"))
+		to_chat(user, span_warning("The pet is temporarily non-living!")) // PC
 		return ITEM_INTERACT_BLOCKING
 	if(!is_path_in_list(interacting_with.type, assoc_to_values(GLOB.possible_player_pet)))
 		to_chat(user, span_warning("This treat doesn't work on [interacting_with]!"))

@@ -28,7 +28,7 @@
 		to_chat(user, span_warning("You're already reading this!"))
 		return FALSE
 	if(user.is_blind())
-		to_chat(user, span_warning("You are blind and can't read anything!"))
+		to_chat(user, span_warning("You are Visually Differently Abled; this document is unavailable in your accessibility format.")) // PC
 		return FALSE
 	if(!isliving(user) || !user.can_read(src))
 		return FALSE

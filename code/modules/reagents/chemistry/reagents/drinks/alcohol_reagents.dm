@@ -277,7 +277,7 @@
 				if(drinker.adjust_brute_loss(15 * metabolization_ratio, updating_health = FALSE, required_bodytype = affected_bodytype))
 					. = UPDATE_MOB_HEALTH
 			else
-				to_chat(drinker, span_userdanger("You scream in terror as you go blind!"))
+				to_chat(drinker, span_userdanger("You scream in terror as you become Visually Differently Abled!")) // PC
 				if(eyes.apply_organ_damage(eyes.maxHealth))
 					. = UPDATE_MOB_HEALTH
 				drinker.emote("scream")
@@ -2831,7 +2831,7 @@
 	boozepwr = 80
 	color = "#00fbff"
 	quality = DRINK_FANTASTIC
-	taste_description = "victory, with a hint of insanity"
+	taste_description = "victory, with a hint of psychological irregularity" // PC
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 

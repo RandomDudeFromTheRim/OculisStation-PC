@@ -6,10 +6,10 @@
 /datum/brain_trauma
 	/// Tracks abstract types of brain traumas, useful for determining traumas that should not exist
 	abstract_type = /datum/brain_trauma
-	var/name = "Brain Trauma"
-	var/desc = "A trauma caused by brain damage, which causes issues to the patient."
+	var/name = "Cerebral Enrichment" // OCULIS EDIT CHANGE - ORIGINAL: var/name = "Brain Trauma"
+	var/desc = "A cerebral enrichment caused by non-normative neuronal load." // OCULIS EDIT CHANGE - ORIGINAL: var/desc = "A trauma caused by brain damage, which causes issues to the patient."
 	/// Description when detected by a health scanner
-	var/scan_desc = "generic brain trauma"
+	var/scan_desc = "generic cerebral enrichment" // OCULIS EDIT CHANGE - ORIGINAL: var/scan_desc = "generic brain trauma"
 	/// A string listing potential symptoms caused by this trauma
 	var/symptoms = ""
 	/// The poor bastard
@@ -17,9 +17,9 @@
 	/// The poor bastard's brain
 	var/obj/item/organ/brain/brain
 	/// Message sent in chat when trauma is gained
-	var/gain_text = span_notice("You feel traumatized.")
+	var/gain_text = span_notice("You feel cerebrally enriched.") // OCULIS EDIT CHANGE - ORIGINAL: var/gain_text = span_notice("You feel traumatized.")
 	/// Message sent in chat when trauma is lost
-	var/lose_text = span_notice("You no longer feel traumatized.")
+	var/lose_text = span_notice("Your cerebral enrichment returns to baseline.") // OCULIS EDIT CHANGE - ORIGINAL: var/lose_text = span_notice("You no longer feel traumatized.")
 	/// If the trauma can be gained, checked in can_gain_trauma
 	var/can_gain = TRUE
 	/// If this trauma can be gained randomly

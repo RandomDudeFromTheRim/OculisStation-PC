@@ -60,12 +60,12 @@
 	return ..()
 
 /datum/spellbook_entry/summon/curse_of_madness
-	name = "Curse of Madness"
-	desc = "Curses the station, warping the minds of everyone inside, causing lasting traumas. Warning: this spell can affect you if not cast from a safe distance."
+	name = "Curse of Unvalidated Cognition" // OCULIS EDIT CHANGE - ORIGINAL: name = "Curse of Madness"
+	desc = "Curses the station, challenging the emotional regulation of everyone inside and providing lasting wellness opportunities. Warning: this spell can affect you if not cast from a safe distance." // OCULIS EDIT CHANGE - ORIGINAL: desc = "Curses the station, warping the minds of everyone inside, causing lasting traumas. Warning: this spell can affect you if not cast from a safe distance."
 	cost = 4
 
 /datum/spellbook_entry/summon/curse_of_madness/buy_spell(mob/living/carbon/human/user, obj/item/spellbook/book, log_buy = TRUE)
-	var/message = tgui_input_text(user, "Whisper a secret truth to drive your victims to madness", "Whispers of Madness", max_length = MAX_MESSAGE_LEN)
+	var/message = tgui_input_text(user, "Whisper a secret truth to invite your victims into an unmoderated emotional processing session", "Unsolicited Disclosures", max_length = MAX_MESSAGE_LEN) // OCULIS EDIT CHANGE - ORIGINAL: var/message = tgui_input_text(user, "Whisper a secret truth to drive your victims to madness", "Whispers of Madness", max_length = MAX_MESSAGE_LEN)
 	if(!message || QDELETED(user) || QDELETED(book) || !can_buy(user, book))
 		return FALSE
 	curse_of_madness(user, message)

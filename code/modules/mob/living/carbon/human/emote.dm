@@ -157,7 +157,8 @@
 
 /datum/emote/living/carbon/human/crazy
 	key = "crazy"
-	message = "twirls a finger next to their head."
+	name = "cognitive wellness check" // PC
+	message = "makes a finger-twirling gesture expressing concern for a coworker's cognitive wellness." // PC CHANGE - ORIGINAL: message = "twirls a finger next to their head."
 	can_use_flags = EMOTE_CANUSE_REQUIRE_HANDS
 
 /datum/emote/living/carbon/human/squint

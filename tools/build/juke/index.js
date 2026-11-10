@@ -4363,10 +4363,16 @@ var killChildren = () => {
 var trap = (signals, handler) => {
   let readline;
   if (process.platform === "win32") {
-    readline = require("readline").createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
+    // OCULIS EDIT: stdin is not always a TTY (piped/non-interactive shells). readline
+    // requires a console for setRawMode; without one, skip it and rely on process signals.
+    try {
+      readline = require("readline").createInterface({
+        input: process.stdin,
+        output: process.stdout
+      });
+    } catch {
+      readline = void 0;
+    }
   }
   for (const signal of signals) {
     const handleSignal = () => handler(signal);

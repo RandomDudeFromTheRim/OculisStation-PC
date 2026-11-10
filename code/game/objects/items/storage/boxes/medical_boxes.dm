@@ -187,7 +187,7 @@
 #define SEVERITY_MINIMAL "minimal"
 #define SEVERITY_DELAYED "delayed"
 #define SEVERITY_IMMEDIATE "immediate"
-#define SEVERITY_DEAD "expectant / deceased"
+#define SEVERITY_DEAD "expectant / temporarily non-living" // PC
 
 /obj/item/paper/triage
 	name = "triage card"
@@ -232,7 +232,7 @@
 	. = ..()
 	switch(severity)
 		if(SEVERITY_DEAD)
-			. += span_notice("This card indicates that the patient is deceased or is not expected to survive.")
+			. += span_notice("This card indicates that the patient is temporarily non-living, or is not expected to return to a living state.") // PC
 		if(SEVERITY_IMMEDIATE)
 			. += span_notice("This card indicates that the patient is in a critical condition and requires immediate attention.")
 		if(SEVERITY_DELAYED)
@@ -246,7 +246,7 @@
 	. = ..()
 	. += span_notice("<i>The back of [src] has a guide to performing triage:</i>")
 	. += "&bull; \"Is the victim walking and can respond to simple orders?\" If so, mark as <b>minimal</b>."
-	. += "&bull; \"Has the victim stopped breathing entirely (without even gasping for air)?\" If so, mark as <b>expectant / deceased</b>."
+	. += "&bull; \"Has the victim stopped breathing entirely (without even gasping for air)?\" If so, mark as <b>expectant / temporarily non-living</b>." // PC
 	. += "&bull; \"Is the victim bleeding, failing to follow simple commands, lacking a pulse, having difficulties breathing?\" If so, mark as <b>immediate</b>."
 	. += "&bull; Otherwise, mark as <b>delayed</b>."
 
