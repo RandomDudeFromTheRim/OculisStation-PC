@@ -1,9 +1,9 @@
 ///Robot customers
 /mob/living/basic/robot_customer
-	name = "tourist bot"
+	name = "visiting colleague bot" // PC - the Office declassified the term "tourist"
 	maxHealth = 150
 	health = 150
-	desc = "I wonder what they'll order..."
+	desc = "A visiting colleague bot. It has been certified culturally neutral by the Office of Inclusive Care. Its order is its own business." // PC
 	gender = NEUTER
 
 	icon = 'icons/mob/simple/tourists.dmi'
@@ -106,6 +106,7 @@
 
 /mob/living/basic/robot_customer/examine(mob/user)
 	. = ..()
+	. += span_notice("This visiting colleague has been certified culturally neutral by the Office of Inclusive Care.") // PC
 	if(isnull(ai_controller.blackboard[BB_CUSTOMER_CURRENT_ORDER]))
 		return
 

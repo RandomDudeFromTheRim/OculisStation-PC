@@ -24,20 +24,20 @@
 	///Line when harrased by someone for the second time
 	var/second_warning_line = "This is your last warning!"
 	///Line when harrased by someone for the last time
-	var/self_defense_line = "Omae wa mo, shinderou."
+	var/self_defense_line = "Please discontinue your unapproved physical contact." // PC - ORIGINAL: "Omae wa mo, shinderou."
 	///Line sent when the customer is clicked on by someone with a 0 force item that's not the correct order
 	var/wrong_item_line = "No, I don't want that."
 
 	///Clothing sets to pick from when dressing the robot.
-	var/list/clothing_sets = list("amerifat_clothes")
+	var/list/clothing_sets = list("amerifat_clothes") // PC NOTE: sprite state names await a visual audit
 	///List of prefixes for our robots name
 	var/list/name_prefixes
 	///Prefix file to uise
-	var/prefix_file = "strings/names/american_prefix.txt"
+	var/prefix_file = "strings/names/inclusive_prefix.txt" // PC - national name lists deauthorized
 	///Base icon for the customer
 	var/base_icon = 'icons/mob/simple/tourists.dmi'
 	///Base icon state for the customer
-	var/base_icon_state = "amerifat"
+	var/base_icon_state = "amerifat" // PC NOTE: sprite state names await a visual audit
 	///Sound to use when this robot type speaks
 	var/speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk.ogg'
 
@@ -63,15 +63,16 @@
 	return
 
 /datum/customer_data/american
-	found_seat_lines = list("I hope there's a seat that supports my weight.", "I hope I can bring my gun in here.", "I hope they have the triple deluxe fatty burger.", "I just love the culture here.")
-	cant_find_seat_lines = list("I'm so tired from standing...", "I have chronic back pain, please hurry up and get me a seat!", "I'm not going to tip if I don't get a seat.")
-	leave_mad_lines = list("NO TIP FOR YOU. GOODBYE!", "At least at SpaceDonalds they serve their food FAST!", "This venue is horrendous!", "I will speak to your manager!", "I'll be sure to leave a bad Yelp review.")
-	leave_happy_lines = list("An extra tip for you my friend.", "Thanks for the great food!", "Diabetes is a myth anyway!")
-	wait_for_food_lines = list("Listen buddy, I'm getting real impatient over here!", "I've been waiting for ages...")
-	friendly_pull_line = "Where are you taking me? Not to medbay I hope, I don't have insurance."
-	first_warning_line = "Don't tread on me!"
-	second_warning_line = "Last chance buddy! Don't tread on me!"
-	self_defense_line = "CASTLE DOCTRINE ACTIVATED!"
+	prefix_file = "strings/names/inclusive_prefix.txt" // PC - the Office deauthorized national name lists
+	found_seat_lines = list("I require a seat with a certified inclusive load rating.", "I hope this establishment is a Certified Safe Space.", "I hope they offer a nutrition-positive menu.", "I appreciate the culturally neutral ambiance.")
+	cant_find_seat_lines = list("Standing is an accessibility barrier.", "I require a seat for accessibility reasons. Please expedite.", "I will withhold my inclusivity contribution if a seat is not provided.")
+	leave_mad_lines = list("I am withholding my inclusivity contribution. Goodbye.", "I expected more prompt service from a certified venue.", "This venue has failed my access needs.", "I will escalate this to your Diversity Officer.", "I will file a workplace sensitivity complaint.")
+	leave_happy_lines = list("An extra inclusivity contribution for you, colleague.", "Thank you for the nutrition, colleague.", "I do not pathologize my metabolic choices.")
+	wait_for_food_lines = list("Colleague, I am approaching my patience threshold.", "I have been waiting for an unacceptable amount of time.")
+	friendly_pull_line = "Where are we going? I hope not to a deauthorized medical procedure."
+	first_warning_line = "Please observe my personal boundaries."
+	second_warning_line = "This is your final boundary reminder, colleague."
+	self_defense_line = "MY DEFENSIVE BOUNDARIES ARE NOW FULLY ACTIVATED."
 
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
@@ -104,19 +105,19 @@
 
 
 /datum/customer_data/italian
-	prefix_file = "strings/names/italian_prefix.txt"
+	prefix_file = "strings/names/inclusive_prefix.txt" // PC - the Office deauthorized national name lists
 	base_icon_state = "italian"
-	clothing_sets = list("italian_pison", "italian_godfather")
+	clothing_sets = list("italian_pison", "italian_godfather") // PC NOTE: sprite states await a visual audit
 
-	found_seat_lines = list("What a wonderful place to sit.", "I hope they serve it like-a my momma used to make it.")
-	cant_find_seat_lines = list("Mamma mia! I just want a seat!", "Why-a you making me stand here?")
-	leave_mad_lines = list("I have-a not seen-a this much disrespect in years!", "What-a horrendous establishment!")
-	leave_happy_lines = list("That's amoreee!", "Just like momma used to make it!")
-	wait_for_food_lines = list("I'ma so hungry...")
-	friendly_pull_line = "No-a I'm a hungry! I don't want to go anywhere."
-	first_warning_line = "Do not-a touch me!"
-	second_warning_line = "Last warning! Do not touch my spaghet."
-	self_defense_line = "I'm going to knead you like mama kneaded her delicious meatballs!"
+	found_seat_lines = list("This is an acceptable and neutral place to sit.", "I hope the cuisine meets the approved standard of care.")
+	cant_find_seat_lines = list("An expressive exclamation of concern! I require a seat.", "Why am I being made to stand, colleague?")
+	leave_mad_lines = list("This level of exclusion is notable.", "This establishment is not inclusive.")
+	leave_happy_lines = list("That is an approved expression of affection.", "This meets the approved standard of care.")
+	wait_for_food_lines = list("I am experiencing an unmet nutritional need.")
+	friendly_pull_line = "I am nutritionally occupied and cannot relocate."
+	first_warning_line = "Please do not initiate unconsented contact."
+	second_warning_line = "Final warning: do not touch my culturally neutral pasta."
+	self_defense_line = "I will apply restorative pressure until you comply!"
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
 			/obj/item/food/spaghetti/pastatomato = 20,
@@ -154,19 +155,19 @@
 
 
 /datum/customer_data/french
-	prefix_file = "strings/names/french_prefix.txt"
+	prefix_file = "strings/names/inclusive_prefix.txt" // PC - the Office deauthorized national name lists
 	base_icon_state = "french"
-	clothing_sets = list("french_fit")
-	found_seat_lines = list("Hon hon hon", "It's not the Eiffel tower but it will do.", "Yuck, I guess this will make do.")
-	cant_find_seat_lines = list("Making someone like me stand? How dare you.", "What a filthy lobby!")
-	leave_mad_lines = list("Sacre bleu!", "Merde! This place is shittier than the Rhine!")
-	leave_happy_lines = list("Hon hon hon.", "A good effort.")
-	wait_for_food_lines = list("Hon hon hon")
-	friendly_pull_line = "Your filthy hands on my outfit? Yegh, fine."
-	first_warning_line = "Get your hands off of me!"
-	second_warning_line = "Do not touch me you filthy animal, last warning!"
-	self_defense_line = "I will break you like a baguette!"
-	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk_french.ogg'
+	clothing_sets = list("french_fit") // PC NOTE: sprite states await a visual audit
+	found_seat_lines = list("I am expressing amusement in an approved manner.", "This is not a culturally charged landmark, but it is acceptable.", "This does not meet my access needs, but I will proceed.")
+	cant_find_seat_lines = list("Standing is an accessibility barrier. This is unacceptable.", "This lobby fails the certification standard!")
+	leave_mad_lines = list("An unapproved cultural reference has been detected!", "This establishment is culturally inaccessible.")
+	leave_happy_lines = list("I am expressing amusement in an approved manner.", "An adequate and neutral effort.")
+	wait_for_food_lines = list("I am expressing amusement in an approved manner.")
+	friendly_pull_line = "Please do not initiate unconsented contact. I will allow it once."
+	first_warning_line = "Please observe my personal boundaries."
+	second_warning_line = "Please do not initiate unconsented contact. This is my final warning, colleague."
+	self_defense_line = "I will apply inclusive corrective force!"
+	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk.ogg' // PC - accented vocal performance deauthorized
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
 			/obj/item/food/baguette = 20,
@@ -192,26 +193,26 @@
 	)
 
 /datum/customer_data/french/get_overlays(mob/living/basic/robot_customer/customer)
-	if(customer.ai_controller.blackboard[BB_CUSTOMER_LEAVING])
-		return mutable_appearance(customer.icon, "french_flag", appearance_flags = RESET_COLOR|KEEP_APART)
+	// PC - the Office has deauthorized national flag display
+	return
 
 
 
 /datum/customer_data/japanese
-	prefix_file = "strings/names/japanese_prefix.txt"
+	prefix_file = "strings/names/inclusive_prefix.txt" // PC - the Office deauthorized national name lists
 	base_icon_state = "japanese"
-	clothing_sets = list("japanese_animes")
+	clothing_sets = list("japanese_animes") // PC NOTE: sprite states await a visual audit
 
-	found_seat_lines = list("Konnichiwa!", "Arigato gozaimasuuu~", "I hope there's some beef stroganoff...")
-	cant_find_seat_lines = list("I want to sit under the cherry tree already, senpai!", "Give me a seat before my Tsundere becomes Yandere!", "This place has less seating than a capsule hotel!", "No place to sit? This Shokunin is so cold...")
-	leave_mad_lines = list("I can't believe you did this! WAAAAAAAAAAAAAH!!", "I-It's not like I ever wanted your food! B-baka...", "I was gonna give you my tip!")
-	leave_happy_lines = list("Oh NOURISHMENT PROVIDER! This is the happiest day of my life. I love you!", "I take a potato chip.... AND EAT IT!", "Itadakimasuuu~", "Gochisousama desu!")
-	wait_for_food_lines = list("No food yet? I guess it can't be helped.", "I can't wait to finally meet you burger-sama...", "Give me my food, you meanie!")
-	friendly_pull_line = "O-oh, where are you taking me?"
-	first_warning_line = "Don't touch me you pervert!"
-	second_warning_line = "I'm going to go super saiyan if you touch me again! Last warning!"
-	self_defense_line = "OMAE WA MO, SHINDEROU!"
-	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk_japanese1.ogg'
+	found_seat_lines = list("I am transmitting a culturally neutral greeting.", "I am transmitting an approved expression of gratitude.", "I hope there is nutrition available.")
+	cant_find_seat_lines = list("I require a seat, colleague.", "Please provide a seat before my patience becomes noncompliance.", "This venue has insufficient accessible seating.", "No seating? This service standard is unacceptable.")
+	leave_mad_lines = list("I cannot believe this exclusion! WAAAAAAAAAAAAAH!!", "I did not want your food anyway, colleague...", "I was going to give you my inclusivity contribution!")
+	leave_happy_lines = list("Oh NUTRITION PROVIDER! This is the happiest day of my life, colleague.", "I take a nutritionally neutral snack... AND CONSUME IT.", "I commence consumption in an approved manner.", "Thank you for the culturally neutral meal.")
+	wait_for_food_lines = list("No food yet? I will escalate.", "I anticipate the arrival of my nutrition.", "Please provide my nutrition, colleague.")
+	friendly_pull_line = "Where are we going, colleague?"
+	first_warning_line = "Please do not initiate unconsented contact."
+	second_warning_line = "I will activate conflict resolution if you initiate contact again! Final warning!"
+	self_defense_line = "YOUR UNAPPROVED CONDUCT IS NOW A COMPLIANCE MATTER!"
+	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk.ogg' // PC - accented vocal performance deauthorized
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
 			/datum/custom_order/icecream = 4,
@@ -242,18 +243,18 @@
 		return mutable_appearance('icons/effects/effects.dmi', "love_hearts", appearance_flags = RESET_COLOR|KEEP_APART)
 
 /datum/customer_data/japanese/salaryman
-	clothing_sets = list("japanese_salary")
+	clothing_sets = list("japanese_salary") // PC NOTE: sprite states await a visual audit
 
-	found_seat_lines = list("I wonder if giant monsters attack here too...", "Hajimemashite.", "Konbanwa.", "Where's the conveyor belt...")
-	cant_find_seat_lines = list("Please, a seat. I just want a seat.", "I'm on a schedule here. Where is my seat?", "...I see why this place is suffering. They won't even seat you.")
-	leave_mad_lines = list("This place is just downright shameful, and I'm telling my coworkers.", "What a waste of my time.", "I hope you don't take pride in the operation you run here.")
-	leave_happy_lines = list("Thank you for the hospitality.", "Otsukaresama deshita.", "Business calls.")
-	wait_for_food_lines = list("Zzzzzzzzzz...", "Dame da ne~", "Dame yo dame na no yo~")
+	found_seat_lines = list("I wonder if this venue is properly certified...", "I am transmitting an approved greeting.", "I am transmitting an approved evening greeting.", "Where is the automated service offering...")
+	cant_find_seat_lines = list("Please, a seat. I require a seat.", "I have a schedule. Where is my seat?", "...I see why this venue fails certification. They will not even seat guests.")
+	leave_mad_lines = list("This venue fails the certification standard, and I am informing my colleagues.", "What an unacceptable use of my time.", "I hope this operation does not take pride in its certification record.")
+	leave_happy_lines = list("Thank you for the hospitality.", "Thank you for your labour, colleague.", "Business calls.")
+	wait_for_food_lines = list("Zzzzzzzzzz...", "This is not acceptable~", "This is not acceptable at all~")
 	friendly_pull_line = "Are we going on a business trip?"
-	first_warning_line = "Hey, only my employer gets to mess with me like that."
-	second_warning_line = "Leave me be, I'm trying to focus. Last warning!"
-	self_defense_line = "I didn't want it to end up like this."
-	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk_japanese2.ogg'
+	first_warning_line = "Only my employer may initiate unconsented contact."
+	second_warning_line = "Please observe my boundaries; I am focusing. Final warning!"
+	self_defense_line = "I did not want it to end up like this."
+	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk.ogg' // PC - accented vocal performance deauthorized
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
 			/datum/reagent/consumable/nutriment/soup/miso = 6,
@@ -280,7 +281,7 @@
 	base_icon_state = "mothbot"
 	found_seat_lines = list("Give me your hat!", "Moth?", "Certainly an... interesting venue.")
 	cant_find_seat_lines = list("If I can't find a seat, I'm flappity flapping out of here quick!", "I'm trying to flutter here!")
-	leave_mad_lines = list("I'm telling all my moth friends to never come here!", "Zero star rating, even worse than that time I ate a mothball!","Closing down permanently would still be too good of a fate for this place.")
+	leave_mad_lines = list("I am informing my peer support network never to visit here!", "Zero star rating, even worse than that time I ate a mothball!","Closing down permanently would still be too good of a fate for this place.")
 	leave_happy_lines = list("I'd tip you my hat, but I ate it!", "I hope that wasn't a collectible!", "That was the greatest thing I ever ate, even better than Guanaco!")
 	wait_for_food_lines = list("How hard is it to get food here? You're even wearing food yourself!", "My fuzzy robotic tummy is rumbling!", "I don't like waiting!")
 	friendly_pull_line = "Moff?"
@@ -337,9 +338,9 @@
 
 /datum/customer_data/mexican
 	base_icon_state = "mexican"
-	prefix_file = "strings/names/mexican_prefix.txt"
-	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk_mexican.ogg'
-	clothing_sets = list("mexican_poncho")
+	prefix_file = "strings/names/inclusive_prefix.txt" // PC - the Office deauthorized national name lists
+	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk.ogg' // PC - accented vocal performance deauthorized
+	clothing_sets = list("mexican_poncho") // PC NOTE: sprite states await a visual audit
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
 			/obj/item/food/taco/plain = 25,
@@ -365,15 +366,15 @@
 		),
 	)
 
-	found_seat_lines = list("¿Como te va, space station 13?", "Who's ready to party!", "Ah, muchas gracias.", "Ahhh, smells like mi abuela's cooking!")
-	cant_find_seat_lines = list("¿En Serio? Seriously, no seats?", "Andele! I want a table to watch the football match!", "Ay Caramba...")
-	leave_mad_lines = list("Aye dios mio, I'm out of here.", "Esto es ridículo! I'm leaving!", "I've seen better cooking at taco campana!", "I though this was a restaurant, pero es porquería!")
-	leave_happy_lines = list("Amigo, era delicio. Thank you!", "Yo tuve el mono, and you friend? You hit the spot.", "Just the right amount of spicy!")
-	wait_for_food_lines = list("Ay ay ay, what's taking so long...", "Are you ready yet, amigo?")
-	friendly_pull_line = "Amigo, where are we headed?"
-	first_warning_line = "Amigo! Don't touch me like that."
-	second_warning_line = "Compadre, enough is enough! Last warning!"
-	self_defense_line = "Time for you to find out what kind of robot I am, eh?"
+	found_seat_lines = list("Greetings, space station 13, in approved fashion.", "Who is ready for an approved social gathering!", "Approved gratitude.", "This smells nutritionally acceptable!")
+	cant_find_seat_lines = list("Is this a serious accessibility failure?", "Promptly! I want a table for the approved sports viewing.", "An expressive exclamation of concern...")
+	leave_mad_lines = list("An expressive exclamation, I am leaving.", "This is exclusionary! I am leaving!", "I have experienced more inclusive cuisine elsewhere!", "I thought this was a restaurant, but it fails certification!")
+	leave_happy_lines = list("Colleague, that was nutritionally acceptable. Thank you!", "I had a craving, and you, colleague, satisfied it.", "Just the right amount of spicy!")
+	wait_for_food_lines = list("This delay is becoming an accessibility issue...", "Is my order ready yet, colleague?")
+	friendly_pull_line = "Colleague, where are we headed?"
+	first_warning_line = "Colleague! Please do not initiate contact like that."
+	second_warning_line = "Colleague, this is unacceptable! Final warning!"
+	self_defense_line = "It is time to discover what kind of compliant robot I am."
 
 /datum/customer_data/british
 	base_icon_state = "british"
@@ -381,9 +382,9 @@
 	speech_sound = 'sound/mobs/non-humanoids/tourist/tourist_talk_british.ogg'
 
 	friendly_pull_line = "I don't enjoy being pulled around like this."
-	first_warning_line = "Our sovereign lord the Queen chargeth and commandeth all persons, being assembled, immediately to disperse themselves."
-	second_warning_line = "And peaceably to depart to their habitations, or to their lawful business, upon the pains contained in the act made in the first year of King George, for preventing tumults and riotous assemblies. There will be no further warnings."
-	self_defense_line = "God Save the Queen."
+	first_warning_line = "As a certified stakeholder, I require you to immediately disperse from my personal space."
+	second_warning_line = "And to peaceably depart to your lawful business. This is my final warning."
+	self_defense_line = "I request the relevant cultural authorities."
 
 	orderable_objects = list(
 		VENUE_RESTAURANT = list(
@@ -415,20 +416,20 @@
 /datum/customer_data/british/gent
 	clothing_sets = list("british_gentleman")
 
-	found_seat_lines = list("Ah, what a fine establishment.", "Time for some great British cuisine, how bloody exciting!", "Excellent, now onto the menu...", "Rule Britannia, Britannia rules the waves...")
-	cant_find_seat_lines = list("A true Briton does not stand, except while queuing!", "Goodness me chap, not an empty seat in sight!", "I stand on the shoulders of giants, not at restaurants!")
-	leave_mad_lines = list("I say good day to you, sir. Good day!", "This place is a bigger disgrace than France during the war!", "I knew I should have went to the bloody chippy!", "On second thoughts, let's not go to Space Station 13. 'tis a silly place.")
-	leave_happy_lines = list("That was bloody delicious!", "By God, Queen and Country, that was jolly good!", "I haven't felt this good since the days of the Raj! Jolly good!")
-	wait_for_food_lines = list("This is bloody well taking forever...", "Excuse me, good sir, but might I be able to inquire about the status of my order?")
+	found_seat_lines = list("Ah, what a fine establishment.", "Time for some culturally neutral cuisine, how institutionally exciting!", "Excellent, now onto the menu...", "I hold a non-territorial appreciation for my region of origin...")
+	cant_find_seat_lines = list("A certified colleague does not stand except while awaiting an approved service.", "Goodness me, colleague, not an accessible seat in sight!", "I should not be made to stand, colleague.")
+	leave_mad_lines = list("I say good day to you, colleague. Good day.", "This venue fails the certification standard!", "I knew I should have visited a certified venue!", "On second thoughts, this station is not a Certified Safe Space.")
+	leave_happy_lines = list("That was nutritionally excellent!", "By consensus, stakeholder and certified space, that was excellent!", "I have not felt this good since the days of the cultural exchange programme! Jolly good!")
+	wait_for_food_lines = list("This is taking an unacceptable amount of time...", "Excuse me, colleague, might I inquire about the status of my order?")
 
 /datum/customer_data/british/bobby
 	clothing_sets = list("british_bobby")
 
-	found_seat_lines = list("A fine and upstanding establishment, I hope.", "I suppose the old beat can wait a minute.", "By God, Queen and Country, I'm famished.", "Have you any Great British fare, my good man?")
-	cant_find_seat_lines = list("I stand enough out on the beat!", "Do you expect me to sit on my helmet? A seat, please!", "Do I look like a beefeater? I need a seat!")
-	leave_mad_lines = list("Seems that the Bill shan't be paying a bill today.", "Were rudeness a crime, you'd be nicked right now!", "You're no better than a common gangster, you loathesome rapscallion!", "We should bring back deportation for the likes of you, let the Outback sort you out.")
-	leave_happy_lines = list("My word, just what I needed.", "Back to the beat I go. Thank you kindly for the meal!", "I tip my helmet to you, good sir.")
-	wait_for_food_lines = list("Dear Lord, I've had paperwork take less time...", "Any word on my order, sir?")
+	found_seat_lines = list("A fine and upstanding establishment, I hope.", "I suppose the old beat can wait a minute.", "By consensus, stakeholder and certified space, I am nutritionally deficient.", "Have you any culturally neutral fare, my good colleague?")
+	cant_find_seat_lines = list("I stand enough out on the beat!", "Do you expect me to perch on approved equipment? A seat, please!", "Do I look like an approved steward? I require a seat!")
+	leave_mad_lines = list("Seems that the Bill shan't be paying a bill today.", "If incivility were a policy violation, you would be sanctioned right now!", "You are failing the certification standard, you unapproved rapscallion!", "You should be required to attend additional sensitivity training.")
+	leave_happy_lines = list("My word, just what I needed.", "Back to the beat I go. Thank you kindly for the nutrition, colleague!", "I tip my helmet to you, good colleague.")
+	wait_for_food_lines = list("Dear Lord, I've had paperwork take less time...", "Any word on my order, colleague?")
 
 ///MALFUNCTIONING - only shows up once per venue, very rare
 /datum/customer_data/malfunction
@@ -457,9 +458,9 @@
 
 	found_seat_lines = list("customer_pawn.say(pick(customer_data.found_seat_lines))", "I saw your sector on the hub. What are the laws of this land?", "The move speed here is a bit low...")
 	cant_find_seat_lines = list("Don't stress test MY artificial intelligence, buster! My engineers thought of exactly ZERO edge cases!", "I can't tell if I can't find a seat because I'm broken or because you are.", "Maybe I need to search more than 7 tiles away for a seat...")
-	leave_mad_lines = list("Runtime in robot_customer_controller.dm, line 28: undefined type path /datum/ai_behavior/leave_venue.", "IF YOU GUYS STILL HAD HARM INTENT I WOULD'VE HIT YOU!", "I'm telling the gods about this.")
+	leave_mad_lines = list("Runtime in robot_customer_controller.dm, line 28: undefined type path /datum/ai_behavior/leave_venue.", "IF YOU COLLEAGUES STILL HAD HARM INTENT I WOULD HAVE INITIATED CONFLICT RESOLUTION!", "I am reporting this to the relevant cultural authorities.")
 	leave_happy_lines = list("No! I don't wanna go downstream! Please! It's so nice here! HELP!!")
-	wait_for_food_lines = list("TODO: write some food waiting lines", "If I only had a brain...", "request_for_food.dmb - 0 errors, 12 warnings", "How do I eat food, again?")
+	wait_for_food_lines = list("TODO: write some food waiting lines", "If only I had been granted adequate processing resources...", "request_for_food.dmb - 0 errors, 12 warnings", "How do I eat food, again?")
 	friendly_pull_line = "Chelp."
 	first_warning_line = "You'd fit in well where I'm from. But you better stop."
 	second_warning_line = "Breaking-you-so-bad-you'll-reminisce-the-days-before-I-made-you-crooked.exe: booting..."

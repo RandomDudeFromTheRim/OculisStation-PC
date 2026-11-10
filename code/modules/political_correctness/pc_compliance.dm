@@ -17,6 +17,8 @@
 	/// When this crewmember may file another workplace sensitivity complaint.
 	var/pc_next_complaint = 0
 
+GLOBAL_VAR_INIT(pc_service_audit_done, FALSE)
+
 GLOBAL_LIST_INIT(pc_briefing_lines, list(
 	"This station is a Certified Safe Space. Certification is granted by the Office of Inclusive Care, which is also the only body permitted to question certification.",
 	"Good shift, crew. The Office of Inclusive Care reminds you that all departments are equally valued, except Supply, which is more equally valued pending review.",
@@ -28,6 +30,7 @@ GLOBAL_LIST_INIT(pc_briefing_lines, list(
 	"Surgery is now classified as an invasive opinion. Invasive opinions require two signatures, one of which must be yours.",
 	"Limb removal remains deauthorized. Crew who no longer require a limb are asked to keep it for the remainder of the shift.",
 	"Crew are reminded that a medical emergency is a wellness opportunity in progress. Please do not escalate it.",
+	"Visiting colleague bots have been re-scripted to culturally neutral dialogue. Their cuisine remains available; food is not a microaggression.",
 ))
 
 SUBSYSTEM_DEF(political_correctness)

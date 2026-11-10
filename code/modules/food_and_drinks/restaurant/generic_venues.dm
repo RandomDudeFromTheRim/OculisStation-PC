@@ -7,14 +7,14 @@
 	min_time_between_visitor = 80 SECONDS
 	max_time_between_visitor = 100 SECONDS
 	customer_types = list(
-		/datum/customer_data/american = 50,
+		/datum/customer_data/american = 30, // PC - equal representation of all visiting colleagues
 		/datum/customer_data/italian = 30,
 		/datum/customer_data/french = 30,
 		/datum/customer_data/mexican = 30,
 		/datum/customer_data/japanese = 30,
-		/datum/customer_data/japanese/salaryman = 20,
-		/datum/customer_data/british/bobby = 20,
-		/datum/customer_data/british/gent = 20,
+		/datum/customer_data/japanese/salaryman = 30,
+		/datum/customer_data/british/bobby = 30,
+		/datum/customer_data/british/gent = 30,
 		/datum/customer_data/moth = 1,
 		/datum/customer_data/malfunction = 1,
 	)
@@ -75,14 +75,14 @@
 	min_time_between_visitor = 40 SECONDS
 	max_time_between_visitor = 60 SECONDS
 	customer_types = list(
-		/datum/customer_data/american = 50,
+		/datum/customer_data/american = 30, // PC - equal representation of all visiting colleagues
 		/datum/customer_data/italian = 30,
 		/datum/customer_data/french = 30,
 		/datum/customer_data/mexican = 30,
 		/datum/customer_data/japanese = 30,
-		/datum/customer_data/japanese/salaryman = 20,
-		/datum/customer_data/british/bobby = 20,
-		/datum/customer_data/british/gent = 20,
+		/datum/customer_data/japanese/salaryman = 30,
+		/datum/customer_data/british/bobby = 30,
+		/datum/customer_data/british/gent = 30,
 		/datum/customer_data/malfunction = 1,
 	)
 

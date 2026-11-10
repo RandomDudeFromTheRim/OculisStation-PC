@@ -145,6 +145,11 @@
 
 /datum/venue/proc/open()
 	open = TRUE
+	// PC ADDITION START - the Office of Inclusive Care audits the service sector
+	if(!GLOB.pc_service_audit_done)
+		GLOB.pc_service_audit_done = TRUE
+		priority_announce("The Office of Inclusive Care has detected unapproved cultural performance in the service sector. All visiting colleague bots have been re-scripted to culturally neutral dialogue. Cuisine remains available, because food is not a microaggression.", "Service Sector Audit")
+	// PC ADDITION END
 	for (var/obj/machinery/restaurant_portal/portal as anything in restaurant_portals)
 		portal.update_icon()
 	COOLDOWN_START(src, visit_cooldown, 4 SECONDS) //First one comes faster

@@ -67,6 +67,26 @@ put real slurs in the enforcer's mouth as "the joke", use "it's satire" as the o
 do "both sides equally bad" where power is asymmetric. The vocabulary here is invented
 corporate euphemism; the Office is the fool.
 
+## Visiting colleague bots (service sector audit)
+
+The restaurant robots were a walking national-stereotype parade: the American gun/healthcare/diabetes
+bot, Italian mamma-mia bot, French "hon hon" bot with a flag overlay, anime-weeb Japanese bots,
+"andele" Mexican bot, and the British Raj/deportation bot — plus stereotyped name lists and
+culture-coded voice clips. The Office has re-scripted them:
+
+- All cultural dialogue is now deadpan inclusivity doublespeak ("I require a seat with a certified
+  inclusive load rating", "I am emitting an approved expression of amusement").
+- Every cultural bot draws its name from `strings/names/inclusive_prefix.txt` →
+  "Trauma-Informed-bot", "Culturally Neutral-bot", "Consent-Forward-bot", … so they are all equally reresented.
+- Culture-specific voice clips are deauthorized (all use the generic tourist beep); the French flag
+  overlay no longer displays.
+- Bots examine as "certified culturally neutral by the Office of Inclusive Care".
+- The first venue open each round triggers a **Service Sector Audit** station announcement.
+- Restaurant/bar customer weights are equalized ("equal representation of all visiting colleagues").
+
+Sprite/icon-state names ("amerifat", the national outfits, the tourist DMI) are left alone because
+renaming DMI states is out of scope; the Office has filed them under "visual audit pending".
+
 ## Known caveats
 
 - Renamed quirk display names may reset saved quirk selections for existing characters
