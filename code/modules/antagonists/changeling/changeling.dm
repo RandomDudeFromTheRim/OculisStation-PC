@@ -1150,8 +1150,8 @@
 
 /datum/antagonist/changeling/headslug/greet()
 	play_stinger()
-	to_chat(owner, span_bolddanger("You are a fresh changeling birthed from a headslug! \
-		You aren't as strong as a normal changeling, as you are newly born."))
+	to_chat(owner, span_bolddanger("You are a fresh assumed carbon-based lifeform birthed from a headslug! \
+		You aren't as strong as a normal assumed carbon-based lifeform, as you are newly born.")) // PC
 
 
 /datum/antagonist/changeling/space
